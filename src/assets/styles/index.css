@@ -7,7 +7,7 @@
   word-break: break-word;
 }
 :root {
-  --left-side-length: 140px;
+  --left-side-length: 180px;
 }
 
 html,
@@ -300,10 +300,14 @@ i.iconfont {
 .grid-container {
   display: grid;
   gap: 10px;
-  background-color: #c18888; /* purple */
+  background-color: #ffffff; /* purple */
   padding: 8px;
 }
 
+.collapse-mine {
+  margin-top: 10px;
+  
+}
 .grid-item {
   background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
