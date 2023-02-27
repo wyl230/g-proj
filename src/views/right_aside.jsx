@@ -3,12 +3,16 @@
  * 左侧区域，矩形、圆形...
  */
 import React, { useCallback } from 'react';
-import { icons } from '../utils/data';
+import { icons, interfaces } from '../utils/data';
+import { hardware_properties } from '../utils/data';
+import { component_properties } from '../utils/data';
+// use imgs
+// import logo from "../assets/images/hya.png"
+// <img src={logo} alt="" />
 
 
 
 // antd
-// 
 import { CaretRightOutlined } from '@ant-design/icons';
 import { Collapse, theme, Input } from 'antd';
 
@@ -54,24 +58,32 @@ const Right_aside = () => {
         </div>
       </form>
 
-
-
-    <Collapse
-      bordered={false}
-      defaultActiveKey={['1', '2', '3']}
-      expandIcon={({ isActive }) => <CaretRightOutlined rotate={isActive ? 90 : 0} />}
-      style={{ background: token.colorBgContainer }}
-    >
-      <Panel header="模型属性展示 1" key="1" style={panelStyle}>
-        <p>{text}</p>
-      </Panel>
-      <Panel header="模型属性展示 2" key="2" style={panelStyle}>
-        <p>{text}</p>
-      </Panel>
-      <Panel header="模型属性展示 3" key="3" style={panelStyle}>
-        <p>{text}</p>
-      </Panel>
-    </Collapse>
+      <Collapse
+        bordered={false}
+        defaultActiveKey={['1', '2', '3']}
+        expandIcon={({ isActive }) => <CaretRightOutlined rotate={isActive ? 90 : 0} />}
+        style={{ background: token.colorBgContainer }}
+      >
+        <Panel header="硬件模型属性展示" key="1" style={panelStyle}>
+          {
+            hardware_properties.map((property) => {
+              return <p>{property}： ...</p>
+            })
+          }
+          <p>{text}</p >
+        </Panel>
+        <Panel header="组件模型属性展示" key="2" style={panelStyle}>
+          {
+            component_properties.map((property) => {
+              return <p>{property}： ...</p>
+            })
+          }
+          <p>{text}</p >
+        </Panel>
+        <Panel header="模型属性展示 3" key="3" style={panelStyle}>
+          <p>{text}</p>
+        </Panel>
+      </Collapse>
 
       <div className='source-name'>
         模型属性展示

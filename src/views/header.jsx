@@ -84,6 +84,21 @@ const Header = () => {
     }
   }, []);
 
+  const onTest_interface = useCallback(() => {
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ title: 'React POST Request Example' })
+    };
+    fetch('http://162.105.85.214:8000/test_interface', requestOptions)
+        .then(response => response.json())
+        .then(data => this.setState({ postId: data.id }));
+
+    // window.open('http://162.105.85.214:8000/test_interface');
+    alert('已发送post请求');
+  }, []);
+
+
   const onHelp = useCallback(() => {
     // window.open('https://www.yuque.com/alsmile/topology/cucep0');
     window.open('./help.html');
@@ -142,17 +157,22 @@ const Header = () => {
         <img src='/favicon.ico' alt="乐吾乐" />
       </div>
       <div className="button-group" >
-        <button id="create" onClick = { onCreate } >新建文件</button>
-        <button id="open" >
+        <button class='button-3' id="create" onClick = { onCreate } >新建文件</button>
+        <button class='button-3' id="open" >
           打开文件
           <input id="open-input" type="file" onChange = { onOpen } />
         </button>
-        <button id="save" onClick = { onSave } >保存</button>
-        <button id="pen" onClick = { onTogglePen } ref = { penBtn } >折线</button>
-        <button id="pencil" onClick = { onTogglePencil } ref = { pencilBtn } >曲线</button>
-        <button id="magnifier" onClick = { onToggleMagnifier } ref = { magnifierBtn } >放大镜</button>
-        <button id="minimap" onClick = { onToggleMinimap } ref = { minimapBtn } >缩略图</button>
-        <button id="help" onClick = { onHelp } >帮助</button>
+
+        <button class='button-3' id="save" onClick = { onSave } >保存</button>
+        <button class='button-3' id="pen" onClick = { onTogglePen } ref = { penBtn } >折线</button>
+        <button class='button-3' id="pencil" onClick = { onTogglePencil } ref = { pencilBtn } >曲线</button>
+        <button class='button-3' id="magnifier" onClick = { onToggleMagnifier } ref = { magnifierBtn } >放大镜</button>
+        <button class='button-3' id="minimap" onClick = { onToggleMinimap } ref = { minimapBtn } >缩略图</button>
+        <button class='button-3' id="help" onClick = { onHelp } >帮助</button>
+        <button class='button-3' id="test_interface" onClick = { onTest_interface } >接口测试</button>
+        <button class='button-3' id="test_interface" onClick = { onTest_interface } >生成IDL文件</button>
+        <button class='button-3' id="test_interface" onClick = { onTest_interface } >IDL2C</button>
+        <button class='button-3' id="test_interface" onClick = { onTest_interface } >IDL2FPGA</button>
       </div>
     </div>
   );

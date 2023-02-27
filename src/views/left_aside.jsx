@@ -4,15 +4,13 @@
  */
 import React, { useCallback } from 'react';
 import { icons } from '../utils/data';
+import { hardwares } from '../utils/data';
 
+import logo from "../assets/images/hya.png"
 
 // 
 import { Input } from 'antd';
-
-
-// antd
 import { Collapse } from 'antd';
-
 const { Panel } = Collapse;
 
 const text = ` 待定 `;
@@ -57,22 +55,33 @@ const Left_aside = () => {
                 </div>
               );
             }) }
-            <div class="grid-item item3">3</div>  
-            <div class="grid-item item4">4</div>
-            <div class="grid-item item5">5</div>
-            <div class="grid-item item5">5</div>
-            <div class="grid-item item">5</div>
-            <div class="grid-item item">6</div>
-            <div class="grid-item item">6</div>
-            <div class="grid-item item">6</div>
-            <div class="grid-item item">6</div>
-            <div class="grid-item item">7</div>
-            <div class="grid-item item">7</div>
+
+            <div class="grid-item item3">CPU</div>  
+            <div class="grid-item item4">DSP</div>
+            <div class="grid-item item5">FPGA</div>
+            <div class="grid-item item5">微处理器</div>
+            <div class="grid-item item">SOC</div>
+            <div class="grid-item item">主控模块</div>
+            <div class="grid-item item">交换模块</div>
+            <div class="grid-item item"> 信息处理模块 </div>
+            <div class="grid-item item">信号处理模块</div>
+            <div class="grid-item item">中频处理模块</div>
+            <div class="grid-item item">时钟频率模块</div>
           </div>
         </Panel>
         <Panel header="接口模型库" key="2">
+          {
+            hardwares.map((hardware) => {
+              return (
+                <>
+                  <div class='grid-item item'>{hardware}</div>
+                </>
+              );
+
+            })
+          }
           <p>{text}</p>
-        </Panel>
+          <img class='img_left' src={logo} alt="" /> </Panel>
         <Panel header="组件模型库" key="3">
           <p>{text}</p>
         </Panel>
@@ -152,44 +161,6 @@ const Left_aside = () => {
           <div class="grid-item item3">7</div>
         </div>
       </div>
-      <div className="icon-list" >
-        { icons.map((icon) => {
-          const { key, title, data } = icon;
-          return (
-            <div
-              key = { key }
-            >
-              <i
-                draggable
-                className = { `iconfont icon-${ key }` }
-                title = { title }
-                onDragStart = { (e) => onDragStart(e, data) }
-              ></i>
-            </div>
-          );
-        }) }
-      </div>
-
-      <div className="icon-list" >
-        { icons.map((icon) => {
-          const { key, title, data } = icon;
-          return (
-            <div
-              key = { key }
-            >
-              <i
-                draggable
-                className = { `iconfont icon-${ key }` }
-                title = { title }
-                onDragStart = { (e) => onDragStart(e, data) }
-              ></i>
-            </div>
-          );
-        }) }
-      </div>
-
-
-
       <div className="link" >
         <a href = "http://2ds.le5le.com/">去官网</a>
       </div>

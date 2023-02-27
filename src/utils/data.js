@@ -91,3 +91,54 @@ export const icons = [
     }
   }
 ];
+
+
+export const hardwares = [
+  'CPU',
+  'DSP',
+  'FPGA'
+]
+
+export const interfaces = [
+  'RS232',
+  'RS422',
+  'RS485',
+  '网口',
+  'CAN',
+  'GPIO',
+]
+
+
+export const hardware_properties = [
+  "名称",
+  "型号",
+  "创建时间",
+  "版本号",
+  "文档附件",
+  "功耗",
+  "硬件功能",
+  "硬件性能",
+  "操作环境",
+  "OEM(原始设备制造单位)",
+  "健康管理信息",
+  "历史应用信息",
+]
+
+
+export const component_properties = [
+  "名称",
+  "创建时间",
+  "版本号",
+  "运行环境描述",
+  "组件功能",
+  "组件性能",
+  "操作环境",
+  "开发语言",
+  "组件完成进度",
+  "参数集合",
+  "协议文档",
+  "组件源码包/安装包",
+]
+
+
+
