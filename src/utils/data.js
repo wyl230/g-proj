@@ -24,6 +24,42 @@ export const icons = [
       height: 100
     }
   }, { 
+    key: 'rect',
+    title: '域管理器组件',
+    data: {
+      name: 'rectangle',
+      text: '设备管理器',
+      width: 100,
+      height: 100
+    }
+  }, { 
+    key: 'rect',
+    title: '平台管理服务组件',
+    data: {
+      name: 'rectangle',
+      text: '设备管理器',
+      width: 100,
+      height: 100
+    }
+  }, { 
+    key: 'rect',
+    title: '设备组件A',
+    data: {
+      name: 'rectangle',
+      text: '设备管理器',
+      width: 100,
+      height: 100
+    }
+  }, { 
+    key: 'rect',
+    title: '设备管理器',
+    data: {
+      name: 'rectangle',
+      text: '设备管理器',
+      width: 100,
+      height: 100
+    }
+  }, { 
     key: 'file', // icon对应的
     title: '文件', // 鼠标放在icon上显示的文字
     data: {

@@ -98,6 +98,9 @@ const Header = () => {
     alert('已发送post请求');
   }, []);
 
+  const on_3d_show = useCallback(() => {
+    window.open('http://162.105.85.214:8000/3d_show');
+  })
 
   const onHelp = useCallback(() => {
     // window.open('https://www.yuque.com/alsmile/topology/cucep0');
@@ -172,7 +175,8 @@ const Header = () => {
         <button class='button-3' id="test_interface" onClick = { onTest_interface } >接口测试</button>
         <button class='button-3' id="test_interface" onClick = { onTest_interface } >生成IDL文件</button>
         <button class='button-3' id="test_interface" onClick = { onTest_interface } >IDL2C</button>
-        <button class='button-3' id="test_interface" onClick = { onTest_interface } >IDL2FPGA</button>
+        <button class='button-3' id="test_interface" onClick = { onTest_interface } >to_FPGA</button>
+        <button class='button-3' id="3d_show" onClick = { on_3d_show } >产品展示界面</button>
       </div>
     </div>
   );

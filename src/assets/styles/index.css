@@ -7,7 +7,8 @@
   word-break: break-word;
 }
 :root {
-  --left-side-length: 180px;
+  --left-side-length: 240px;
+  --right-side-length: 180px;
 }
 
 html,
@@ -22,8 +23,18 @@ input[type=file]::-webkit-file-upload-button { /* chromes and blink button */
   cursor: pointer; 
 }
 
+.single_item {
+  border: 1px solid;
+  text-align: center;
+  cursor: pointer;
+  /* position: inherit; */
+  /* position: absolute; */
+  /* transform: translate(-50%, -50%); */
+  /* margin: auto; */
+  /* background-color:rgba(39, 174, 96, .15); */
+}
 i.iconfont {
-  font-size: 30px;
+  font-size: 1px;
   color: rgba(0,0,0,.65);
 }
 
@@ -124,7 +135,7 @@ i.iconfont {
 
 .right_aside {
   /* width: 68px; */
-  width: var(--left-side-length);
+  width: var(--right-side-length);
   height: calc(100% - 61px);
   float: right;
   border-right: 1px solid #ccc;
@@ -158,7 +169,7 @@ i.iconfont {
   /* padding-left: var(--left-side-length); */
   /* padding-right: var(--left-side-length); */
   margin-left: var(--left-side-length);
-  margin-right: var(--left-side-length);
+  margin-right: var(--right-side-length);
   
   background-color: rgb(244, 244, 244);
 }
@@ -203,7 +214,13 @@ i.iconfont {
 }
 
 .icon-rect:before {
-  content: "\e610";
+  border: 1px;
+  /* border-style: solid; */
+  border-style: dotted;
+  border-color:rgb(0, 0, 0);
+  font-size: 1%;
+  /* content: "组件"; */
+  /* content: "\e610"; */
 }
 
 .icon-triangle:before {
@@ -214,7 +231,12 @@ i.iconfont {
   content: "\e609";
 }
 
-.icon-circle:before {
+/* .icon-circle:before {
+  content: "\e64e";
+} */
+
+
+.icon-circle:after {
   content: "\e64e";
 }
 

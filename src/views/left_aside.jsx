@@ -45,13 +45,16 @@ const Left_aside = () => {
             { icons.map((icon) => {
               const { key, title, data } = icon;
               return (
-                <div key = { key } >
+                <div class='single_item' key = { key } 
+                  draggable
+                  onDragStart = { (e) => onDragStart(e, data) }
+                >
                   <i
                     draggable
                     className = { `grid-item item iconfont icon-${ key }` }
                     title = { title }
                     onDragStart = { (e) => onDragStart(e, data) }
-                  ></i>
+                  >{title}</i>
                 </div>
               );
             }) }
@@ -102,7 +105,7 @@ const Left_aside = () => {
                   className = { `grid-item item iconfont icon-${ key }` }
                   title = { title }
                   onDragStart = { (e) => onDragStart(e, data) }
-                ></i>
+                >{title}</i>
               </div>
             );
           }) }
