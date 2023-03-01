@@ -71,6 +71,9 @@ const Left_aside = () => {
             <div class="grid-item item">中频处理模块</div>
             <div class="grid-item item">时钟频率模块</div>
           </div>
+          <div>
+            <button type="submit" class='button-3 create' role='button'>新建模块</button>
+          </div>
         </Panel>
         <Panel header="接口模型库" key="2">
           {
@@ -84,9 +87,18 @@ const Left_aside = () => {
             })
           }
           <p>{text}</p>
-          <img class='img_left' src={logo} alt="" /> </Panel>
+          <img class='img_left' src={logo} alt="" /> 
+
+          <div>
+            <button type="submit" class='button-3 create' role='button'>+</button>
+          </div>
+        </Panel>
         <Panel header="组件模型库" key="3">
           <p>{text}</p>
+
+          <div>
+            <button type="submit" class='button-3 create' role='button'>+</button>
+          </div>
         </Panel>
       </Collapse>
 

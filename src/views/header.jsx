@@ -3,7 +3,7 @@
  * 最上面一行
  */
 import React, { useCallback, useEffect, useRef } from 'react';
-
+import { BrowserRouter, Routes, Route, Link, Outlet } from "react-router-dom";
 const Header = () => {
   const penBtn = useRef(null);
   const pencilBtn = useRef(null);
@@ -35,6 +35,7 @@ const Header = () => {
     const filename = 'test_data.json';
     const data = window.meta2d.data();
     const json = JSON.stringify(data, undefined, 4);
+    // alert('123');
     const blob = new Blob([ json ], { type: 'text/json' });
     const a = document.createElement('a');
     a.download = filename;
@@ -99,7 +100,7 @@ const Header = () => {
   }, []);
 
   const on_3d_show = useCallback(() => {
-    window.open('http://162.105.85.214:8000/3d_show');
+    window.open('http://162.105.85.214:8000/about');
   })
 
   const onHelp = useCallback(() => {
@@ -159,7 +160,31 @@ const Header = () => {
       <div className="logo" >
         <img src='/favicon.ico' alt="乐吾乐" />
       </div>
+
+
+
+
+
+
+
       <div className="button-group" >
+        <Link to="/">
+          <button class-3>
+              Home
+          </button>
+        </Link>
+        <Link to="/about">
+          <button class-3>
+              about
+          </button>
+        </Link>
+        <Link to="/contact">
+          <button class-3>
+            产品展示界面
+          </button>
+        </Link>
+        <Outlet />
+
         <button class='button-3' id="create" onClick = { onCreate } >新建文件</button>
         <button class='button-3' id="open" >
           打开文件
