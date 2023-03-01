@@ -23,7 +23,7 @@ const text = `待定 `;
 
 
 
-const Right_aside = () => {
+const Right_aside = (props) => {
   // panel
   const { token } = theme.useToken();
 
@@ -65,6 +65,17 @@ const Right_aside = () => {
         style={{ background: token.colorBgContainer }}
       >
         <Panel header="硬件模型属性展示" key="1" style={panelStyle}>
+          <p>
+            测试属性: {props.value} 
+            <hr />
+            key: {props.current_object}
+          </p>
+          <hr />
+            {props.current_object_properties.map((item) => {
+              return <p>名称： {item}</p>
+            })}
+          <hr />
+
           {
             hardware_properties.map((property) => {
               return <p>{property}： ...</p>

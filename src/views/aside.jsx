@@ -9,7 +9,9 @@ class Aside extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      current_property: 'test property'
+      current_property: 'test property',
+      current_object: 'undefined',
+      current_object_properties: []
     };
 
     // handleClick = (child_data) => {
@@ -22,11 +24,23 @@ class Aside extends React.Component {
       current_property: i
     })
   }
+
+  update_current_object(key, title, data) {
+    this.setState({
+      current_object: key,
+      current_object_properties: [title]
+    })
+  }
+
   render_left_aside(i) {
     return (
         <Left_aside 
+        // 等号前面是子组件的名称
           value={this.state.current_property} 
+          current_object={this.state.current_object} 
           onClick={(i) => this.handleClick(i)}
+          update_current_object = {(key,title,data) => this.update_current_object(key, title, data)}
+
           // parentCallback={this.handleClick}
         />
     )
@@ -35,7 +49,11 @@ class Aside extends React.Component {
 
   render_right_aside(i) {
     return (
-        <Right_aside value={this.state.current_property} />
+        <Right_aside 
+          value={this.state.current_property} 
+          current_object={this.state.current_object} 
+          current_object_properties={this.state.current_object_properties}
+        />
     )
     // <Square value={i}/>;
   };

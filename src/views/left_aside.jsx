@@ -70,6 +70,8 @@ const Left_aside = (props) => {
                 <div class='single_item' key = { key } 
                   draggable
                   onDragStart = { (e) => onDragStart(e, data) }
+                  // onClick = {() => alert(`key: ${key} title: ${title} data: ${data}`)} // 测试用，点击组件名字即可
+                  onClick = {() => props.update_current_object(key, title, data)}
                 >
                   <i
                     draggable
