@@ -34,8 +34,9 @@ const Header = () => {
   const onSave = useCallback(() => {
     const filename = 'test_data.json';
     const data = window.meta2d.data();
+    console.log(data);
     const json = JSON.stringify(data, undefined, 4);
-    // alert('123');
+    console.log(json);
     const blob = new Blob([ json ], { type: 'text/json' });
     const a = document.createElement('a');
     a.download = filename;
@@ -43,6 +44,31 @@ const Header = () => {
     a.dataset.downloadurl = ['text/json', a.download, a.href].join(':');
     a.click();
   }, []);
+
+  const onTest_send_json = useCallback(() => {
+
+    const data = window.meta2d.data();
+    console.log(data);
+    const json = JSON.stringify(data, undefined, 4);
+    console.log(json);
+
+    const requestOptions = {
+        method: 'POST',
+        headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+        },
+        // headers: { 'Content-Type': 'application/json' },
+        body: json
+    };
+    fetch('http://162.105.85.214:8000/test_interface', requestOptions)
+        .then(response => response.json())
+        .then(data => this.setState({ postId: data.id }));
+
+  // curl -d '{"MyKey":"My Value"}' -H "Content-Type: application/json" http://127.0.0.1:8000/test_interface {"MyKey":"My Value"}
+    // window.open('http://162.105.85.214:8000/test_interface');
+    alert('已发送post请求');
+  });
 
   const onTogglePen = useCallback(() => {
     pencilBtn.current.className = '';
@@ -198,6 +224,7 @@ const Header = () => {
         <button class='button-3' id="minimap" onClick = { onToggleMinimap } ref = { minimapBtn } >缩略图</button>
         <button class='button-3' id="help" onClick = { onHelp } >帮助</button>
         <button class='button-3' id="test_interface" onClick = { onTest_interface } >接口测试</button>
+        <button class='button-3' id="test_send_json" onClick = { onTest_send_json } >发送连接关系对应的JSON</button>
         <button class='button-3' id="test_interface" onClick = { onTest_interface } >生成IDL文件</button>
         <button class='button-3' id="test_interface" onClick = { onTest_interface } >IDL2C</button>
         <button class='button-3' id="test_interface" onClick = { onTest_interface } >to_FPGA</button>

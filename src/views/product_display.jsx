@@ -1,26 +1,25 @@
 import React from 'react';
+import Show_properties from './show_properties';
 import { BrowserRouter, Routes, Route, Link, Outlet } from "react-router-dom";
 
 const Product_display = () => (
     <>
-    <div>
-        <Link to="/">
-            <button class-3>
-                Home
-            </button>
-        </Link>
-        <Link to="/about">
-            <button class-3>
-                about
-            </button>
-        </Link>
-        <Link to="/contact">
-            <button class-3>
-            产品展示界面
-            </button>
-        </Link>
-        <Outlet />
-    </div>
+    <Link to="/">
+        <button class-3>
+            Home
+        </button>
+    </Link>
+    <Link to="/about">
+        <button class-3>
+            about
+        </button>
+    </Link>
+    <Link to="/contact">
+        <button class-3>
+        产品展示界面
+        </button>
+    </Link>
+    <Outlet />
 
     <h1>
         产品展示界面
@@ -39,8 +38,8 @@ const Product_display = () => (
         3.支持关键属性修改，如机箱布局，横插/竖插方式。
         </p>
 
+        <Show_properties />
     </div>
-
     </>
 )
 
