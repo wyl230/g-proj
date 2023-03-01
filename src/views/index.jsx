@@ -5,8 +5,7 @@
  * @LastEditTime: 
  */
 import React from 'react';
-import Left_aside from './left_aside';
-import Right_aside from './right_aside';
+import Aside from './aside';
 import Header from './header';
 import Meta2dContainer from './meta2d';
 import Product_display from './product_display';
@@ -20,8 +19,7 @@ const Home = () => {
   return (
     <>
       <Header />
-      <Left_aside />
-      <Right_aside />
+      <Aside />
       <Meta2dContainer />
     </>
   );
