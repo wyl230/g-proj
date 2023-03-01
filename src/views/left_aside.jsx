@@ -2,13 +2,13 @@
  * @Description:
  * 左侧区域，矩形、圆形...
  */
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import { icons } from '../utils/data';
 import { hardwares } from '../utils/data';
 
 import logo from "../assets/images/hya.png"
+import { Button, Modal } from 'antd';
 
-// 
 import { Input } from 'antd';
 import { Collapse } from 'antd';
 const { Panel } = Collapse;
@@ -28,6 +28,22 @@ const Left_aside = () => {
 
     alert(search_items);
   }
+
+
+  // modal
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <div className="left_aside" >
@@ -72,7 +88,30 @@ const Left_aside = () => {
             <div class="grid-item item">时钟频率模块</div>
           </div>
           <div>
-            <button type="submit" class='button-3 create' role='button'>新建模块</button>
+            {/* <button type="submit" class='button-3 create' role='button'>新建模块</button> */}
+            
+            <Button type="primary" onClick={showModal}>
+              新建模块
+            </Button>
+            <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+              <div>
+              <p>名称：</p>
+              <Input id='test' placeholder="搜索组件..." />
+              </div>
+              <p>型号:
+                <Input placeholder="..." />
+              </p>
+
+              <p>硬件功能：
+                <Input placeholder="..." />
+              </p>
+              <p>硬件性能:
+                <Input placeholder="..." />
+              </p>
+
+              <p>Some contents...</p>
+              <p>Some contents...</p>
+            </Modal>
           </div>
         </Panel>
         <Panel header="接口模型库" key="2">

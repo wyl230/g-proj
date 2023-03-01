@@ -2,8 +2,15 @@
  * @Description: 
  * 最上面一行
  */
+
+// add dropdown
+import { MenuProps } from 'antd';
+import { Button, Dropdown } from 'antd';
 import React, { useCallback, useEffect, useRef } from 'react';
 import { BrowserRouter, Routes, Route, Link, Outlet } from "react-router-dom";
+
+
+
 const Header = () => {
   const penBtn = useRef(null);
   const pencilBtn = useRef(null);
@@ -181,17 +188,76 @@ const Header = () => {
     }
   }, []);
 
+
+  const items = [
+  {
+    key: '1',
+    label: (
+        <button class='button-3' id="pencil" onClick = { onTogglePencil } ref = { pencilBtn } >曲线</button>
+    ),
+  },
+  {
+    key: '2',
+    label: (
+        <button class='button-3' id="pen" onClick = { onTogglePen } ref = { penBtn } >折线</button>
+    ),
+  },
+  {
+    key: '3',
+    label: (
+      <a target="_blank" rel="noopener noreferrer" href="https://www.luohanacademy.com">
+        放上需要的链接
+      </a>
+    ),
+  },
+  {
+    key: '4',
+    label: (
+      <a target="_blank" rel="noopener noreferrer" href="https://www.luohanacademy.com">
+        放上需要的链接
+      </a>
+      ),
+    },
+  ];
+
+  const file_op_items = [
+  {
+    key: '5',
+    label: (
+        <button class='button-3' id="pencil" onClick = { onTogglePencil } ref = { pencilBtn } >曲线</button>
+    ),
+  },
+  {
+    key: '6',
+    label: (
+        <button class='button-3' id="pen" onClick = { onTogglePen } ref = { penBtn } >折线</button>
+    ),
+  },
+  {
+    key: '7',
+    label: (
+      <a target="_blank" rel="noopener noreferrer" href="https://www.luohanacademy.com">
+        放上需要的链接
+      </a>
+    ),
+  },
+  {
+    key: '8',
+    label: (
+      <a target="_blank" rel="noopener noreferrer" href="https://www.luohanacademy.com">
+        放上需要的链接
+      </a>
+      ),
+    },
+  ];
+
+
+
   return (
     <div className="header" >
       <div className="logo" >
         <img src='/favicon.ico' alt="乐吾乐" />
       </div>
-
-
-
-
-
-
 
       <div className="button-group" >
         <Link to="/">
@@ -211,6 +277,28 @@ const Header = () => {
         </Link>
         <Outlet />
 
+
+    <Dropdown menu={{ items }} placement="bottomLeft" arrow>
+      <Button>bottomLeft</Button>
+    </Dropdown>
+    <Dropdown menu={{ items }} placement="bottom" arrow>
+      <Button>文件操作</Button>
+    </Dropdown>
+    <Dropdown menu={{ items }} placement="bottomRight" arrow>
+      <Button>更多...(绘图相关)</Button>
+    </Dropdown>
+    <br />
+    <Dropdown menu={{ items }} placement="topLeft" arrow>
+      <Button>topLeft</Button>
+    </Dropdown>
+    <Dropdown menu={{ items }} placement="top" arrow>
+      <Button>top</Button>
+    </Dropdown>
+    <Dropdown menu={{ items }} placement="topRight" arrow>
+      <Button>topRight</Button>
+    </Dropdown>
+
+
         <button class='button-3' id="create" onClick = { onCreate } >新建文件</button>
         <button class='button-3' id="open" >
           打开文件
@@ -218,8 +306,6 @@ const Header = () => {
         </button>
 
         <button class='button-3' id="save" onClick = { onSave } >保存</button>
-        <button class='button-3' id="pen" onClick = { onTogglePen } ref = { penBtn } >折线</button>
-        <button class='button-3' id="pencil" onClick = { onTogglePencil } ref = { pencilBtn } >曲线</button>
         <button class='button-3' id="magnifier" onClick = { onToggleMagnifier } ref = { magnifierBtn } >放大镜</button>
         <button class='button-3' id="minimap" onClick = { onToggleMinimap } ref = { minimapBtn } >缩略图</button>
         <button class='button-3' id="help" onClick = { onHelp } >帮助</button>
