@@ -15,7 +15,8 @@ const { Panel } = Collapse;
 
 const text = ` 待定 `;
 
-const Left_aside = () => {
+// class Left_aside extends React.Component {
+const Left_aside = (props) => {
   const onChange = (key) => { console.log(key); };
   const onDragStart = useCallback((e, data) => {
     e.dataTransfer.setData('Meta2d', JSON.stringify(data));
@@ -47,6 +48,11 @@ const Left_aside = () => {
 
   return (
     <div className="left_aside" >
+      <p>
+        <Button onClick={() => props.onClick('切换')}>
+          {props.value}
+        </Button>
+      </p>
       <form onSubmit={handleSubmit}>
         <div className='search-bar_right'>
           {/* <label htmlFor="text">搜索</label> */}
