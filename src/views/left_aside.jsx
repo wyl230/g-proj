@@ -61,17 +61,17 @@ const Left_aside = (props) => {
         <div className='search-bar_right'>
           {/* <label htmlFor="text">搜索</label> */}
           <Input id='search_items' placeholder="搜索组件..." />
-          <button type="submit" class='button-68' role='button'>search</button>
+          <button type="submit" className='button-68' role='button'>search</button>
         </div>
       </form>
 
       <Collapse defaultActiveKey={['1']} onChange={onChange} className='collapse-mine'>
         <Panel header="硬件模型库" key="1">
-          <div class="grid-container">
+          <div className="grid-container">
             { icons.map((icon) => {
               const { key, title, data } = icon;
               return (
-                <div class='single_item' key = { key } 
+                <div className='single_item' key = { key } 
                   draggable
                   onDragStart = { (e) => onDragStart(e, data) }
                   // onClick = {() => alert(`key: ${key} title: ${title} data: ${data}`)} // 测试用，点击组件名字即可
@@ -88,17 +88,17 @@ const Left_aside = (props) => {
               );
             }) }
 
-            <div class="grid-item item3">CPU</div>  
-            <div class="grid-item item4">DSP</div>
-            <div class="grid-item item5">FPGA</div>
-            <div class="grid-item item5">微处理器</div>
-            <div class="grid-item item">SOC</div>
-            <div class="grid-item item">主控模块</div>
-            <div class="grid-item item">交换模块</div>
-            <div class="grid-item item"> 信息处理模块 </div>
-            <div class="grid-item item">信号处理模块</div>
-            <div class="grid-item item">中频处理模块</div>
-            <div class="grid-item item">时钟频率模块</div>
+            <div className="grid-item item3">CPU</div>  
+            <div className="grid-item item4">DSP</div>
+            <div className="grid-item item5">FPGA</div>
+            <div className="grid-item item5">微处理器</div>
+            <div className="grid-item item">SOC</div>
+            <div className="grid-item item">主控模块</div>
+            <div className="grid-item item">交换模块</div>
+            <div className="grid-item item"> 信息处理模块 </div>
+            <div className="grid-item item">信号处理模块</div>
+            <div className="grid-item item">中频处理模块</div>
+            <div className="grid-item item">时钟频率模块</div>
           </div>
           <div>
             {/* <button type="submit" class='button-3 create' role='button'>新建模块</button> */}
@@ -132,24 +132,24 @@ const Left_aside = (props) => {
             hardwares.map((hardware) => {
               return (
                 <>
-                  <div class='grid-item item'>{hardware}</div>
+                  <div className='grid-item item'>{hardware}</div>
                 </>
               );
 
             })
           }
           <p>{text}</p>
-          <img class='img_left' src={logo} alt="" /> 
+          <img className='img_left' src={logo} alt="" /> 
 
           <div>
-            <button type="submit" class='button-3 create' role='button'>+</button>
+            <button type="submit" className='button-3 create' role='button'>+</button>
           </div>
         </Panel>
         <Panel header="组件模型库" key="3">
           <p>{text}</p>
 
           <div>
-            <button type="submit" class='button-3 create' role='button'>+</button>
+            <button type="submit" className='button-3 create' role='button'>+</button>
           </div>
         </Panel>
       </Collapse>

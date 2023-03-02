@@ -1,5 +1,5 @@
 /*
- * @Description: 
+ * @Description:
  * @Author: 高浩然
  * @Date: 2021-10-11 15:02:14
  * @LastEditTime: 2021-10-13 14:59:48
@@ -28,7 +28,7 @@ module.exports = {
       {
         test: /\.(tsx|ts|jsx|js)$/,
         use: [
-          'babel-loader'
+          'babel-loader' , 'source-map-loader'
         ],
         exclude: /node_modules|dist/,
       },

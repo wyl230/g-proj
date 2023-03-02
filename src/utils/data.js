@@ -21,7 +21,7 @@ export const icons = [
       height: 100
     }
   }, { 
-    key: 'rect',
+    key: 'dev_manager',
     title: '设备管理器',
     data: {
       name: 'rectangle',
@@ -30,7 +30,7 @@ export const icons = [
       height: 100
     }
   }, { 
-    key: 'rect',
+    key: 'domain_manager',
     title: '域管理器组件',
     data: {
       name: 'rectangle',
@@ -39,7 +39,7 @@ export const icons = [
       height: 100
     }
   }, { 
-    key: 'rect',
+    key: 'platform_manager',
     title: '平台管理服务组件',
     data: {
       name: 'rectangle',
@@ -48,7 +48,7 @@ export const icons = [
       height: 100
     }
   }, { 
-    key: 'rect',
+    key: 'dev_com_A',
     title: '设备组件A',
     data: {
       name: 'rectangle',
@@ -57,8 +57,8 @@ export const icons = [
       height: 100
     }
   }, { 
-    key: 'rect',
-    title: '设备管理器',
+    key: 'dev_manager_B',
+    title: '设备管理器B',
     data: {
       name: 'rectangle',
       text: '设备管理器',

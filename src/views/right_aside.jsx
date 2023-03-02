@@ -49,7 +49,7 @@ const Right_aside = (props) => {
       <form onSubmit={handleSubmit}>
         <div className='search-bar_right'>
           <Input id='search_items' placeholder="搜索..." />
-          <button type="submit" class='button-68' role='button'>search</button>
+          <button type="submit" className='button-68' role='button'>search</button>
 
         </div>
       </form>
@@ -117,7 +117,7 @@ const Right_aside = (props) => {
         <ul className='property'> 属性5：...  </ul>
         <ul className='property'> 属性6：...  </ul>
       </div>
-      <hr class="hr-twill-colorful"/>
+      <hr className="hr-twill-colorful"/>
 
 
       <div className='source-name'>
@@ -129,7 +129,7 @@ const Right_aside = (props) => {
         <ul className='property'> 属性5：...  </ul>
         <ul className='property'> 属性6：...  </ul>
       </div>
-      <hr class="hr-twill-colorful"/>
+      <hr className="hr-twill-colorful"/>
 
 
       <div className='source-name'>
@@ -141,7 +141,7 @@ const Right_aside = (props) => {
         <ul className='property'> 属性5：...  </ul>
         <ul className='property'> 属性6：...  </ul>
       </div>
-      <hr class="hr-twill-colorful"/>
+      <hr className="hr-twill-colorful"/>
 
 
 

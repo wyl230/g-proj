@@ -193,13 +193,13 @@ const Header = () => {
   {
     key: '1',
     label: (
-        <button class='button-3' id="pencil" onClick = { onTogglePencil } ref = { pencilBtn } >曲线</button>
+        <button className='button-3' id="pencil" onClick = { onTogglePencil } ref = { pencilBtn } >曲线</button>
     ),
   },
   {
     key: '2',
     label: (
-        <button class='button-3' id="pen" onClick = { onTogglePen } ref = { penBtn } >折线</button>
+        <button className='button-3' id="pen" onClick = { onTogglePen } ref = { penBtn } >折线</button>
     ),
   },
   {
@@ -224,13 +224,13 @@ const Header = () => {
   {
     key: '5',
     label: (
-        <button class='button-3' id="pencil" onClick = { onTogglePencil } ref = { pencilBtn } >曲线</button>
+        <button className='button-3' id="pencil" onClick = { onTogglePencil } ref = { pencilBtn } >曲线</button>
     ),
   },
   {
     key: '6',
     label: (
-        <button class='button-3' id="pen" onClick = { onTogglePen } ref = { penBtn } >折线</button>
+        <button className='button-3' id="pen" onClick = { onTogglePen } ref = { penBtn } >折线</button>
     ),
   },
   {
@@ -261,17 +261,17 @@ const Header = () => {
 
       <div className="button-group" >
         <Link to="/">
-          <button class-3>
+          <button className='button-3'>
               Home
           </button>
         </Link>
         <Link to="/about">
-          <button class-3>
+          <button className='button-3'>
               about
           </button>
         </Link>
         <Link to="/contact">
-          <button class-3>
+          <button className='button-3'>
             产品展示界面
           </button>
         </Link>
@@ -299,22 +299,22 @@ const Header = () => {
     </Dropdown>
 
 
-        <button class='button-3' id="create" onClick = { onCreate } >新建文件</button>
-        <button class='button-3' id="open" >
+        <button className='button-3' id="create" onClick = { onCreate } >新建文件</button>
+        <button className='button-3' id="open" >
           打开文件
           <input id="open-input" type="file" onChange = { onOpen } />
         </button>
 
-        <button class='button-3' id="save" onClick = { onSave } >保存</button>
-        <button class='button-3' id="magnifier" onClick = { onToggleMagnifier } ref = { magnifierBtn } >放大镜</button>
-        <button class='button-3' id="minimap" onClick = { onToggleMinimap } ref = { minimapBtn } >缩略图</button>
-        <button class='button-3' id="help" onClick = { onHelp } >帮助</button>
-        <button class='button-3' id="test_interface" onClick = { onTest_interface } >接口测试</button>
-        <button class='button-3' id="test_send_json" onClick = { onTest_send_json } >发送连接关系对应的JSON</button>
-        <button class='button-3' id="test_interface" onClick = { onTest_interface } >生成IDL文件</button>
-        <button class='button-3' id="test_interface" onClick = { onTest_interface } >IDL2C</button>
-        <button class='button-3' id="test_interface" onClick = { onTest_interface } >to_FPGA</button>
-        <button class='button-3' id="3d_show" onClick = { on_3d_show } >产品展示界面</button>
+        <button className='button-3' id="save" onClick = { onSave } >保存</button>
+        <button className='button-3' id="magnifier" onClick = { onToggleMagnifier } ref = { magnifierBtn } >放大镜</button>
+        <button className='button-3' id="minimap" onClick = { onToggleMinimap } ref = { minimapBtn } >缩略图</button>
+        <button className='button-3' id="help" onClick = { onHelp } >帮助</button>
+        <button className='button-3' id="test_interface" onClick = { onTest_interface } >接口测试</button>
+        <button className='button-3' id="test_send_json" onClick = { onTest_send_json } >发送连接关系对应的JSON</button>
+        <button className='button-3' id="test_interface" onClick = { onTest_interface } >生成IDL文件</button>
+        <button className='button-3' id="test_interface" onClick = { onTest_interface } >IDL2C</button>
+        <button className='button-3' id="test_interface" onClick = { onTest_interface } >to_FPGA</button>
+        <button className='button-3' id="3d_show" onClick = { on_3d_show } >产品展示界面</button>
       </div>
     </div>
   );
