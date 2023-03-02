@@ -19,8 +19,8 @@ const Meta2dContainer = () => {
 
     // 3. 注册图形
     // 参数 {key: fn}。key为图形唯一name，否则覆盖原来图形，fn为相关函数
-    meta2d.register({ my_compoent });
-    meta2d.registerAnchors({ my_compoent: my_compoent_Anchors });
+    window.meta2d.register({ my_compoent });
+    window.meta2d.registerAnchors({ my_compoent: my_compoent_Anchors });
 
     // 4. 开始使用
     const pen = {
@@ -34,7 +34,16 @@ const Meta2dContainer = () => {
     meta2d.addPen(pen);
     meta2d.inactive();
   }, []);
+  var pens;
 
+  // const draw_interface_text = () => {
+  //   pens.map(
+  //     (pen) => {
+  //       return <i>{pen.x}</i>
+  //     }
+  //   )
+  // }
+  const list = [23,23,23];
   return (
     <div className='main' >
       <div>
@@ -56,6 +65,27 @@ const Meta2dContainer = () => {
         <button
           onClick={() => meta2d.downloadPng()} >
           生成 png 图像
+        </button>
+
+        <button
+          onClick={() => {
+            pens = window.meta2d.mine();
+            console.log(pens);
+            // draw_interface_text();
+          }
+          } >
+            {
+              // list.map(l => <p>234</p>)
+              // meta2d.mine().map(l => <p>23</p>)
+            }
+          {/* onClick={() => console.log(Meta2d)} > */}
+          {/* {draw_interface_text()} */}
+          {/* {(window.meta2d.mine()).map((pen) => {
+            return (
+              <p>23</p>
+            )
+          })} */}
+          test
         </button>
 
       </div>

@@ -33,11 +33,7 @@ const Right_aside = (props) => {
     borderRadius: token.borderRadiusLG,
     border: 'none',
   };
-  // panen end
-  const onChange = (key) => { console.log(key); };
-  const onDragStart = useCallback((e, data) => {
-    e.dataTransfer.setData('Meta2d', JSON.stringify(data));
-  }, []);
+  // panel end
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -67,7 +63,9 @@ const Right_aside = (props) => {
         <Panel header="硬件模型属性展示" key="1" style={panelStyle}>
           <p>
             测试属性: {props.value} 
-            <hr />
+          </p>
+          <hr />
+          <p>
             key: {props.current_object}
           </p>
           <hr />
