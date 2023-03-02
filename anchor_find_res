@@ -1,0 +1,1444 @@
+输入关键词，空格分隔:
+['anchor']
+./src/utils/draw.js 16   const anchors = [];
+
+./src/utils/draw.js 17   anchors.push({
+
+./src/utils/draw.js 24   anchors.push({
+
+./src/utils/draw.js 31   anchors.push({
+
+./src/utils/draw.js 37   pen.anchors = anchors;
+
+./node_modules/csstype/index.js.flow 1060   "offset-anchor"?: Property$OffsetAnchor<TLength>,
+
+./node_modules/csstype/index.js.flow 1072   "overflow-anchor"?: Property$OverflowAnchor,
+
+./node_modules/csstype/index.js.flow 1679   "text-anchor"?: Property$TextAnchor,
+
+./node_modules/csstype/index.js.flow 2760   "offset-anchor"?: Property$OffsetAnchor<TLength> | Array<Property$OffsetAnchor<TLength>>,
+
+./node_modules/csstype/index.js.flow 2772   "overflow-anchor"?: Property$OverflowAnchor | Array<Property$OverflowAnchor>,
+
+./node_modules/csstype/index.js.flow 3379   "text-anchor"?: Property$TextAnchor | Array<Property$TextAnchor>,
+
+./node_modules/csstype/index.js.flow 3964   | "[text-anchor]"
+
+./node_modules/regexpu-core/rewrite-pattern.js 289 		case 'anchor':
+
+./node_modules/node-forge/lib/x509.js 2981     public key of the trust anchor. This requires obtaining a sequence of
+
+./node_modules/node-forge/lib/x509.js 2983     in the passed 'chain'. The trust anchor should be in the given CA
+
+./node_modules/node-forge/lib/x509.js 2994     (b) certificate 1 is issued by the trust anchor;
+
+./node_modules/node-forge/lib/x509.js 3029     (d) trust anchor information, describing a CA that serves as a trust
+
+./node_modules/node-forge/lib/x509.js 3030           anchor for the certification path. The trust anchor information
+
+./node_modules/node-forge/lib/x509.js 3039       (Trust anchors are provided via certificates in the CA store).
+
+./node_modules/node-forge/lib/x509.js 3041       The trust anchor information may be provided to the path processing
+
+./node_modules/node-forge/lib/x509.js 3042       procedure in the form of a self-signed certificate. The trusted anchor
+
+./node_modules/typescript/lib/typingsInstaller.js 14344                 String: ["codePointAt", "includes", "endsWith", "normalize", "repeat", "startsWith", "anchor", "big", "blink", "bold", "fixed", "fontcolor", "fontsize", "italics", "link", "small", "strike", "sub", "sup"],
+
+./node_modules/typescript/lib/typingsInstaller.js 44122                     // typedef anchored to an A.B.C assignment - we need to bind into B's namespace under name C
+
+./node_modules/typescript/lib/typescript.js 14549                 String: ["codePointAt", "includes", "endsWith", "normalize", "repeat", "startsWith", "anchor", "big", "blink", "bold", "fixed", "fontcolor", "fontsize", "italics", "link", "small", "strike", "sub", "sup"],
+
+./node_modules/typescript/lib/typescript.js 44327                     // typedef anchored to an A.B.C assignment - we need to bind into B's namespace under name C
+
+./node_modules/typescript/lib/typescript.js 142529                     // use next sibling as an anchor
+
+./node_modules/typescript/lib/typescriptServices.js 14549                 String: ["codePointAt", "includes", "endsWith", "normalize", "repeat", "startsWith", "anchor", "big", "blink", "bold", "fixed", "fontcolor", "fontsize", "italics", "link", "small", "strike", "sub", "sup"],
+
+./node_modules/typescript/lib/typescriptServices.js 44327                     // typedef anchored to an A.B.C assignment - we need to bind into B's namespace under name C
+
+./node_modules/typescript/lib/typescriptServices.js 142529                     // use next sibling as an anchor
+
+./node_modules/typescript/lib/tsc.js 10925                 String: ["codePointAt", "includes", "endsWith", "normalize", "repeat", "startsWith", "anchor", "big", "blink", "bold", "fixed", "fontcolor", "fontsize", "italics", "link", "small", "strike", "sub", "sup"],
+
+./node_modules/typescript/lib/tsserver.js 14355                 String: ["codePointAt", "includes", "endsWith", "normalize", "repeat", "startsWith", "anchor", "big", "blink", "bold", "fixed", "fontcolor", "fontsize", "italics", "link", "small", "strike", "sub", "sup"],
+
+./node_modules/typescript/lib/tsserver.js 44133                     // typedef anchored to an A.B.C assignment - we need to bind into B's namespace under name C
+
+./node_modules/typescript/lib/tsserver.js 141947                     // use next sibling as an anchor
+
+./node_modules/typescript/lib/tsserverlibrary.js 14549                 String: ["codePointAt", "includes", "endsWith", "normalize", "repeat", "startsWith", "anchor", "big", "blink", "bold", "fixed", "fontcolor", "fontsize", "italics", "link", "small", "strike", "sub", "sup"],
+
+./node_modules/typescript/lib/tsserverlibrary.js 44327                     // typedef anchored to an A.B.C assignment - we need to bind into B's namespace under name C
+
+./node_modules/typescript/lib/tsserverlibrary.js 142529                     // use next sibling as an anchor
+
+./node_modules/babel-plugin-polyfill-corejs3/esm/index.mjs 246   anchor: define(null, ["es.string.anchor"]),
+
+./node_modules/babel-plugin-polyfill-corejs3/lib/built-in-definitions.js 252   anchor: define(null, ["es.string.anchor"]),
+
+./node_modules/webpack/lib/optimize/ConcatenatedModule.js 170 		"alert,all,anchor,anchors,area,assign,blur,button,checkbox,clearInterval,clearTimeout",
+
+./node_modules/dayjs/esm/utils.js 21   var anchor = a.clone().add(wholeMonthDiff, C.M);
+
+./node_modules/dayjs/esm/utils.js 22   var c = b - anchor < 0;
+
+./node_modules/dayjs/esm/utils.js 23   var anchor2 = a.clone().add(wholeMonthDiff + (c ? -1 : 1), C.M);
+
+./node_modules/dayjs/esm/utils.js 24   return +(-(wholeMonthDiff + (b - anchor) / (c ? anchor - anchor2 : anchor2 - anchor)) || 0);
+
+./node_modules/antd/es/index.js 3 export { default as Anchor } from './anchor';
+
+./node_modules/antd/es/anchor/Anchor.js 35     anchorPrefixCls: prefixCls,
+
+./node_modules/antd/es/anchor/Anchor.js 43     direction: anchorDirection = 'vertical',
+
+./node_modules/antd/es/anchor/Anchor.js 56     process.env.NODE_ENV !== "production" ? warning(!(anchorDirection === 'horizontal' && (items === null || items === void 0 ? void 0 : items.some(n => 'children' in n))), 'Anchor', '`Anchor items#children` is not supported when `Anchor` direction is horizontal.') : void 0;
+
+./node_modules/antd/es/anchor/Anchor.js 84       if (anchorDirection !== 'horizontal') {
+
+./node_modules/antd/es/anchor/Anchor.js 170     [`${prefixCls}-wrapper-horizontal`]: anchorDirection === 'horizontal',
+
+./node_modules/antd/es/anchor/Anchor.js 173   const anchorClass = classNames(prefixCls, {
+
+./node_modules/antd/es/anchor/Anchor.js 184   }), anchorDirection === 'vertical' && createNestedLink(item.children))) : null;
+
+./node_modules/antd/es/anchor/Anchor.js 185   const anchorContent = /*#__PURE__*/React.createElement("div", {
+
+./node_modules/antd/es/anchor/Anchor.js 190     className: anchorClass
+
+./node_modules/antd/es/anchor/Anchor.js 210   }, [anchorDirection, getCurrentAnchor, dependencyListItem, activeLink]);
+
+./node_modules/antd/es/anchor/Anchor.js 217     direction: anchorDirection
+
+./node_modules/antd/es/anchor/Anchor.js 218   }), [activeLink, onClick, handleScrollTo, anchorDirection]);
+
+./node_modules/antd/es/anchor/Anchor.js 224   }, anchorContent) : anchorContent);
+
+./node_modules/antd/es/anchor/Anchor.js 234   const anchorPrefixCls = getPrefixCls('anchor', customizePrefixCls);
+
+./node_modules/antd/es/anchor/Anchor.js 235   const [wrapSSR, hashId] = useStyle(anchorPrefixCls);
+
+./node_modules/antd/es/anchor/Anchor.js 238     anchorPrefixCls: anchorPrefixCls
+
+./node_modules/antd/es/anchor/AnchorLink.js 45     const prefixCls = getPrefixCls('anchor', customizePrefixCls);
+
+./node_modules/antd/es/anchor/style/index.js 25           paddingBlock: token.anchorPaddingBlock,
+
+./node_modules/antd/es/anchor/style/index.js 26           paddingInline: `${token.anchorPaddingInline}px 0`,
+
+./node_modules/antd/es/anchor/style/index.js 30             marginBlockEnd: token.anchorTitleBlock,
+
+./node_modules/antd/es/anchor/style/index.js 42             paddingBlock: token.anchorPaddingBlockSecondary
+
+./node_modules/antd/es/anchor/style/index.js 137   const anchorToken = mergeToken(token, {
+
+./node_modules/antd/es/anchor/style/index.js 139     anchorPaddingBlock: paddingXXS,
+
+./node_modules/antd/es/anchor/style/index.js 140     anchorPaddingBlockSecondary: paddingXXS / 2,
+
+./node_modules/antd/es/anchor/style/index.js 141     anchorPaddingInline: padding,
+
+./node_modules/antd/es/anchor/style/index.js 142     anchorTitleBlock: fontSize / 14 * 3,
+
+./node_modules/antd/es/anchor/style/index.js 143     anchorBallSize: fontSizeLG / 2
+
+./node_modules/antd/es/anchor/style/index.js 145   return [genSharedAnchorStyle(anchorToken), genSharedAnchorHorizontalStyle(anchorToken)];
+
+./node_modules/antd/dist/antd.js 118 	"./anchor/style/index.ts": "./components/anchor/style/index.ts",
+
+./node_modules/antd/dist/antd.js 2566 /***/ "./components/anchor/Anchor.tsx":
+
+./node_modules/antd/dist/antd.js 2568   !*** ./components/anchor/Anchor.tsx ***!
+
+./node_modules/antd/dist/antd.js 2586 /* harmony import */ var _AnchorLink__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./AnchorLink */ "./components/anchor/AnchorLink.tsx");
+
+./node_modules/antd/dist/antd.js 2587 /* harmony import */ var _context__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./context */ "./components/anchor/context.ts");
+
+./node_modules/antd/dist/antd.js 2588 /* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./style */ "./components/anchor/style/index.ts");
+
+./node_modules/antd/dist/antd.js 2623     anchorPrefixCls: prefixCls,
+
+./node_modules/antd/dist/antd.js 2631     direction: anchorDirection = 'vertical',
+
+./node_modules/antd/dist/antd.js 2644      true ? Object(_util_warning__WEBPACK_IMPORTED_MODULE_8__[/* default */ "a"])(!(anchorDirection === 'horizontal' && (items === null || items === void 0 ? void 0 : items.some(n => 'children' in n))), 'Anchor', '`Anchor items#children` is not supported when `Anchor` direction is horizontal.') : undefined;
+
+./node_modules/antd/dist/antd.js 2672       if (anchorDirection !== 'horizontal') {
+
+./node_modules/antd/dist/antd.js 2758     [`${prefixCls}-wrapper-horizontal`]: anchorDirection === 'horizontal',
+
+./node_modules/antd/dist/antd.js 2761   const anchorClass = classnames__WEBPACK_IMPORTED_MODULE_1___default()(prefixCls, {
+
+./node_modules/antd/dist/antd.js 2772   }), anchorDirection === 'vertical' && createNestedLink(item.children))) : null;
+
+./node_modules/antd/dist/antd.js 2773   const anchorContent = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"]("div", {
+
+./node_modules/antd/dist/antd.js 2778     className: anchorClass
+
+./node_modules/antd/dist/antd.js 2798   }, [anchorDirection, getCurrentAnchor, dependencyListItem, activeLink]);
+
+./node_modules/antd/dist/antd.js 2805     direction: anchorDirection
+
+./node_modules/antd/dist/antd.js 2806   }), [activeLink, onClick, handleScrollTo, anchorDirection]);
+
+./node_modules/antd/dist/antd.js 2812   }, anchorContent) : anchorContent);
+
+./node_modules/antd/dist/antd.js 2822   const anchorPrefixCls = getPrefixCls('anchor', customizePrefixCls);
+
+./node_modules/antd/dist/antd.js 2823   const [wrapSSR, hashId] = Object(_style__WEBPACK_IMPORTED_MODULE_11__["default"])(anchorPrefixCls);
+
+./node_modules/antd/dist/antd.js 2826     anchorPrefixCls: anchorPrefixCls
+
+./node_modules/antd/dist/antd.js 2836 /***/ "./components/anchor/AnchorLink.tsx":
+
+./node_modules/antd/dist/antd.js 2838   !*** ./components/anchor/AnchorLink.tsx ***!
+
+./node_modules/antd/dist/antd.js 2851 /* harmony import */ var _context__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./context */ "./components/anchor/context.ts");
+
+./node_modules/antd/dist/antd.js 2896     const prefixCls = getPrefixCls('anchor', customizePrefixCls);
+
+./node_modules/antd/dist/antd.js 2919 /***/ "./components/anchor/context.ts":
+
+./node_modules/antd/dist/antd.js 2921   !*** ./components/anchor/context.ts ***!
+
+./node_modules/antd/dist/antd.js 2936 /***/ "./components/anchor/index.ts":
+
+./node_modules/antd/dist/antd.js 2938   !*** ./components/anchor/index.ts ***!
+
+./node_modules/antd/dist/antd.js 2945 /* harmony import */ var _Anchor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Anchor */ "./components/anchor/Anchor.tsx");
+
+./node_modules/antd/dist/antd.js 2946 /* harmony import */ var _AnchorLink__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AnchorLink */ "./components/anchor/AnchorLink.tsx");
+
+./node_modules/antd/dist/antd.js 2955 /***/ "./components/anchor/style/index.ts":
+
+./node_modules/antd/dist/antd.js 2957   !*** ./components/anchor/style/index.ts ***!
+
+./node_modules/antd/dist/antd.js 2991           paddingBlock: token.anchorPaddingBlock,
+
+./node_modules/antd/dist/antd.js 2992           paddingInline: `${token.anchorPaddingInline}px 0`,
+
+./node_modules/antd/dist/antd.js 2996             marginBlockEnd: token.anchorTitleBlock,
+
+./node_modules/antd/dist/antd.js 3008             paddingBlock: token.anchorPaddingBlockSecondary
+
+./node_modules/antd/dist/antd.js 3103   const anchorToken = Object(_theme_internal__WEBPACK_IMPORTED_MODULE_0__[/* mergeToken */ "e"])(token, {
+
+./node_modules/antd/dist/antd.js 3105     anchorPaddingBlock: paddingXXS,
+
+./node_modules/antd/dist/antd.js 3106     anchorPaddingBlockSecondary: paddingXXS / 2,
+
+./node_modules/antd/dist/antd.js 3107     anchorPaddingInline: padding,
+
+./node_modules/antd/dist/antd.js 3108     anchorTitleBlock: fontSize / 14 * 3,
+
+./node_modules/antd/dist/antd.js 3109     anchorBallSize: fontSizeLG / 2
+
+./node_modules/antd/dist/antd.js 3111   return [genSharedAnchorStyle(anchorToken), genSharedAnchorHorizontalStyle(anchorToken)];
+
+./node_modules/antd/dist/antd.js 17838 /* harmony import */ var _anchor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./anchor */ "./components/anchor/index.ts");
+
+./node_modules/antd/dist/antd.js 17839 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Anchor", function() { return _anchor__WEBPACK_IMPORTED_MODULE_2__["a"]; });
+
+./node_modules/antd/dist/antd-with-locales.js 2569 /***/ "./components/anchor/Anchor.tsx":
+
+./node_modules/antd/dist/antd-with-locales.js 2571   !*** ./components/anchor/Anchor.tsx ***!
+
+./node_modules/antd/dist/antd-with-locales.js 2589 /* harmony import */ var _AnchorLink__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./AnchorLink */ "./components/anchor/AnchorLink.tsx");
+
+./node_modules/antd/dist/antd-with-locales.js 2590 /* harmony import */ var _context__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./context */ "./components/anchor/context.ts");
+
+./node_modules/antd/dist/antd-with-locales.js 2591 /* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./style */ "./components/anchor/style/index.ts");
+
+./node_modules/antd/dist/antd-with-locales.js 2626     anchorPrefixCls: prefixCls,
+
+./node_modules/antd/dist/antd-with-locales.js 2634     direction: anchorDirection = 'vertical',
+
+./node_modules/antd/dist/antd-with-locales.js 2647      true ? Object(_util_warning__WEBPACK_IMPORTED_MODULE_8__[/* default */ "a"])(!(anchorDirection === 'horizontal' && (items === null || items === void 0 ? void 0 : items.some(n => 'children' in n))), 'Anchor', '`Anchor items#children` is not supported when `Anchor` direction is horizontal.') : undefined;
+
+./node_modules/antd/dist/antd-with-locales.js 2675       if (anchorDirection !== 'horizontal') {
+
+./node_modules/antd/dist/antd-with-locales.js 2761     [`${prefixCls}-wrapper-horizontal`]: anchorDirection === 'horizontal',
+
+./node_modules/antd/dist/antd-with-locales.js 2764   const anchorClass = classnames__WEBPACK_IMPORTED_MODULE_1___default()(prefixCls, {
+
+./node_modules/antd/dist/antd-with-locales.js 2775   }), anchorDirection === 'vertical' && createNestedLink(item.children))) : null;
+
+./node_modules/antd/dist/antd-with-locales.js 2776   const anchorContent = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"]("div", {
+
+./node_modules/antd/dist/antd-with-locales.js 2781     className: anchorClass
+
+./node_modules/antd/dist/antd-with-locales.js 2801   }, [anchorDirection, getCurrentAnchor, dependencyListItem, activeLink]);
+
+./node_modules/antd/dist/antd-with-locales.js 2808     direction: anchorDirection
+
+./node_modules/antd/dist/antd-with-locales.js 2809   }), [activeLink, onClick, handleScrollTo, anchorDirection]);
+
+./node_modules/antd/dist/antd-with-locales.js 2815   }, anchorContent) : anchorContent);
+
+./node_modules/antd/dist/antd-with-locales.js 2825   const anchorPrefixCls = getPrefixCls('anchor', customizePrefixCls);
+
+./node_modules/antd/dist/antd-with-locales.js 2826   const [wrapSSR, hashId] = Object(_style__WEBPACK_IMPORTED_MODULE_11__["default"])(anchorPrefixCls);
+
+./node_modules/antd/dist/antd-with-locales.js 2829     anchorPrefixCls: anchorPrefixCls
+
+./node_modules/antd/dist/antd-with-locales.js 2839 /***/ "./components/anchor/AnchorLink.tsx":
+
+./node_modules/antd/dist/antd-with-locales.js 2841   !*** ./components/anchor/AnchorLink.tsx ***!
+
+./node_modules/antd/dist/antd-with-locales.js 2854 /* harmony import */ var _context__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./context */ "./components/anchor/context.ts");
+
+./node_modules/antd/dist/antd-with-locales.js 2899     const prefixCls = getPrefixCls('anchor', customizePrefixCls);
+
+./node_modules/antd/dist/antd-with-locales.js 2922 /***/ "./components/anchor/context.ts":
+
+./node_modules/antd/dist/antd-with-locales.js 2924   !*** ./components/anchor/context.ts ***!
+
+./node_modules/antd/dist/antd-with-locales.js 2939 /***/ "./components/anchor/index.ts":
+
+./node_modules/antd/dist/antd-with-locales.js 2941   !*** ./components/anchor/index.ts ***!
+
+./node_modules/antd/dist/antd-with-locales.js 2948 /* harmony import */ var _Anchor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Anchor */ "./components/anchor/Anchor.tsx");
+
+./node_modules/antd/dist/antd-with-locales.js 2949 /* harmony import */ var _AnchorLink__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AnchorLink */ "./components/anchor/AnchorLink.tsx");
+
+./node_modules/antd/dist/antd-with-locales.js 2958 /***/ "./components/anchor/style/index.ts":
+
+./node_modules/antd/dist/antd-with-locales.js 2960   !*** ./components/anchor/style/index.ts ***!
+
+./node_modules/antd/dist/antd-with-locales.js 2994           paddingBlock: token.anchorPaddingBlock,
+
+./node_modules/antd/dist/antd-with-locales.js 2995           paddingInline: `${token.anchorPaddingInline}px 0`,
+
+./node_modules/antd/dist/antd-with-locales.js 2999             marginBlockEnd: token.anchorTitleBlock,
+
+./node_modules/antd/dist/antd-with-locales.js 3011             paddingBlock: token.anchorPaddingBlockSecondary
+
+./node_modules/antd/dist/antd-with-locales.js 3106   const anchorToken = Object(_theme_internal__WEBPACK_IMPORTED_MODULE_0__[/* mergeToken */ "e"])(token, {
+
+./node_modules/antd/dist/antd-with-locales.js 3108     anchorPaddingBlock: paddingXXS,
+
+./node_modules/antd/dist/antd-with-locales.js 3109     anchorPaddingBlockSecondary: paddingXXS / 2,
+
+./node_modules/antd/dist/antd-with-locales.js 3110     anchorPaddingInline: padding,
+
+./node_modules/antd/dist/antd-with-locales.js 3111     anchorTitleBlock: fontSize / 14 * 3,
+
+./node_modules/antd/dist/antd-with-locales.js 3112     anchorBallSize: fontSizeLG / 2
+
+./node_modules/antd/dist/antd-with-locales.js 3114   return [genSharedAnchorStyle(anchorToken), genSharedAnchorHorizontalStyle(anchorToken)];
+
+./node_modules/antd/dist/antd-with-locales.js 20730 /* harmony import */ var _anchor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./anchor */ "./components/anchor/index.ts");
+
+./node_modules/antd/dist/antd-with-locales.js 20731 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Anchor", function() { return _anchor__WEBPACK_IMPORTED_MODULE_2__["a"]; });
+
+./node_modules/antd/lib/index.js 22     return _anchor.default;
+
+./node_modules/antd/lib/index.js 429 var _anchor = _interopRequireDefault(require("./anchor"));
+
+./node_modules/antd/lib/anchor/Anchor.js 43     anchorPrefixCls: prefixCls,
+
+./node_modules/antd/lib/anchor/Anchor.js 51     direction: anchorDirection = 'vertical',
+
+./node_modules/antd/lib/anchor/Anchor.js 64     process.env.NODE_ENV !== "production" ? (0, _warning.default)(!(anchorDirection === 'horizontal' && (items === null || items === void 0 ? void 0 : items.some(n => 'children' in n))), 'Anchor', '`Anchor items#children` is not supported when `Anchor` direction is horizontal.') : void 0;
+
+./node_modules/antd/lib/anchor/Anchor.js 92       if (anchorDirection !== 'horizontal') {
+
+./node_modules/antd/lib/anchor/Anchor.js 178     [`${prefixCls}-wrapper-horizontal`]: anchorDirection === 'horizontal',
+
+./node_modules/antd/lib/anchor/Anchor.js 181   const anchorClass = (0, _classnames.default)(prefixCls, {
+
+./node_modules/antd/lib/anchor/Anchor.js 192   }), anchorDirection === 'vertical' && createNestedLink(item.children))) : null;
+
+./node_modules/antd/lib/anchor/Anchor.js 193   const anchorContent = /*#__PURE__*/React.createElement("div", {
+
+./node_modules/antd/lib/anchor/Anchor.js 198     className: anchorClass
+
+./node_modules/antd/lib/anchor/Anchor.js 218   }, [anchorDirection, getCurrentAnchor, dependencyListItem, activeLink]);
+
+./node_modules/antd/lib/anchor/Anchor.js 225     direction: anchorDirection
+
+./node_modules/antd/lib/anchor/Anchor.js 226   }), [activeLink, onClick, handleScrollTo, anchorDirection]);
+
+./node_modules/antd/lib/anchor/Anchor.js 232   }, anchorContent) : anchorContent);
+
+./node_modules/antd/lib/anchor/Anchor.js 242   const anchorPrefixCls = getPrefixCls('anchor', customizePrefixCls);
+
+./node_modules/antd/lib/anchor/Anchor.js 243   const [wrapSSR, hashId] = (0, _style.default)(anchorPrefixCls);
+
+./node_modules/antd/lib/anchor/Anchor.js 246     anchorPrefixCls: anchorPrefixCls
+
+./node_modules/antd/lib/anchor/AnchorLink.js 53     const prefixCls = getPrefixCls('anchor', customizePrefixCls);
+
+./node_modules/antd/lib/anchor/style/index.js 31           paddingBlock: token.anchorPaddingBlock,
+
+./node_modules/antd/lib/anchor/style/index.js 32           paddingInline: `${token.anchorPaddingInline}px 0`,
+
+./node_modules/antd/lib/anchor/style/index.js 36             marginBlockEnd: token.anchorTitleBlock,
+
+./node_modules/antd/lib/anchor/style/index.js 48             paddingBlock: token.anchorPaddingBlockSecondary
+
+./node_modules/antd/lib/anchor/style/index.js 143   const anchorToken = (0, _internal.mergeToken)(token, {
+
+./node_modules/antd/lib/anchor/style/index.js 145     anchorPaddingBlock: paddingXXS,
+
+./node_modules/antd/lib/anchor/style/index.js 146     anchorPaddingBlockSecondary: paddingXXS / 2,
+
+./node_modules/antd/lib/anchor/style/index.js 147     anchorPaddingInline: padding,
+
+./node_modules/antd/lib/anchor/style/index.js 148     anchorTitleBlock: fontSize / 14 * 3,
+
+./node_modules/antd/lib/anchor/style/index.js 149     anchorBallSize: fontSizeLG / 2
+
+./node_modules/antd/lib/anchor/style/index.js 151   return [genSharedAnchorStyle(anchorToken), genSharedAnchorHorizontalStyle(anchorToken)];
+
+./node_modules/babel-plugin-polyfill-corejs2/esm/index.mjs 55   anchor: globalOnly(["es6.string.anchor"]),
+
+./node_modules/babel-plugin-polyfill-corejs2/lib/built-in-definitions.js 61   anchor: globalOnly(["es6.string.anchor"]),
+
+./node_modules/@babel/compat-data/data/corejs2-built-ins.json 1296   "es6.string.anchor": {
+
+./node_modules/relateurl/lib/parse/path.js 53 			// "..?var", "..#anchor", etc ... not "..index.html"
+
+./node_modules/core-js-compat/data.json 2521   "es.string.anchor": {
+
+./node_modules/core-js-compat/modules-by-versions.json 154     "es.string.anchor",
+
+./node_modules/core-js-compat/modules.json 173   "es.string.anchor",
+
+./node_modules/core-js-compat/entries.json 174     "es.string.anchor",
+
+./node_modules/core-js-compat/entries.json 548     "es.string.anchor",
+
+./node_modules/core-js-compat/entries.json 1525     "es.string.anchor",
+
+./node_modules/core-js-compat/entries.json 1539   "core-js/es/string/anchor": [
+
+./node_modules/core-js-compat/entries.json 1540     "es.string.anchor"
+
+./node_modules/core-js-compat/entries.json 1678     "es.string.anchor",
+
+./node_modules/core-js-compat/entries.json 1692   "core-js/es/string/virtual/anchor": [
+
+./node_modules/core-js-compat/entries.json 1693     "es.string.anchor"
+
+./node_modules/core-js-compat/entries.json 2502     "es.string.anchor",
+
+./node_modules/core-js-compat/entries.json 4330     "es.string.anchor",
+
+./node_modules/core-js-compat/entries.json 4348   "core-js/features/string/anchor": [
+
+./node_modules/core-js-compat/entries.json 4349     "es.string.anchor"
+
+./node_modules/core-js-compat/entries.json 4494     "es.string.anchor",
+
+./node_modules/core-js-compat/entries.json 4512   "core-js/features/string/virtual/anchor": [
+
+./node_modules/core-js-compat/entries.json 4513     "es.string.anchor"
+
+./node_modules/core-js-compat/entries.json 5794   "core-js/modules/es.string.anchor": [
+
+./node_modules/core-js-compat/entries.json 5795     "es.string.anchor"
+
+./node_modules/core-js-compat/entries.json 7055     "es.string.anchor",
+
+./node_modules/core-js-compat/entries.json 8083     "es.string.anchor",
+
+./node_modules/core-js-compat/entries.json 8097   "core-js/stable/string/anchor": [
+
+./node_modules/core-js-compat/entries.json 8098     "es.string.anchor"
+
+./node_modules/core-js-compat/entries.json 8236     "es.string.anchor",
+
+./node_modules/core-js-compat/entries.json 8250   "core-js/stable/string/virtual/anchor": [
+
+./node_modules/core-js-compat/entries.json 8251     "es.string.anchor"
+
+./node_modules/regjsparser/parser.js 275         type: 'anchor',
+
+./node_modules/regjsparser/parser.js 557       var anchor = parseAnchor();
+
+./node_modules/regjsparser/parser.js 559       if (anchor) {
+
+./node_modules/regjsparser/parser.js 560         return anchor;
+
+./node_modules/regjsgen/regjsgen.js 139     assertType(node.type, 'anchor');
+
+./node_modules/regjsgen/regjsgen.js 156     assertType(node.type, 'anchor|characterClass|characterClassEscape|dot|group|reference|value');
+
+./node_modules/regjsgen/regjsgen.js 190     assertType(node.type, 'anchor|characterClassEscape|characterClassRange|dot|value');
+
+./node_modules/regjsgen/regjsgen.js 304     assertType(node.type, 'anchor|characterClass|characterClassEscape|empty|group|quantifier|reference|unicodePropertyEscape|value|dot');
+
+./node_modules/regjsgen/regjsgen.js 371     'anchor': generateAnchor,
+
+./node_modules/@ant-design/cssinjs/node_modules/csstype/index.js.flow 1070   "offset-anchor"?: Property$OffsetAnchor<TLength>,
+
+./node_modules/@ant-design/cssinjs/node_modules/csstype/index.js.flow 1082   "overflow-anchor"?: Property$OverflowAnchor,
+
+./node_modules/@ant-design/cssinjs/node_modules/csstype/index.js.flow 1685   "text-anchor"?: Property$TextAnchor,
+
+./node_modules/@ant-design/cssinjs/node_modules/csstype/index.js.flow 2776   "offset-anchor"?: Property$OffsetAnchor<TLength> | Array<Property$OffsetAnchor<TLength>>,
+
+./node_modules/@ant-design/cssinjs/node_modules/csstype/index.js.flow 2788   "overflow-anchor"?: Property$OverflowAnchor | Array<Property$OverflowAnchor>,
+
+./node_modules/@ant-design/cssinjs/node_modules/csstype/index.js.flow 3391   "text-anchor"?: Property$TextAnchor | Array<Property$TextAnchor>,
+
+./node_modules/@ant-design/cssinjs/node_modules/csstype/index.js.flow 3961   | "[text-anchor]"
+
+./node_modules/querystring/.package.json.un~ failed
+./node_modules/querystring/test/.index.js.un~ failed
+./node_modules/@meta2d/core/src/core.js 2161             var lineId = _a.lineId, anchor = _a.anchor;
+
+./node_modules/@meta2d/core/src/core.js 2162             var fromAnchor = (_b = pen.anchors) === null || _b === void 0 ? void 0 : _b.filter(function (_anchor) { return _anchor.id === anchor; })[0];
+
+./node_modules/@meta2d/core/src/core.js 2164             if (line.anchors[0].connectTo == pen.id) {
+
+./node_modules/@meta2d/core/src/core.js 2166                 var connectTo = line.anchors[line.anchors.length - 1].connectTo;
+
+./node_modules/@meta2d/core/src/core.js 2170                     var penAnchor = _next.anchors.filter(function (_anchor) { return _anchor.id === connectedLine_1.anchor; })[0];
+
+./node_modules/@meta2d/core/src/core.js 2186      * @param anchor 待添加锚点
+
+./node_modules/@meta2d/core/src/core.js 2189     Meta2d.prototype.addAnchor = function (pen, anchor, index) {
+
+./node_modules/@meta2d/core/src/core.js 2193         if (!pen.anchors) {
+
+./node_modules/@meta2d/core/src/core.js 2194             pen.anchors = [];
+
+./node_modules/@meta2d/core/src/core.js 2201                 index = pen.anchors.length + 1 + index;
+
+./node_modules/@meta2d/core/src/core.js 2203             if (index > pen.anchors.length) {
+
+./node_modules/@meta2d/core/src/core.js 2204                 index = pen.anchors.length;
+
+./node_modules/@meta2d/core/src/core.js 2209             if ((index == 0 && pen.anchors[0].connectTo) ||
+
+./node_modules/@meta2d/core/src/core.js 2210                 (index == pen.anchors.length && pen.anchors[index - 1].connectTo)) {
+
+./node_modules/@meta2d/core/src/core.js 2215         var _anchor = null;
+
+./node_modules/@meta2d/core/src/core.js 2217         if (anchor.x <= 1 && anchor.x >= 0 && anchor.y <= 1 && anchor.y >= 0) {
+
+./node_modules/@meta2d/core/src/core.js 2220                 id: anchor.id || s8(),
+
+./node_modules/@meta2d/core/src/core.js 2223                     pen.calculative.worldRect.width * anchor.x,
+
+./node_modules/@meta2d/core/src/core.js 2225                     pen.calculative.worldRect.height * anchor.y,
+
+./node_modules/@meta2d/core/src/core.js 2232             _anchor = {
+
+./node_modules/@meta2d/core/src/core.js 2235                 x: anchor.x,
+
+./node_modules/@meta2d/core/src/core.js 2236                 y: anchor.y,
+
+./node_modules/@meta2d/core/src/core.js 2242                 id: anchor.id || s8(),
+
+./node_modules/@meta2d/core/src/core.js 2244                 x: anchor.x,
+
+./node_modules/@meta2d/core/src/core.js 2245                 y: anchor.y,
+
+./node_modules/@meta2d/core/src/core.js 2249                     rotatePoint(anchor, -pen.rotate, pen.calculative.worldRect.center);
+
+./node_modules/@meta2d/core/src/core.js 2251                 _anchor = {
+
+./node_modules/@meta2d/core/src/core.js 2254                     x: (anchor.x - pen.calculative.worldRect.x) /
+
+./node_modules/@meta2d/core/src/core.js 2256                     y: (anchor.y - pen.calculative.worldRect.y) /
+
+./node_modules/@meta2d/core/src/core.js 2264             pen.anchors.splice(index, 0, _anchor);
+
+./node_modules/@meta2d/core/src/core.js 2272             pen.anchors.push(_anchor);
+
+./node_modules/@meta2d/core/src/core.js 2309             anchors: [
+
+./node_modules/@meta2d/core/src/core.js 2339      * @param anchor 是否产生默认的锚点
+
+./node_modules/@meta2d/core/src/core.js 2342     Meta2d.prototype.toComponent = function (pens, showChild, anchor) {
+
+./node_modules/@meta2d/core/src/core.js 2353         if (anchor) {
+
+./node_modules/@meta2d/core/src/core.js 2354             parent.anchors = [
+
+./node_modules/@meta2d/core/src/core.js 2459             globalStore.anchors = {};
+
+./node_modules/@meta2d/core/src/options.js 16     anchorColor: '#278DF8',
+
+./node_modules/@meta2d/core/src/options.js 18     anchorRadius: 4,
+
+./node_modules/@meta2d/core/src/options.js 19     anchorBackground: '#fff',
+
+./node_modules/@meta2d/core/src/pen/utils.js 16     if (Array.isArray(pen.anchors)) {
+
+./node_modules/@meta2d/core/src/pen/utils.js 18             for (var _b = __values(pen.anchors), _c = _b.next(); !_c.done; _c = _b.next()) {
+
+./node_modules/@meta2d/core/src/pen/model.js 115     'anchorColor',
+
+./node_modules/@meta2d/core/src/pen/model.js 116     'anchorRadius',
+
+./node_modules/@meta2d/core/src/pen/render.js 322             var anchor = _d.value;
+
+./node_modules/@meta2d/core/src/pen/render.js 324                 prev = anchor;
+
+./node_modules/@meta2d/core/src/pen/render.js 327             var dis = distance(prev, anchor);
+
+./node_modules/@meta2d/core/src/pen/render.js 333             var angle = calcRotate(prev, anchor) - 270;
+
+./node_modules/@meta2d/core/src/pen/render.js 344             prev = anchor;
+
+./node_modules/@meta2d/core/src/pen/render.js 1021     var anchors = [];
+
+./node_modules/@meta2d/core/src/pen/render.js 1022     if (pen.anchors) {
+
+./node_modules/@meta2d/core/src/pen/render.js 1023         pen.anchors.forEach(function (anchor) {
+
+./node_modules/@meta2d/core/src/pen/render.js 1024             anchors.push(calcWorldPointOfPen(pen, anchor));
+
+./node_modules/@meta2d/core/src/pen/render.js 1027     // Default anchors of node
+
+./node_modules/@meta2d/core/src/pen/render.js 1028     if (!anchors.length &&
+
+./node_modules/@meta2d/core/src/pen/render.js 1032         anchors = store.options.defaultAnchors.map(function (anchor, index) {
+
+./node_modules/@meta2d/core/src/pen/render.js 1036                 x: x_1 + width_1 * anchor.x,
+
+./node_modules/@meta2d/core/src/pen/render.js 1037                 y: y_1 + height_1 * anchor.y,
+
+./node_modules/@meta2d/core/src/pen/render.js 1042         anchors.forEach(function (anchor) {
+
+./node_modules/@meta2d/core/src/pen/render.js 1043             rotatePoint(anchor, pen.calculative.rotate, pen.calculative.worldRect.center);
+
+./node_modules/@meta2d/core/src/pen/render.js 1046     if (!pen.type || pen.anchors) {
+
+./node_modules/@meta2d/core/src/pen/render.js 1047         pen.calculative.worldAnchors = anchors;
+
+./node_modules/@meta2d/core/src/pen/render.js 1049     if (pen.calculative.activeAnchor && anchors.length) {
+
+./node_modules/@meta2d/core/src/pen/render.js 1050         pen.calculative.activeAnchor = anchors.find(function (a) {
+
+./node_modules/@meta2d/core/src/pen/render.js 1129     if (!pen.anchors) {
+
+./node_modules/@meta2d/core/src/pen/render.js 1130         pen.anchors = [];
+
+./node_modules/@meta2d/core/src/pen/render.js 1146         var anchor = {
+
+./node_modules/@meta2d/core/src/pen/render.js 1152         pen.anchors.push(anchor);
+
+./node_modules/@meta2d/core/src/pen/render.js 1157     if (!pen.anchors) {
+
+./node_modules/@meta2d/core/src/pen/render.js 1158         pen.anchors = [];
+
+./node_modules/@meta2d/core/src/pen/render.js 1165     pen.anchors.splice(index + 1, 0, calcRelativePoint(worldAnchor, pen.calculative.worldRect));
+
+./node_modules/@meta2d/core/src/pen/render.js 1169 export function removePenAnchor(pen, anchor) {
+
+./node_modules/@meta2d/core/src/pen/render.js 1173     var i = pen.calculative.worldAnchors.findIndex(function (a) { return a.id === anchor.id; });
+
+./node_modules/@meta2d/core/src/pen/render.js 1177     i = pen.anchors.findIndex(function (a) { return a.id === anchor.id; });
+
+./node_modules/@meta2d/core/src/pen/render.js 1179         pen.anchors.splice(i, 1);
+
+./node_modules/@meta2d/core/src/pen/render.js 1190     var anchor;
+
+./node_modules/@meta2d/core/src/pen/render.js 1195             anchor = a;
+
+./node_modules/@meta2d/core/src/pen/render.js 1198     return anchor;
+
+./node_modules/@meta2d/core/src/pen/render.js 1203     if (pen.anchors) {
+
+./node_modules/@meta2d/core/src/pen/render.js 1204         pen.anchors.forEach(function (a) {
+
+./node_modules/@meta2d/core/src/pen/render.js 1218         if (!pen.anchors || !pen.anchors.length) {
+
+./node_modules/@meta2d/core/src/pen/render.js 1241 export function connectLine(pen, anchor, line, lineAnchor) {
+
+./node_modules/@meta2d/core/src/pen/render.js 1243         !anchor ||
+
+./node_modules/@meta2d/core/src/pen/render.js 1246         anchor.twoWay === TwoWay.DisableConnected ||
+
+./node_modules/@meta2d/core/src/pen/render.js 1247         anchor.twoWay === TwoWay.Disable ||
+
+./node_modules/@meta2d/core/src/pen/render.js 1252     if (anchor.twoWay === TwoWay.In) {
+
+./node_modules/@meta2d/core/src/pen/render.js 1261     if (anchor.twoWay === TwoWay.Out) {
+
+./node_modules/@meta2d/core/src/pen/render.js 1267     if (lineAnchor.connectTo === pen.id && lineAnchor.anchorId === anchor.id) {
+
+./node_modules/@meta2d/core/src/pen/render.js 1272         disconnectLine(p, getAnchor(p, lineAnchor.anchorId), line, lineAnchor);
+
+./node_modules/@meta2d/core/src/pen/render.js 1280             item.anchor === anchor.id;
+
+./node_modules/@meta2d/core/src/pen/render.js 1286             anchor: anchor.id,
+
+./node_modules/@meta2d/core/src/pen/render.js 1290     lineAnchor.anchorId = anchor.id;
+
+./node_modules/@meta2d/core/src/pen/render.js 1293         connectLine(line, lineAnchor, pen, anchor);
+
+./node_modules/@meta2d/core/src/pen/render.js 1299         anchor: anchor,
+
+./node_modules/@meta2d/core/src/pen/render.js 1306 export function disconnectLine(pen, anchor, line, lineAnchor) {
+
+./node_modules/@meta2d/core/src/pen/render.js 1307     if (!pen || !anchor || !line || !lineAnchor) {
+
+./node_modules/@meta2d/core/src/pen/render.js 1316             item.anchor === anchor.id) {
+
+./node_modules/@meta2d/core/src/pen/render.js 1321     lineAnchor.anchorId = undefined;
+
+./node_modules/@meta2d/core/src/pen/render.js 1324         anchor.connectTo === line.id &&
+
+./node_modules/@meta2d/core/src/pen/render.js 1325         anchor.anchorId === lineAnchor.id) {
+
+./node_modules/@meta2d/core/src/pen/render.js 1326         disconnectLine(line, lineAnchor, pen, anchor);
+
+./node_modules/@meta2d/core/src/pen/render.js 1332         anchor: anchor,
+
+./node_modules/@meta2d/core/src/pen/render.js 1336 export function getAnchor(pen, anchorId) {
+
+./node_modules/@meta2d/core/src/pen/render.js 1338     if (!pen || !anchorId) {
+
+./node_modules/@meta2d/core/src/pen/render.js 1341     return (_a = pen.calculative.worldAnchors) === null || _a === void 0 ? void 0 : _a.find(function (item) { return item.id === anchorId; });
+
+./node_modules/@meta2d/core/src/pen/render.js 1714         pen.calculative.worldAnchors.forEach(function (anchor) {
+
+./node_modules/@meta2d/core/src/pen/render.js 1715             rotatePoint(anchor, angle, rect.center);
+
+./node_modules/@meta2d/core/src/pen/render.js 1774         pen.anchors = pen.calculative.worldAnchors.map(function (pt) {
+
+./node_modules/@meta2d/core/src/pen/math.js 202                                 anchorId: activePoint.id,
+
+./node_modules/@meta2d/core/src/pen/math.js 217                                 anchorId: activePoint.id,
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 496                         if (_this.store.active[0].anchors[0].connectTo) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 775             // Set anchor of pen.
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 785                     var anchor = _this.store.activeAnchor;
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 788                         x: anchor.x,
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 789                         y: anchor.y,
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 794                     connectLine(_this.store.hover, anchor, _this.drawingLine, pt);
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 822                         var anchor = _this.store.activeAnchor;
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 823                         to_2.x = anchor.x;
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 824                         to_2.y = anchor.y;
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 825                         connectLine(_this.store.hover, anchor, _this.drawingLine, to_2);
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 839                     if ((_c = _this.store.active[0]) === null || _c === void 0 ? void 0 : _c.anchors[0].connectTo) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 850                     var anchor = nearestAnchor(_this.store.hover, e);
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 851                     to_3.x = anchor.x;
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 852                     to_3.y = anchor.y;
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 854                     connectLine(_this.store.hover, anchor, _this.drawingLine, to_3);
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 882                         var anchor = nearestAnchor(_this.store.hover, e);
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 883                         _this.store.hoverAnchor = anchor;
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 884                         var pt = { id: s8(), x: anchor.x, y: anchor.y };
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 887                         connectLine(_this.store.hover, anchor, _this.drawingLine, pt);
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 1077                         // Move line anchor
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 1090                         // Move line anchor prev
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 1095                         // Move line anchor next
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 1299                     var anchor = nearestAnchor(_this.store.hover, e);
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 1300                     to.x = anchor.x;
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 1301                     to.y = anchor.y;
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 1303                     connectLine(_this.store.hover, anchor, _this.drawingLine, to);
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 1329                         var hoverAnchors = hover.calculative.worldAnchors.map(function (anchor) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 1330                             return __assign(__assign({}, anchor), { penId: line_1.id });
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 1616                                 var anchor = _d.value;
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 1617                                 hoverType = _this.inAnchor(pt, pen, anchor);
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 1763                 r += 2 * _this.store.options.anchorRadius;
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 1773                                 var anchor = _e.value;
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 1774                                 if (anchor.twoWay === TwoWay.In) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 1780                                 if (anchor.twoWay === TwoWay.Out) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 1786                                 if (anchor.twoWay === TwoWay.DisableConnected ||
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 1787                                     anchor.twoWay === TwoWay.Disable ||
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 1792                                 if (_this.inAnchor(pt, pen, anchor)) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 1946                 var anchors = __spreadArray([], __read(_this.store.hover.calculative.worldAnchors), false);
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 1948                     anchors.push(_this.store.pointAt);
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 1950                 if (anchors) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 1952                         _this.store.hover.anchorColor || _this.store.options.anchorColor;
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 1954                         _this.store.hover.anchorBackground ||
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 1955                             _this.store.options.anchorBackground;
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 1956                     anchors.forEach(function (anchor) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 1957                         if (anchor.hidden && anchor.locked > LockState.DisableEdit) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 1960                         if (anchor === _this.store.hoverAnchor) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 1968                         var size = anchor.radius ||
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 1969                             _this.store.hover.anchorRadius ||
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 1970                             _this.store.options.anchorRadius;
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 1977                         ctx.arc(anchor.x, anchor.y, size, 0, Math.PI * 2);
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 1978                         if (_this.store.hover.type && _this.store.hoverAnchor === anchor) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 1984                         else if (anchor.color || anchor.background) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 1986                             ctx.strokeStyle = anchor.color;
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 1987                             ctx.fillStyle = anchor.background;
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 1991                         if (anchor === _this.store.hoverAnchor) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 1994                         if (_this.store.hover.type && _this.store.hoverAnchor === anchor) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 1997                         else if (anchor.color || anchor.background) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 2004                             if (anchor === _this.store.hoverAnchor) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 2013                                 ctx.arc(anchor.x, anchor.y, size + 1.5, 0, Math.PI * 2);
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 2629      * @param anchor 锚点，连线的某个锚点，引用相同
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 2631     Canvas.prototype.splitLine = function (line, anchor) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 2633         var index = worldAnchors.findIndex(function (a) { return a === anchor; });
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 2690             var anchor = calcRelativePoint(this.movingAnchor, rect);
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 2691             // 更改 pen 的 anchors 属性
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 2692             var index = pen.anchors.findIndex(function (anchor) { return anchor.id === _this.movingAnchor.id; });
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 2693             pen.anchors[index] = anchor;
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 2977             anchors: [
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3040             ((xDock === null || xDock === void 0 ? void 0 : xDock.anchorId) || (yDock === null || yDock === void 0 ? void 0 : yDock.anchorId))) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3043             if (xDock === null || xDock === void 0 ? void 0 : xDock.anchorId) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3044                 var anchor = this.store.pens[this.store.active[0].id + movingSuffix].calculative.worldAnchors.find(function (item) { return item.id === xDock.anchorId; });
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3045                 if (anchor.x === from.x && anchor.y === from.y) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3047                     connectLine(this.store.active[0], anchor, dockPen, from);
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3050                 else if (anchor.x === to.x && anchor.y === to.y) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3052                     connectLine(this.store.active[0], anchor, dockPen, to);
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3056             else if (yDock === null || yDock === void 0 ? void 0 : yDock.anchorId) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3057                 var anchor = this.store.pens[this.store.active[0].id + movingSuffix].calculative.worldAnchors.find(function (item) { return item.id === yDock.anchorId; });
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3058                 if (anchor.x === from.x && anchor.y === from.y) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3060                     connectLine(this.store.active[0], anchor, dockPen, from);
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3063                 else if (anchor.x === to.x && anchor.y === to.y) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3065                     connectLine(this.store.active[0], anchor, dockPen, to);
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3086             // 若需要更改 anchors ，注意 anchors connectTo 问题
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3087             // const { x, y, width, height, anchors } = this.movingPens[i];
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3192     Canvas.prototype.inAnchor = function (pt, pen, anchor) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3196         if (!anchor || anchor.locked > LockState.DisableEdit) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3204             anchor.connectTo) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3205             var connectPen = this.findOne(anchor.connectTo);
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3208                 var connectAnchor = connectPen.calculative.worldAnchors.find(function (item) { return item.id === anchor.anchorId; });
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3209                 connectAnchor && (anchor = connectAnchor);
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3212         if (anchor.twoWay === TwoWay.Disable && pen.name !== 'line') {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3215         if (pen.name === 'line' && anchor.connectTo) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3216             var _anchor = (_a = this.findOne(anchor.connectTo)) === null || _a === void 0 ? void 0 : _a.anchors.find(function (item) { return item.id === anchor.anchorId; });
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3217             if (_anchor && _anchor.twoWay) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3222             if (anchor.twoWay === TwoWay.Out) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3229             else if (anchor.twoWay === TwoWay.In) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3233         if (hitPoint(pt, anchor, this.pointSize)) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3234             if (anchor !== this.store.hoverAnchor) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3237             this.store.hoverAnchor = anchor;
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3239             // if (pen.name === 'line' && anchor.connectTo) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3240             //   const connectPen = this.findOne(anchor.connectTo);
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3244             //       (item) => item.id === anchor.anchorId
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3250             // console.log('hover', pen, anchor);
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3252                 if (anchor.connectTo && !pen.calculative.active) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3253                     this.store.hover = this.store.pens[anchor.connectTo];
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3256                             this.store.hover.calculative.worldAnchors.find(function (a) { return a.id === anchor.anchorId; });
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3279                 anchor.prev &&
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3280                 hitPoint(pt, anchor.prev, this.pointSize)) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3281                 this.store.hoverAnchor = anchor;
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3287                 anchor.next &&
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3288                 hitPoint(pt, anchor.next, this.pointSize)) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3289                 this.store.hoverAnchor = anchor;
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3613         if (!pen.anchors && globalStore.anchors[pen.name]) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3614             if (!pen.anchors) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3615                 pen.anchors = [];
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3617             globalStore.anchors[pen.name](pen);
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3620         if (!pen.anchors && pen.calculative.worldAnchors) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3621             pen.anchors = pen.calculative.worldAnchors.map(function (pt) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3672             pen.anchors = pen.calculative.worldAnchors.map(function (pt) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3772             var anchors, p, allowAdd, _a;
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3777                         anchors = simplify(this.pencilLine.calculative.worldAnchors, 10, 0, this.pencilLine.calculative.worldAnchors.length - 1);
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3779                         anchors.unshift({ id: p.id, penId: p.penId, x: p.x, y: p.y });
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3781                         anchors.push({ id: p.id, penId: p.penId, x: p.x, y: p.y });
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 3782                         this.pencilLine.calculative.worldAnchors = smoothLine(anchors);
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 4261             (this.store.active[0].anchors[0].connectTo ||
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 4262                 this.store.active[0].anchors[this.store.active[0].anchors.length - 1]
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 4325             pen.calculative.worldAnchors = pen.calculative.worldAnchors.map(function (anchor) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 4326                 if (anchor.connectTo && pens.find(function (p) { return p.id === anchor.connectTo; })) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 4327                     anchor.connectTo += movingSuffix;
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 4329                 return anchor;
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 4343                 if (pen.anchors[0].connectTo ||
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 4344                     pen.anchors[pen.anchors.length - 1].connectTo) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 4385             disconnectLine(pen, getAnchor(pen, this.store.activeAnchor.anchorId), this.store.pens[this.store.activeAnchor.penId], this.store.activeAnchor);
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 4594         line.anchors.forEach(function (anchor) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 4595             if (anchor.connectTo &&
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 4597                     return p.id === anchor.connectTo ||
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 4598                         p.id === anchor.connectTo + movingSuffix;
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 4600                 var pen = _this.store.pens[anchor.connectTo];
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 4604                 disconnectLine(pen, getAnchor(pen, anchor.anchorId), line, anchor);
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 4692             penConnection.anchor = newAnchor.id;
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 4803             var penAnchor = getAnchor(pen, item.anchor);
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 4863             pen.calculative.worldAnchors.forEach(function (anchor) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 4864                 rotatePoint(anchor, angle, rect.center);
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 5219      * 修改对应连线的 anchors
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 5232                 var from = line.anchors[0];
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 5233                 var to = line.anchors[line.anchors.length - 1];
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 5259         var from = line.anchors[0];
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 5260         var to = line.anchors[line.anchors.length - 1];
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 5262         var anchors = [from, to];
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 5263         var _loop_7 = function (anchor) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 5264             var nodeId = anchor.connectTo;
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 5271                             cl.lineAnchor = anchor.id;
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 5277                     anchor.connectTo = undefined;
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 5278                     if (anchor.prev) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 5279                         anchor.prev.connectTo = undefined;
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 5281                     if (anchor.next) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 5282                         anchor.next.connectTo = undefined;
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 5288             for (var anchors_1 = __values(anchors), anchors_1_1 = anchors_1.next(); !anchors_1_1.done; anchors_1_1 = anchors_1.next()) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 5289                 var anchor = anchors_1_1.value;
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 5290                 _loop_7(anchor);
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 5296                 if (anchors_1_1 && !anchors_1_1.done && (_a = anchors_1.return)) _a.call(anchors_1);
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 5335                         // TODO: 连线的删除 ，连接的 node 的 connectLines 会变化（删除 node ，line 的 anchors 类似），未记历史记录
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 5439                     var anchor = line.anchors.find(function (anchor) { return anchor.id === lineAnchor; });
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 5440                     if ((anchor === null || anchor === void 0 ? void 0 : anchor.connectTo) === pen.id) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 5441                         anchor.connectTo = undefined;
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 5442                         anchor.anchorId = undefined;
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 5443                         anchor.prev && (anchor.prev.connectTo = undefined);
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 5444                         anchor.next && (anchor.next.connectTo = undefined);
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 5446                     anchor = getAnchor(line, lineAnchor);
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 5447                     if (anchor) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 5448                         anchor.connectTo = undefined;
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 5449                         anchor.anchorId = undefined;
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 5450                         anchor.prev && (anchor.prev.connectTo = undefined);
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 5451                         anchor.next && (anchor.next.connectTo = undefined);
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 5470                 (_a = connectTo.calculative.worldAnchors) === null || _a === void 0 ? void 0 : _a.forEach(function (anchor) {
+
+./node_modules/@meta2d/core/src/canvas/canvas.js 5471                     disconnectLine(connectTo, anchor, pen, lineAnchor);
+
+./node_modules/@meta2d/core/src/point/point.js 117     return pt1.anchorId === pt2.anchorId && pt1.connectTo === pt2.connectTo;
+
+./node_modules/@meta2d/core/src/diagrams/mindLine.js 21     pen.anchors = points.map(function (_a, index) {
+
+./node_modules/@meta2d/core/src/diagrams/pentagram.js 58     var anchors = [];
+
+./node_modules/@meta2d/core/src/diagrams/pentagram.js 60         anchors.push({
+
+./node_modules/@meta2d/core/src/diagrams/pentagram.js 68     pen.anchors = anchors;
+
+./node_modules/@meta2d/core/src/diagrams/pentagram.js 73     var manualPoints = pen.anchors.filter(function (point) { return point.flag !== 1; });
+
+./node_modules/@meta2d/core/src/diagrams/pentagram.js 75     pen.anchors = (_a = pen.anchors).concat.apply(_a, __spreadArray([], __read(manualPoints), false));
+
+./node_modules/@meta2d/core/src/diagrams/triangle.js 31     pen.anchors = points.map(function (_a, index) {
+
+./node_modules/@meta2d/core/src/diagrams/hexagon.js 16 //   const anchors: Point[] = [];
+
+./node_modules/@meta2d/core/src/diagrams/hexagon.js 17 //   anchors.push({
+
+./node_modules/@meta2d/core/src/diagrams/hexagon.js 23 //   anchors.push({
+
+./node_modules/@meta2d/core/src/diagrams/hexagon.js 29 //   anchors.push({
+
+./node_modules/@meta2d/core/src/diagrams/hexagon.js 35 //   anchors.push({
+
+./node_modules/@meta2d/core/src/diagrams/hexagon.js 41 //   anchors.push({
+
+./node_modules/@meta2d/core/src/diagrams/hexagon.js 47 //   anchors.push({
+
+./node_modules/@meta2d/core/src/diagrams/hexagon.js 53 //   pen.anchors = anchors;
+
+./node_modules/@meta2d/core/src/diagrams/pentagon.js 36     pen.anchors = points.map(function (_a, index) {
+
+./node_modules/@meta2d/core/src/diagrams/mindNode.js 38     var manualPoints = pen.anchors.filter(function (point) { return point.flag !== 1; });
+
+./node_modules/@meta2d/core/src/diagrams/mindNode.js 40     pen.anchors = (_a = pen.anchors).concat.apply(_a, __spreadArray([], __read(manualPoints), false));
+
+./node_modules/@meta2d/core/src/diagrams/mindNode.js 48     var anchors = [];
+
+./node_modules/@meta2d/core/src/diagrams/mindNode.js 67         anchors.push({
+
+./node_modules/@meta2d/core/src/diagrams/mindNode.js 68             id: String(anchors.length),
+
+./node_modules/@meta2d/core/src/diagrams/mindNode.js 88         anchors.push({
+
+./node_modules/@meta2d/core/src/diagrams/mindNode.js 89             id: String(anchors.length),
+
+./node_modules/@meta2d/core/src/diagrams/mindNode.js 112         anchors.push({
+
+./node_modules/@meta2d/core/src/diagrams/mindNode.js 113             id: String(anchors.length),
+
+./node_modules/@meta2d/core/src/diagrams/mindNode.js 133         anchors.push({
+
+./node_modules/@meta2d/core/src/diagrams/mindNode.js 134             id: String(anchors.length),
+
+./node_modules/@meta2d/core/src/diagrams/mindNode.js 141     pen.anchors = anchors;
+
+./node_modules/@meta2d/core/src/diagrams/line/curve.js 139     var anchor;
+
+./node_modules/@meta2d/core/src/diagrams/line/curve.js 150         anchor = lerp(p7, p8, t);
+
+./node_modules/@meta2d/core/src/diagrams/line/curve.js 152         anchor.prev = p7;
+
+./node_modules/@meta2d/core/src/diagrams/line/curve.js 154         anchor.next = p8;
+
+./node_modules/@meta2d/core/src/diagrams/line/curve.js 166         anchor = pt;
+
+./node_modules/@meta2d/core/src/diagrams/line/curve.js 169         anchor.prev = p3;
+
+./node_modules/@meta2d/core/src/diagrams/line/curve.js 170         anchor.next = p4;
+
+./node_modules/@meta2d/core/src/diagrams/line/curve.js 176         anchor = pt;
+
+./node_modules/@meta2d/core/src/diagrams/line/curve.js 178     anchor.penId = pen.id;
+
+./node_modules/@meta2d/core/src/diagrams/line/curve.js 179     anchor.id = s8();
+
+./node_modules/@meta2d/core/src/diagrams/line/curve.js 180     anchor.prevNextType = PrevNextType.Bilateral;
+
+./node_modules/@meta2d/core/src/diagrams/line/curve.js 181     return anchor;
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 45     if (((_a = pen.anchors) === null || _a === void 0 ? void 0 : _a.length) && from === pen.calculative.activeAnchor) {
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 50     else if ((!pen.anchors || !pen.anchors.length) &&
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 93     pts.forEach(function (anchor) {
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 94         anchor.id = s8();
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 95         anchor.penId = pen.id;
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 96         pen.calculative.worldAnchors.push(anchor);
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 400 export function anchorInHorizontal(pen, anchor, from) {
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 403     var anchors = pen.calculative.worldAnchors;
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 405         anchors = [];
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 407             anchors.unshift(item);
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 410     for (var i = 0; i < anchors.length; i++) {
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 411         if (anchors[i].id === anchor.id) {
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 414         if (anchors[i].y !== anchor.y) {
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 417         if (anchors[i].x === ((_a = anchors[i + 1]) === null || _a === void 0 ? void 0 : _a.x) &&
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 418             anchors[i].y !== ((_b = anchors[i + 1]) === null || _b === void 0 ? void 0 : _b.y)) {
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 424 export function anchorInVertical(pen, anchor, from) {
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 427     var anchors = pen.calculative.worldAnchors;
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 429         anchors = [];
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 431             anchors.unshift(item);
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 434     for (var i = 0; i < anchors.length; i++) {
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 435         if (anchors[i].id === anchor.id) {
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 438         if (anchors[i].x !== anchor.x) {
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 441         if (anchors[i].y === ((_a = anchors[i + 1]) === null || _a === void 0 ? void 0 : _a.y) &&
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 442             anchors[i].x !== ((_b = anchors[i + 1]) === null || _b === void 0 ? void 0 : _b.x)) {
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 448 export function translatePolylineAnchor(pen, anchor, pt) {
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 452     var i = pen.calculative.worldAnchors.findIndex(function (item) { return item.id === anchor.id; });
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 459             if (anchorInHorizontal(pen, anchor, true)) {
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 462             else if (anchorInVertical(pen, anchor, true)) {
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 467             if (anchorInHorizontal(pen, anchor, false)) {
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 470             else if (anchorInVertical(pen, anchor, false)) {
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 476                 pen.calculative.h = prev.y === anchor.y;
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 479                 pen.calculative.h = next.y === anchor.y;
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 485         anchor.x = pt.x;
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 486         if (from.connectTo && anchorInHorizontal(pen, anchor, true)) {
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 487             if (next && next.y !== anchor.y) {
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 488                 next.x = anchor.x;
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 492         if (to.connectTo && anchorInHorizontal(pen, anchor, false)) {
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 493             if (prev && prev.y !== anchor.y) {
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 494                 prev.x = anchor.x;
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 498         var a = pen.anchors[i];
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 501             prev = pen.anchors[pos];
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 524             next = pen.anchors[pos];
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 550         anchor.y = pt.y;
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 554         anchor.y = pt.y;
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 555         if (from.connectTo && anchorInVertical(pen, anchor, true)) {
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 556             if (next && next.x !== anchor.x) {
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 557                 next.y = anchor.y;
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 561         if (to.connectTo && anchorInVertical(pen, anchor, false)) {
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 562             if (prev && prev.x !== anchor.x) {
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 563                 prev.y = anchor.y;
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 567         var a = pen.anchors[i];
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 570             prev = pen.anchors[pos];
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 593             next = pen.anchors[pos];
+
+./node_modules/@meta2d/core/src/diagrams/line/polyline.js 619         anchor.x = pt.x;
+
+./node_modules/@meta2d/core/src/diagrams/line/line.js 67     if (pen.calculative.worldAnchors.length < 2 || ((_a = pen.anchors) === null || _a === void 0 ? void 0 : _a.length) > 1) {
+
+./node_modules/@meta2d/core/src/diagrams/line/line.js 170             var anchor = _c.value;
+
+./node_modules/@meta2d/core/src/diagrams/line/line.js 172                 point = pointInLineSegment(pt, from, anchor, r);
+
+./node_modules/@meta2d/core/src/diagrams/line/line.js 181             from = anchor;
+
+./node_modules/@meta2d/core/src/store/global.js 6     anchors: {},
+
+./node_modules/@meta2d/core/src/store/global.js 15 export function registerAnchors(anchorsFns) {
+
+./node_modules/@meta2d/core/src/store/global.js 16     Object.assign(globalStore.anchors, anchorsFns);
+
+./node_modules/@meta2d/core/src/rect/rect.js 416  * 计算相对点 ，anchors 中的值都是百分比
+
+./node_modules/react-dom/umd/react-dom.profiling.min.js 55 end:d.selectionEnd}:(d=(d.ownerDocument&&d.ownerDocument.defaultView||window).getSelection(),d={anchorNode:d.anchorNode,anchorOffset:d.anchorOffset,focusNode:d.focusNode,focusOffset:d.focusOffset}),fc&&ec(fc,d)||(fc=d,d=Zc(ye,"onSelect"),0<d.length&&(b=new ue("onSelect","select",null,b,c),a.push({event:b,listeners:d}),b.target=wb)))}function Mg(a,b,c){var d=a.type||"unknown-event";a.currentTarget=c;Pi(d,b,void 0,a);a.currentTarget=null}function Eg(a,b){b=0!==(b&4);for(var c=0;c<a.length;c++){var d=
+
+./node_modules/react-dom/umd/react-dom.profiling.min.js 175 k)g={start:k.selectionStart,end:k.selectionEnd};else a:{g=(g=k.ownerDocument)&&g.defaultView||window;var v=g.getSelection&&g.getSelection();if(v&&0!==v.rangeCount){g=v.anchorNode;q=v.anchorOffset;t=v.focusNode;v=v.focusOffset;try{g.nodeType,t.nodeType}catch(bb){g=null;break a}var p=0,z=-1,C=-1,F=0,H=0,r=k,x=null;b:for(;;){for(var u;;){r!==g||0!==q&&3!==r.nodeType||(z=p+q);r!==t||0!==v&&3!==r.nodeType||(C=p+v);3===r.nodeType&&(p+=r.nodeValue.length);if(null===(u=r.firstChild))break;x=r;r=u}for(;;){if(r===
+
+./node_modules/react-dom/umd/react-dom.profiling.min.js 178 y)){null!==k&&we(y)&&(A=k.start,w=k.end,void 0===w&&(w=A),"selectionStart"in y?(y.selectionStart=A,y.selectionEnd=Math.min(w,y.value.length)):(w=(A=y.ownerDocument||document)&&A.defaultView||window,w.getSelection&&(w=w.getSelection(),g=y.textContent.length,B=Math.min(k.start,g),k=void 0===k.end?B:Math.min(k.end,g),!w.extend&&B>k&&(g=k,k=B,B=g),g=Ig(y,B),q=Ig(y,k),g&&q&&(1!==w.rangeCount||w.anchorNode!==g.node||w.anchorOffset!==g.offset||w.focusNode!==q.node||w.focusOffset!==q.offset)&&(A=A.createRange(),
+
+./node_modules/react-dom/umd/react-dom-server.browser.development.js 2656     textanchor: 'textAnchor',
+
+./node_modules/react-dom/umd/react-dom-server.browser.development.js 2657     'text-anchor': 'textAnchor',
+
+./node_modules/react-dom/umd/react-dom.development.js 3148     textanchor: 'textAnchor',
+
+./node_modules/react-dom/umd/react-dom.development.js 3149     'text-anchor': 'textAnchor',
+
+./node_modules/react-dom/umd/react-dom.development.js 7590     var anchorNode = selection.anchorNode,
+
+./node_modules/react-dom/umd/react-dom.development.js 7591         anchorOffset = selection.anchorOffset,
+
+./node_modules/react-dom/umd/react-dom.development.js 7593         focusOffset = selection.focusOffset; // In Firefox, anchorNode and focusNode can be "anonymous divs", e.g. the
+
+./node_modules/react-dom/umd/react-dom.development.js 7603       anchorNode.nodeType;
+
+./node_modules/react-dom/umd/react-dom.development.js 7610     return getModernOffsetsFromPoints(outerNode, anchorNode, anchorOffset, focusNode, focusOffset);
+
+./node_modules/react-dom/umd/react-dom.development.js 7614    * (anchorNode, anchorOffset) within the textContent of `outerNode`, and
+
+./node_modules/react-dom/umd/react-dom.development.js 7622   function getModernOffsetsFromPoints(outerNode, anchorNode, anchorOffset, focusNode, focusOffset) {
+
+./node_modules/react-dom/umd/react-dom.development.js 7635         if (node === anchorNode && (anchorOffset === 0 || node.nodeType === TEXT_NODE)) {
+
+./node_modules/react-dom/umd/react-dom.development.js 7636           start = length + anchorOffset;
+
+./node_modules/react-dom/umd/react-dom.development.js 7660           // valid selection is anchorNode and focusNode both equal to this node
+
+./node_modules/react-dom/umd/react-dom.development.js 7665         if (parentNode === anchorNode && ++indexWithinAnchor === anchorOffset) {
+
+./node_modules/react-dom/umd/react-dom.development.js 7686       // This should never happen. (Would happen if the anchor/focus nodes aren't
+
+./node_modules/react-dom/umd/react-dom.development.js 7735       if (selection.rangeCount === 1 && selection.anchorNode === startMarker.node && selection.anchorOffset === startMarker.offset && selection.focusNode === endMarker.node && selection.focusOffset === endMarker.offset) {
+
+./node_modules/react-dom/umd/react-dom.development.js 7952         anchorNode: selection.anchorNode,
+
+./node_modules/react-dom/umd/react-dom.development.js 7953         anchorOffset: selection.anchorOffset,
+
+./node_modules/react-dom/umd/react-dom.production.min.js 55 end:d.selectionEnd}:(d=(d.ownerDocument&&d.ownerDocument.defaultView||window).getSelection(),d={anchorNode:d.anchorNode,anchorOffset:d.anchorOffset,focusNode:d.focusNode,focusOffset:d.focusOffset}),$b&&Zb($b,d)||($b=d,d=Tc(pe,"onSelect"),0<d.length&&(b=new le("onSelect","select",null,b,c),a.push({event:b,listeners:d}),b.target=qb)))}function zg(a,b,c){var d=a.type||"unknown-event";a.currentTarget=c;xi(d,b,void 0,a);a.currentTarget=null}function rg(a,b){b=0!==(b&4);for(var c=0;c<a.length;c++){var d=
+
+./node_modules/react-dom/umd/react-dom.production.min.js 172 (h=g.ownerDocument)&&h.defaultView||window,(v=h.getSelection&&h.getSelection())&&0!==v.rangeCount){h=v.anchorNode;f=v.anchorOffset;k=v.focusNode;v=v.focusOffset;try{h.nodeType,k.nodeType}catch(qa){h=null;break a}var t=0,w=-1,r=-1,z=0,B=0,y=g,C=null;b:for(;;){for(var x;;){y!==h||0!==f&&3!==y.nodeType||(w=t+f);y!==k||0!==v&&3!==y.nodeType||(r=t+v);3===y.nodeType&&(t+=y.nodeValue.length);if(null===(x=y.firstChild))break;C=y;y=x}for(;;){if(y===g)break b;C===h&&++z===f&&(w=t);C===k&&++B===v&&(r=t);if(null!==
+
+./node_modules/react-dom/umd/react-dom.production.min.js 175 p?(p.selectionStart=q,p.selectionEnd=Math.min(u,p.value.length)):(u=(q=p.ownerDocument||document)&&q.defaultView||window,u.getSelection&&(u=u.getSelection(),h=p.textContent.length,A=Math.min(g.start,h),g=void 0===g.end?A:Math.min(g.end,h),!u.extend&&A>g&&(h=g,g=A,A=h),h=vg(p,A),f=vg(p,g),h&&f&&(1!==u.rangeCount||u.anchorNode!==h.node||u.anchorOffset!==h.offset||u.focusNode!==f.node||u.focusOffset!==f.offset)&&(q=q.createRange(),q.setStart(h.node,h.offset),u.removeAllRanges(),A>g?(u.addRange(q),u.extend(f.node,
+
+./node_modules/react-dom/cjs/react-dom.profiling.min.js 94 function We(a,b,c){var d=c.window===c?c.document:9===c.nodeType?c:c.ownerDocument;Ve||null==Se||Se!==Ya(d)||(d=Se,"selectionStart"in d&&Qe(d)?d={start:d.selectionStart,end:d.selectionEnd}:(d=(d.ownerDocument&&d.ownerDocument.defaultView||window).getSelection(),d={anchorNode:d.anchorNode,anchorOffset:d.anchorOffset,focusNode:d.focusNode,focusOffset:d.focusOffset}),Ue&&Le(Ue,d)||(Ue=d,d=qe(Te,"onSelect"),0<d.length&&(b=new vd("onSelect","select",null,b,c),a.push({event:b,listeners:d}),b.target=Se)))}
+
+./node_modules/react-dom/cjs/react-dom.profiling.min.js 261 k[l]=-1;g&=~p}null!==Nj&&0===(e&24)&&Nj.has(a)&&Nj.delete(a);a===U&&(Y=U=null,W=0);1<c.flags?null!==c.lastEffect?(c.lastEffect.nextEffect=c,e=c.firstEffect):e=c:e=c.firstEffect;if(null!==e){f=X;X|=32;h=fk(a);zj.current=null;mf=hd;k=Pe();if(Qe(k)){if("selectionStart"in k)g={start:k.selectionStart,end:k.selectionEnd};else a:{g=(g=k.ownerDocument)&&g.defaultView||window;var y=g.getSelection&&g.getSelection();if(y&&0!==y.rangeCount){g=y.anchorNode;l=y.anchorOffset;p=y.focusNode;y=y.focusOffset;try{g.nodeType,
+
+./node_modules/react-dom/cjs/react-dom.profiling.min.js 265 g=w.textContent.length,J=Math.min(k.start,g),k=void 0===k.end?J:Math.min(k.end,g),!m.extend&&J>k&&(g=k,k=J,J=g),g=Ne(w,J),l=Ne(w,k),g&&l&&(1!==m.rangeCount||m.anchorNode!==g.node||m.anchorOffset!==g.offset||m.focusNode!==l.node||m.focusOffset!==l.offset)&&(A=A.createRange(),A.setStart(g.node,g.offset),m.removeAllRanges(),J>k?(m.addRange(A),m.extend(l.node,l.offset)):(A.setEnd(l.node,l.offset),m.addRange(A))))));A=[];for(m=w;m=m.parentNode;)1===m.nodeType&&A.push({element:m,left:m.scrollLeft,top:m.scrollTop});
+
+./node_modules/react-dom/cjs/react-dom-server.node.development.js 2658   textanchor: 'textAnchor',
+
+./node_modules/react-dom/cjs/react-dom-server.node.development.js 2659   'text-anchor': 'textAnchor',
+
+./node_modules/react-dom/cjs/react-dom-server.browser.development.js 2657   textanchor: 'textAnchor',
+
+./node_modules/react-dom/cjs/react-dom-server.browser.development.js 2658   'text-anchor': 'textAnchor',
+
+./node_modules/react-dom/cjs/react-dom.development.js 3151   textanchor: 'textAnchor',
+
+./node_modules/react-dom/cjs/react-dom.development.js 3152   'text-anchor': 'textAnchor',
+
+./node_modules/react-dom/cjs/react-dom.development.js 7560   var anchorNode = selection.anchorNode,
+
+./node_modules/react-dom/cjs/react-dom.development.js 7561       anchorOffset = selection.anchorOffset,
+
+./node_modules/react-dom/cjs/react-dom.development.js 7563       focusOffset = selection.focusOffset; // In Firefox, anchorNode and focusNode can be "anonymous divs", e.g. the
+
+./node_modules/react-dom/cjs/react-dom.development.js 7573     anchorNode.nodeType;
+
+./node_modules/react-dom/cjs/react-dom.development.js 7580   return getModernOffsetsFromPoints(outerNode, anchorNode, anchorOffset, focusNode, focusOffset);
+
+./node_modules/react-dom/cjs/react-dom.development.js 7584  * (anchorNode, anchorOffset) within the textContent of `outerNode`, and
+
+./node_modules/react-dom/cjs/react-dom.development.js 7592 function getModernOffsetsFromPoints(outerNode, anchorNode, anchorOffset, focusNode, focusOffset) {
+
+./node_modules/react-dom/cjs/react-dom.development.js 7605       if (node === anchorNode && (anchorOffset === 0 || node.nodeType === TEXT_NODE)) {
+
+./node_modules/react-dom/cjs/react-dom.development.js 7606         start = length + anchorOffset;
+
+./node_modules/react-dom/cjs/react-dom.development.js 7630         // valid selection is anchorNode and focusNode both equal to this node
+
+./node_modules/react-dom/cjs/react-dom.development.js 7635       if (parentNode === anchorNode && ++indexWithinAnchor === anchorOffset) {
+
+./node_modules/react-dom/cjs/react-dom.development.js 7656     // This should never happen. (Would happen if the anchor/focus nodes aren't
+
+./node_modules/react-dom/cjs/react-dom.development.js 7705     if (selection.rangeCount === 1 && selection.anchorNode === startMarker.node && selection.anchorOffset === startMarker.offset && selection.focusNode === endMarker.node && selection.focusOffset === endMarker.offset) {
+
+./node_modules/react-dom/cjs/react-dom.development.js 7922       anchorNode: selection.anchorNode,
+
+./node_modules/react-dom/cjs/react-dom.development.js 7923       anchorOffset: selection.anchorOffset,
+
+./node_modules/react-dom/cjs/react-dom.production.min.js 94 function Ue(a,b,c){var d=c.window===c?c.document:9===c.nodeType?c:c.ownerDocument;Te||null==Qe||Qe!==Xa(d)||(d=Qe,"selectionStart"in d&&Oe(d)?d={start:d.selectionStart,end:d.selectionEnd}:(d=(d.ownerDocument&&d.ownerDocument.defaultView||window).getSelection(),d={anchorNode:d.anchorNode,anchorOffset:d.anchorOffset,focusNode:d.focusNode,focusOffset:d.focusOffset}),Se&&Je(Se,d)||(Se=d,d=oe(Re,"onSelect"),0<d.length&&(b=new td("onSelect","select",null,b,c),a.push({event:b,listeners:d}),b.target=Qe)))}
+
+./node_modules/react-dom/cjs/react-dom.production.min.js 253 Cj&&0===(d&24)&&Cj.has(a)&&Cj.delete(a);a===U&&(Y=U=null,W=0);1<c.flags?null!==c.lastEffect?(c.lastEffect.nextEffect=c,d=c.firstEffect):d=c:d=c.firstEffect;if(null!==d){e=X;X|=32;pj.current=null;kf=fd;g=Ne();if(Oe(g)){if("selectionStart"in g)h={start:g.selectionStart,end:g.selectionEnd};else a:if(h=(h=g.ownerDocument)&&h.defaultView||window,(l=h.getSelection&&h.getSelection())&&0!==l.rangeCount){h=l.anchorNode;f=l.anchorOffset;k=l.focusNode;l=l.focusOffset;try{h.nodeType,k.nodeType}catch(va){h=null;
+
+./node_modules/react-dom/cjs/react-dom.production.min.js 257 g.end?J:Math.min(g.end,h),!v.extend&&J>g&&(h=g,g=J,J=h),h=Le(t,J),f=Le(t,g),h&&f&&(1!==v.rangeCount||v.anchorNode!==h.node||v.anchorOffset!==h.offset||v.focusNode!==f.node||v.focusOffset!==f.offset)&&(q=q.createRange(),q.setStart(h.node,h.offset),v.removeAllRanges(),J>g?(v.addRange(q),v.extend(f.node,f.offset)):(q.setEnd(f.node,f.offset),v.addRange(q))))));q=[];for(v=t;v=v.parentNode;)1===v.nodeType&&q.push({element:v,left:v.scrollLeft,top:v.scrollTop});"function"===typeof t.focus&&t.focus();for(t=
+
+./node_modules/terser-webpack-plugin/node_modules/terser/dist/bundle.min.js 22189     "anchor",
+
+./node_modules/terser-webpack-plugin/node_modules/terser/dist/bundle.min.js 22190     "anchorNode",
+
+./node_modules/terser-webpack-plugin/node_modules/terser/dist/bundle.min.js 22191     "anchorOffset",
+
+./node_modules/terser-webpack-plugin/node_modules/terser/dist/bundle.min.js 22192     "anchors",
+
+./node_modules/terser-webpack-plugin/node_modules/terser/dist/bundle.min.js 24881     "offset-anchor",
+
+./node_modules/terser-webpack-plugin/node_modules/terser/dist/bundle.min.js 25288     "overflow-anchor",
+
+./node_modules/terser-webpack-plugin/node_modules/terser/dist/bundle.min.js 26401     "text-anchor",
+
+./node_modules/terser-webpack-plugin/node_modules/terser/tools/domprops.js 2919     "anchor",
+
+./node_modules/terser-webpack-plugin/node_modules/terser/tools/domprops.js 2920     "anchorNode",
+
+./node_modules/terser-webpack-plugin/node_modules/terser/tools/domprops.js 2921     "anchorOffset",
+
+./node_modules/terser-webpack-plugin/node_modules/terser/tools/domprops.js 2922     "anchors",
+
+./node_modules/terser-webpack-plugin/node_modules/terser/tools/domprops.js 5611     "offset-anchor",
+
+./node_modules/terser-webpack-plugin/node_modules/terser/tools/domprops.js 6018     "overflow-anchor",
+
+./node_modules/terser-webpack-plugin/node_modules/terser/tools/domprops.js 7131     "text-anchor",
+
+./node_modules/react-router-dom/dist/index.js 418     // eslint-disable-next-line jsx-a11y/anchor-has-content
+
+./node_modules/react-router-dom/dist/react-router-dom.development.js 380     // eslint-disable-next-line jsx-a11y/anchor-has-content
+
+./node_modules/react-router-dom/dist/umd/react-router-dom.development.js 443       // eslint-disable-next-line jsx-a11y/anchor-has-content
+
+./node_modules/core-js-pure/features/index.js 172 require('../modules/es.string.anchor');
+
+./node_modules/core-js-pure/features/string/anchor.js 1 var parent = require('../../stable/string/anchor');
+
+./node_modules/core-js-pure/features/string/virtual/anchor.js 1 var parent = require('../../../stable/string/virtual/anchor');
+
+./node_modules/core-js-pure/es/index.js 172 require('../modules/es.string.anchor');
+
+./node_modules/core-js-pure/es/string/index.js 24 require('../../modules/es.string.anchor');
+
+./node_modules/core-js-pure/es/string/anchor.js 1 require('../../modules/es.string.anchor');
+
+./node_modules/core-js-pure/es/string/anchor.js 4 module.exports = entryUnbind('String', 'anchor');
+
+./node_modules/core-js-pure/es/string/virtual/index.js 22 require('../../../modules/es.string.anchor');
+
+./node_modules/core-js-pure/es/string/virtual/anchor.js 1 require('../../../modules/es.string.anchor');
+
+./node_modules/core-js-pure/es/string/virtual/anchor.js 4 module.exports = entryVirtual('String').anchor;
+
+./node_modules/core-js-pure/stable/index.js 172 require('../modules/es.string.anchor');
+
+./node_modules/core-js-pure/stable/string/anchor.js 1 var parent = require('../../es/string/anchor');
+
+./node_modules/core-js-pure/stable/string/virtual/anchor.js 1 var parent = require('../../../es/string/virtual/anchor');
+
+./node_modules/core-js-pure/modules/es.string.anchor.js 6 // `String.prototype.anchor` method
+
+./node_modules/core-js-pure/modules/es.string.anchor.js 7 // https://tc39.es/ecma262/#sec-string.prototype.anchor
+
+./node_modules/core-js-pure/modules/es.string.anchor.js 8 $({ target: 'String', proto: true, forced: forcedStringHTMLMethod('anchor') }, {
+
+./node_modules/core-js-pure/modules/es.string.anchor.js 9   anchor: function anchor(name) {
+
+./node_modules/terser/tools/domprops.js 2095     "anchor",
+
+./node_modules/terser/tools/domprops.js 2096     "anchorNode",
+
+./node_modules/terser/tools/domprops.js 2097     "anchorOffset",
+
+./node_modules/terser/tools/domprops.js 2098     "anchors",
+
+./node_modules/terser/tools/domprops.js 5163     "text-anchor",
+

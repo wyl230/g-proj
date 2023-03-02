@@ -1,49 +1,10 @@
 /*
  * @Description: 
- * @Author: 高浩然
- * @Date: 2021-10-11 16:56:45
- * @LastEditTime: 2021-10-12 11:46:58
  */
+
 import React, { useEffect } from 'react';
 import { Meta2d } from '@meta2d/core';
-
-export function triangle2(pen, ctx) {
-  const path = !ctx ? new Path2D() : ctx;
-  const { x, y, width, height } = pen.calculative.worldRect;
-  path.moveTo(x, y);
-  path.lineTo(x+width, y);
-  path.lineTo(x, y+height);
-  path.lineTo(x + width, y + height);
-
-  path.closePath();
-  if (path instanceof Path2D) return path;
-}
-
-
-export function triangle2Anchors(pen) {
-  const anchors = [];
-  anchors.push({
-    id: '0',
-    penId: pen.id,
-    x: 0.5,
-    y: 0,
-  });
-
-  anchors.push({
-    id: '1',
-    penId: pen.id,
-    x: 1,
-    y: 1,
-  });
-
-  anchors.push({
-    id: '2',
-    penId: pen.id,
-    x: 0,
-    y: 1,
-  });
-  pen.anchors = anchors;
-}
+import { my_compoent, my_compoent_Anchors } from '../utils/draw';
 
 const Meta2dContainer = () => {
   useEffect(() => {
@@ -58,17 +19,17 @@ const Meta2dContainer = () => {
 
     // 3. 注册图形
     // 参数 {key: fn}。key为图形唯一name，否则覆盖原来图形，fn为相关函数
-    meta2d.register({ triangle2 });
-    meta2d.registerAnchors({ triangle2: triangle2Anchors });
+    meta2d.register({ my_compoent });
+    meta2d.registerAnchors({ my_compoent: my_compoent_Anchors });
 
     // 4. 开始使用
     const pen = {
-      name: 'triangle2',
-      text: '输入名称',
+      name: 'my_compoent',
+      text: 'PIM',
       x: 100,
       y: 100,
-      width: 50,
-      height: 100,
+      width: 140,
+      height: 110,
     };
     meta2d.addPen(pen);
     meta2d.inactive();
@@ -76,6 +37,28 @@ const Meta2dContainer = () => {
 
   return (
     <div className='main' >
+      <div>
+        <button
+          onClick={() => meta2d.fitView()} >
+          自适应界面
+        </button>
+
+        <button
+          onClick={() => meta2d.centerView()} >
+          居中显示
+        </button>
+
+        <button
+          onClick={() => meta2d.toggleAnchorMode()} >
+            添加锚点
+        </button>
+
+        <button
+          onClick={() => meta2d.downloadPng()} >
+          生成 png 图像
+        </button>
+
+      </div>
       <div className="meta2d" id="meta2d"></div>
     </div>
   );

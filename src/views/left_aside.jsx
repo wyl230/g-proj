@@ -8,7 +8,6 @@ import { hardwares } from '../utils/data';
 
 import logo from "../assets/images/hya.png"
 import { Button, Modal } from 'antd';
-
 import { Input } from 'antd';
 import { Collapse } from 'antd';
 const { Panel } = Collapse;
@@ -49,7 +48,12 @@ const Left_aside = (props) => {
   return (
     <div className="left_aside" >
       <p>
-        <Button onClick={() => props.onClick('切换')}>
+        <Button 
+          onClick={() => props.onClick('切换')}
+          onFocus={() => props.onClick('focus')}
+          onMouseOver={() => props.onClick('mouse over')}
+
+        >
           {props.value}
         </Button>
       </p>
@@ -61,7 +65,7 @@ const Left_aside = (props) => {
         </div>
       </form>
 
-      <Collapse defaultActiveKey={['1', '2', '3']} onChange={onChange} className='collapse-mine'>
+      <Collapse defaultActiveKey={['1']} onChange={onChange} className='collapse-mine'>
         <Panel header="硬件模型库" key="1">
           <div class="grid-container">
             { icons.map((icon) => {
@@ -72,6 +76,7 @@ const Left_aside = (props) => {
                   onDragStart = { (e) => onDragStart(e, data) }
                   // onClick = {() => alert(`key: ${key} title: ${title} data: ${data}`)} // 测试用，点击组件名字即可
                   onClick = {() => props.update_current_object(key, title, data)}
+                  onMouseOver = {() => props.update_current_object(key, title, data)}
                 >
                   <i
                     draggable
@@ -149,82 +154,8 @@ const Left_aside = (props) => {
         </Panel>
       </Collapse>
 
-      <div className='source-name'>
-        硬件模型库
-        <div class="grid-container">
-
-          { icons.map((icon) => {
-            const { key, title, data } = icon;
-            return (
-              <div
-                key = { key }
-              >
-                <i
-                  draggable
-                  className = { `grid-item item iconfont icon-${ key }` }
-                  title = { title }
-                  onDragStart = { (e) => onDragStart(e, data) }
-                >{title}</i>
-              </div>
-            );
-          }) }
-          <div class="grid-item item3">3</div>  
-          <div class="grid-item item4">4</div>
-          <div class="grid-item item5">5</div>
-          <div class="grid-item item5">5</div>
-          <div class="grid-item item">5</div>
-          <div class="grid-item item">6</div>
-          <div class="grid-item item">6</div>
-          <div class="grid-item item">6</div>
-          <div class="grid-item item">6</div>
-          <div class="grid-item item">7</div>
-          <div class="grid-item item">7</div>
-        </div>
-      </div>
-      <div className='source-name'>
-        接口模型库
-        <div class="grid-container">
-          <div class="grid-item item1">1</div>
-          <div class="grid-item item2">2</div>
-          <div class="grid-item item3">3</div>  
-          <div class="grid-item item4">4</div>
-          <div class="grid-item item5">5</div>
-          <div class="grid-item item5">5</div>
-          <div class="grid-item item">5</div>
-          <div class="grid-item item">6</div>
-          <div class="grid-item item">6</div>
-          <div class="grid-item item">6</div>
-          <div class="grid-item item">6</div>
-          <div class="grid-item item">7</div>
-          <div class="grid-item item">7</div>
-        </div>
-      </div>
-      <div className='source-name'>
-        组件模型库
-        <div class="grid-container">
-          
-
-          { icons.map((icon) => {
-            const { key, title, data } = icon;
-            return (
-              <div
-                key = { key }
-              >
-                <i
-                  draggable
-                  className = { `grid-item item iconfont icon-${ key }` }
-                  title = { title }
-                  onDragStart = { (e) => onDragStart(e, data) }
-                ></i>
-              </div>
-            );
-          }) }
-
-          <div class="grid-item item3">7</div>
-        </div>
-      </div>
       <div className="link" >
-        <a href = "http://2ds.le5le.com/">去官网</a>
+        <a href = "http://2ds.le5le.com/">一个链接</a>
       </div>
     </div>
 

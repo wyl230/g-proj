@@ -1,8 +1,5 @@
 /*
  * @Description: 
- * @Author: 高浩然
- * @Date: 2021-10-11 15:23:33
- * @LastEditTime: 2021-10-11 15:23:34
  */
 export const icons = [
   {
@@ -11,6 +8,15 @@ export const icons = [
     data: {
       name: 'rectangle',
       text: '矩形text',
+      width: 100,
+      height: 100
+    }
+  }, { 
+    key: 'my_compoent',
+    title: 'PIM',
+    data: {
+      name: 'my_compoent',
+      text: 'PIM',
       width: 100,
       height: 100
     }

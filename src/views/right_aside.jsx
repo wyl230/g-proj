@@ -60,7 +60,7 @@ const Right_aside = (props) => {
 
       <Collapse
         bordered={false}
-        defaultActiveKey={['1', '2', '3']}
+        defaultActiveKey={['1']}
         expandIcon={({ isActive }) => <CaretRightOutlined rotate={isActive ? 90 : 0} />}
         style={{ background: token.colorBgContainer }}
       >
@@ -72,13 +72,22 @@ const Right_aside = (props) => {
           </p>
           <hr />
             {props.current_object_properties.map((item) => {
-              return <p>名称： {item}</p>
+              return (
+                <>
+                  <p>名称： {item}</p>
+                </>
+              )
             })}
           <hr />
 
           {
             hardware_properties.map((property) => {
-              return <p>{property}： ...</p>
+              return (
+                <>
+                  <p>{property}： ...</p> 
+                  <hr />
+                </>
+              )
             })
           }
           <p>{text}</p >
@@ -86,7 +95,12 @@ const Right_aside = (props) => {
         <Panel header="组件模型属性展示" key="2" style={panelStyle}>
           {
             component_properties.map((property) => {
-              return <p>{property}： ...</p>
+              return (
+                <>
+                  <p>{property}： ...</p> 
+                  <hr />
+                </>
+              )
             })
           }
           <p>{text}</p >
