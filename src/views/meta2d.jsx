@@ -6,7 +6,10 @@ import React, { useEffect, useState } from 'react';
 import { Meta2d } from '@meta2d/core';
 import { my_compoent, my_compoent_Anchors } from '../utils/draw';
 import { only_text, only_text_Anchors } from '../utils/draw';
- 
+
+import { Layout, } from "antd";
+const { Content } = Layout;
+
   // 4. 开始使用
   const pen = {
     name: 'my_compoent',
@@ -71,7 +74,8 @@ const Meta2dContainer = () => {
 
   var pens;
   return (
-    <div className='main' >
+    // <div className='main' >
+    <Content className={'main'}>
       <div>
         <button
           onClick={() => meta2d.fitView()} >
@@ -118,7 +122,7 @@ const Meta2dContainer = () => {
 
       </div>
       <div className="meta2d" id="meta2d"></div>
-    </div>
+    </Content>
   );
 };
 

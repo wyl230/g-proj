@@ -15,11 +15,14 @@ import { component_properties } from '../utils/data';
 // antd
 import { CaretRightOutlined } from '@ant-design/icons';
 import { Collapse, theme, Input } from 'antd';
+// import Sider from 'antd/es/layout/Sider';
 
 const { Panel } = Collapse;
 
 const text = `待定 `;
 
+import { Layout, } from "antd";
+const { Sider} = Layout;
 
 
 
@@ -44,7 +47,8 @@ const Right_aside = (props) => {
   }
 
   return (
-    <div className="right_aside" >
+    <Sider  className="right_aside" >
+    {/* <div className="right_aside" > */}
 
       <form onSubmit={handleSubmit}>
         <div className='search-bar_right'>
@@ -148,7 +152,7 @@ const Right_aside = (props) => {
       <div className="link" >
         <a href = "http://2ds.le5le.com/">帮助</a>
       </div>
-    </div>
+    </Sider> 
   );
 };
 

@@ -10,8 +10,10 @@ import React, { useCallback, useEffect, useRef } from 'react';
 import { BrowserRouter, Routes, Route, Link, Outlet } from "react-router-dom";
 
 
+import { Layout, } from "antd";
+const { Header } = Layout;
 
-const Header = () => {
+const My_Header = () => {
   const penBtn = useRef(null);
   const pencilBtn = useRef(null);
   const magnifierBtn = useRef(null);
@@ -277,7 +279,8 @@ const Header = () => {
 
 
   return (
-    <div className="header" >
+    <Header>
+    {/* <div className="header" > */}
       <div className="logo" >
         <img src='/favicon.ico' alt="乐吾乐" />
       </div>
@@ -339,8 +342,8 @@ const Header = () => {
         <button className='button-3' id="test_interface" onClick = { onTest_interface } >to_FPGA</button>
         <button className='button-3' id="3d_show" onClick = { on_3d_show } >产品展示界面</button>
       </div>
-    </div>
+    </Header>
   );
 };
 
-export default Header;
+export default My_Header;

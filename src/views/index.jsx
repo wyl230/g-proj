@@ -6,19 +6,21 @@
  */
 import React from 'react';
 import Aside from './aside';
-import Header from './header';
+import My_Header from './header';
 import Meta2dContainer from './meta2d';
 import Product_display from './product_display';
 
 import ReactDOM from 'react-dom';
 // import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { BrowserRouter, Routes, Route, Link, Outlet} from "react-router-dom";
+import { Layout, } from "antd";
+const { Header , Footer, Sider, Content } = Layout;
 
 
 const Home = () => {
   return (
     <>
-      <Header />
+      <My_Header />
       <Aside />
       <Meta2dContainer />
     </>
@@ -36,24 +38,24 @@ const About = () => (
 )
 const Contact = () => <h1>Contact</h1>;
 
-const Layout = () => (
-  <>
-    <nav>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/about">about</Link>
-        </li>
-        <li>
-          <Link to="/contact">Contact</Link>
-        </li>
-      </ul>
-    </nav>
-    <Outlet />
-  </>
-)
+// const Layout = () => (
+//   <>
+//     <nav>
+//       <ul>
+//         <li>
+//           <Link to="/">Home</Link>
+//         </li>
+//         <li>
+//           <Link to="/about">about</Link>
+//         </li>
+//         <li>
+//           <Link to="/contact">Contact</Link>
+//         </li>
+//       </ul>
+//     </nav>
+//     <Outlet />
+//   </>
+// )
 const App = () => (
   <BrowserRouter>
     <Routes>

@@ -14,6 +14,8 @@ const { Panel } = Collapse;
 
 const text = ` 待定 `;
 
+import { Layout, } from "antd";
+const { Sider} = Layout;
 // class Left_aside extends React.Component {
 const Left_aside = (props) => {
   const onChange = (key) => { console.log(key); };
@@ -46,7 +48,8 @@ const Left_aside = (props) => {
   };
 
   return (
-    <div className="left_aside" >
+    <Sider className="left_aside" >
+    {/* <div className="left_aside" > */}
       <p>
         <Button 
           onClick={() => props.onClick('切换')}
@@ -157,7 +160,7 @@ const Left_aside = (props) => {
       <div className="link" >
         <a href = "http://2ds.le5le.com/">一个链接</a>
       </div>
-    </div>
+    </Sider>   
 
   );
 };
