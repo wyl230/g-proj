@@ -341,6 +341,18 @@ const My_Header = () => {
       label: (
         <Switch onChange={changeTheme} />
       ), key: '11'
+    }, {
+      label: (
+        <Dropdown menu={{ items: file_op_items }} key='34' placement="bottomRight" >
+          <Button>文件...</Button>
+        </Dropdown>
+      ), key: '12'
+    }, {
+      label: (
+        <Dropdown menu={{ items }} key='23' placement="bottomRight" arrow>
+          <Button>更多...(绘图相关)</Button>
+        </Dropdown>
+      ), key: '12'
     }
   ]
 
@@ -373,23 +385,6 @@ const My_Header = () => {
           </button>
         </Link>
         <Outlet /> */}
-
-    <Dropdown menu={{ items }} key='23' placement="bottomRight" arrow>
-      <Button>更多...(绘图相关)</Button>
-    </Dropdown>
-
-    <Dropdown menu={{ items: file_op_items }} key='34' placement="bottomRight" >
-      <Button>文件...</Button>
-    </Dropdown>
-
-        <button className='button-3' id="save" onClick = { onSave } >保存</button>
-        <button className='button-3' id="help" onClick = { onHelp } >帮助</button>
-        <button className='button-3' id="test_interface" onClick = { onTest_interface } >接口测试</button>
-        <button className='button-3' id="test_send_json" onClick = { onTest_send_json } >发送连接关系对应的JSON</button>
-        <button className='button-3' id="test_interface" onClick = { onTest_interface } >生成IDL文件</button>
-        <button className='button-3' id="test_interface" onClick = { onTest_interface } >IDL2C</button>
-        <button className='button-3' id="test_interface" onClick = { onTest_interface } >to_FPGA</button>
-        <button className='button-3' id="3d_show" onClick = { on_3d_show } >产品展示界面</button>
       </div>
     </Header>
   );
