@@ -45,8 +45,8 @@ i.iconfont {
 }
 
 .header {
-  /* height: 61px; */
-  height: 80px;
+  height: 61px;
+  /* height: 80px; */
   border-bottom: 1px solid #ccc;
 }
 

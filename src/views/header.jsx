@@ -205,13 +205,33 @@ const Header = () => {
   {
     key: '3',
     label: (
-      <a target="_blank" rel="noopener noreferrer" href="https://www.luohanacademy.com">
-        放上需要的链接
-      </a>
+        <button className='button-3' id="magnifier" onClick = { onToggleMagnifier } ref = { magnifierBtn } >放大镜</button>
     ),
   },
   {
     key: '4',
+    label: (
+        <button className='button-3' id="minimap" onClick = { onToggleMinimap } ref = { minimapBtn } >缩略图</button>
+      ),
+    },
+  {
+    key: '5',
+    label: (
+      <a target="_blank" rel="noopener noreferrer" href="https://www.luohanacademy.com">
+        放上需要的链接
+      </a>
+      ),
+    },
+  {
+    key: '6',
+    label: (
+      <a target="_blank" rel="noopener noreferrer" href="https://www.luohanacademy.com">
+        放上需要的链接
+      </a>
+      ),
+    },
+  {
+    key: '7',
     label: (
       <a target="_blank" rel="noopener noreferrer" href="https://www.luohanacademy.com">
         放上需要的链接
@@ -222,19 +242,22 @@ const Header = () => {
 
   const file_op_items = [
   {
-    key: '5',
+    key: '1',
     label: (
-        <button className='button-3' id="pencil" onClick = { onTogglePencil } ref = { pencilBtn } >曲线</button>
+        <button className='button-3' id="create" onClick = { onCreate } >新建文件</button>
     ),
   },
   {
-    key: '6',
+    key: '2',
     label: (
-        <button className='button-3' id="pen" onClick = { onTogglePen } ref = { penBtn } >折线</button>
+        <button className='button-3' id="open" >
+          打开文件
+          <input id="open-input" type="file" onChange = { onOpen } />
+        </button>
     ),
   },
   {
-    key: '7',
+    key: '3',
     label: (
       <a target="_blank" rel="noopener noreferrer" href="https://www.luohanacademy.com">
         放上需要的链接
@@ -242,7 +265,7 @@ const Header = () => {
     ),
   },
   {
-    key: '8',
+    key: '4',
     label: (
       <a target="_blank" rel="noopener noreferrer" href="https://www.luohanacademy.com">
         放上需要的链接
@@ -278,7 +301,7 @@ const Header = () => {
         <Outlet />
 
 
-    <Dropdown menu={{ items }} placement="bottomLeft" arrow>
+    {/* <Dropdown menu={{ items }} placement="bottomLeft" arrow>
       <Button>bottomLeft</Button>
     </Dropdown>
     <Dropdown menu={{ items }} placement="bottom" arrow>
@@ -286,9 +309,16 @@ const Header = () => {
     </Dropdown>
     <Dropdown menu={{ items }} placement="bottomRight" arrow>
       <Button>更多...(绘图相关)</Button>
+    </Dropdown> */}
+
+    <Dropdown menu={{ items }} key='23' placement="bottomRight" arrow>
+      <Button>更多...(绘图相关)</Button>
     </Dropdown>
-    <br />
-    <Dropdown menu={{ items }} placement="topLeft" arrow>
+
+    <Dropdown menu={{ items: file_op_items }} key='34' placement="bottomRight" >
+      <Button>文件...</Button>
+    </Dropdown>
+    {/* <Dropdown menu={{ items }} placement="topLeft" arrow>
       <Button>topLeft</Button>
     </Dropdown>
     <Dropdown menu={{ items }} placement="top" arrow>
@@ -296,18 +326,11 @@ const Header = () => {
     </Dropdown>
     <Dropdown menu={{ items }} placement="topRight" arrow>
       <Button>topRight</Button>
-    </Dropdown>
+    </Dropdown> */}
 
 
-        <button className='button-3' id="create" onClick = { onCreate } >新建文件</button>
-        <button className='button-3' id="open" >
-          打开文件
-          <input id="open-input" type="file" onChange = { onOpen } />
-        </button>
 
         <button className='button-3' id="save" onClick = { onSave } >保存</button>
-        <button className='button-3' id="magnifier" onClick = { onToggleMagnifier } ref = { magnifierBtn } >放大镜</button>
-        <button className='button-3' id="minimap" onClick = { onToggleMinimap } ref = { minimapBtn } >缩略图</button>
         <button className='button-3' id="help" onClick = { onHelp } >帮助</button>
         <button className='button-3' id="test_interface" onClick = { onTest_interface } >接口测试</button>
         <button className='button-3' id="test_send_json" onClick = { onTest_send_json } >发送连接关系对应的JSON</button>
