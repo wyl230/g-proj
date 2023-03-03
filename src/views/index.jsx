@@ -1,8 +1,5 @@
 /*
  * @Description: 
- * @Author: 
- * @Date: 
- * @LastEditTime: 
  */
 import React from 'react';
 import Aside from './aside';

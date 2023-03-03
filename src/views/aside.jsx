@@ -1,8 +1,13 @@
 
+// import Layout from 'antd/es/layout/layout';
 import React, { useCallback, useState } from 'react';
 
+import { Layout, } from "antd";
+const { Content } = Layout;
 import Left_aside from './left_aside';
 import Right_aside from './right_aside';
+import Meta2dContainer from './meta2d';
+// import { Content } from 'antd/es/layout/layout';
 class Aside extends React.Component {
 // const Aside = () => {
 
@@ -61,8 +66,10 @@ class Aside extends React.Component {
   render() {
     return (
         <>
+        {/* <Layout> */}
         {this.render_left_aside(0)}
         {this.render_right_aside(0)}
+{/* </Layout> */}
         </>
     )
   }

@@ -42,7 +42,7 @@ const { Content } = Layout;
 const Meta2dContainer = () => {
   const [test_list, set_test_list] = useState('23')
   useEffect(() => {
-    window.meta2d = new Meta2d('meta2d');
+    window.meta2d = new Meta2d('meta2d11'); // 创建了一个id为此的<>
     window.meta2d.register({ my_compoent });
     window.meta2d.register({ only_text });
     window.meta2d.registerAnchors({ my_compoent: my_compoent_Anchors });
@@ -75,22 +75,19 @@ const Meta2dContainer = () => {
   var pens;
   return (
     // <div className='main' >
+    // <Content>
+    
     <Content className={'main'}>
       <div>
-        <button
-          onClick={() => meta2d.fitView()} >
+        <button onClick={() => meta2d.fitView()} >
           自适应界面
-        </button> <button
-          onClick={() => meta2d.centerView()} >
+        </button> <button onClick={() => meta2d.centerView()} >
           居中显示
-        </button> <button
-          onClick={() => meta2d.toggleAnchorMode()} >
+        </button> <button onClick={() => meta2d.toggleAnchorMode()} >
             添加锚点
-        </button> <button
-          onClick={() => meta2d.downloadPng()} >
+        </button> <button onClick={() => meta2d.downloadPng()} >
           生成 png 图像
-        </button> <button
-          onClick={() => {
+        </button> <button onClick={() => {
             console.log('child pen', child_pen);
             pens = window.meta2d.mine();
             console.log('pens');
@@ -121,7 +118,9 @@ const Meta2dContainer = () => {
         </button>
 
       </div>
-      <div className="meta2d" id="meta2d"></div>
+      {/* <div className="meta2d" id="meta2d"></div> */}
+      <div id="meta2d11"></div>
+      {/* <div></div> */}
     </Content>
   );
 };

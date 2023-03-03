@@ -339,10 +339,7 @@ const My_Header = () => {
       ]
     }, {
       label: (
-        <div>
         <Switch onChange={changeTheme} />
-        <br /> 234
-        </div>
       ), key: '11'
     }
   ]

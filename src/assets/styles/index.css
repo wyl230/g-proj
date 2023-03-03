@@ -45,7 +45,7 @@ i.iconfont {
 }
 
 .header {
-  height: 61px;
+  /* height: 61px; */
   /* height: 80px; */
   border-bottom: 1px solid #ccc;
 }
@@ -168,17 +168,21 @@ i.iconfont {
 .main {
   /* cursor: pointer; */
   height: calc(100% - 61px);
+  /* padding-left: 1px;
+  margin-left: 10px; */
   /* padding-left: 101px; */
   /* padding-left: 201px; */
   /* padding-right: 101px; */
 }
 
-#meta2d {
+#meta2d11 {
   height: 100%;
   /* padding-left: var(--left-side-length); */
   /* padding-right: var(--left-side-length); */
-  margin-left: var(--left-side-length);
-  margin-right: var(--right-side-length);
+  /* margin-left: var(--left-side-length); */
+  margin-left: 200px;
+  margin-right: 200px;
+  /* margin-right: var(--right-side-length); */
   
   background-color: rgb(244, 244, 244);
 }
