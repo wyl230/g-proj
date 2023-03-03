@@ -2,6 +2,7 @@
  * @Description: 
  */
 
+import { Divider, Menu, Switch, Breadcrumb,  theme, } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { Meta2d } from '@meta2d/core';
 import { my_compoent, my_compoent_Anchors } from '../utils/draw';
@@ -41,18 +42,20 @@ const { Content } = Layout;
 // const Meta2dContainer = (props) => {
 const Meta2dContainer = () => {
   const [test_list, set_test_list] = useState('23')
+  // const meta2d = new Meta2d('meta2d11');
   useEffect(() => {
-    window.meta2d = new Meta2d('meta2d11'); // 创建了一个id为此的<>
-    window.meta2d.register({ my_compoent });
-    window.meta2d.register({ only_text });
-    window.meta2d.registerAnchors({ my_compoent: my_compoent_Anchors });
-    window.meta2d.registerAnchors({ only_text: only_text_Anchors });
+    const meta2d = new Meta2d('meta2d11');
+    // window.meta2d = new Meta2d('meta2d11'); // 创建了一个id为此的<>
+    meta2d.register({ my_compoent });
+    meta2d.register({ only_text });
+    meta2d.registerAnchors({ my_compoent: my_compoent_Anchors });
+    meta2d.registerAnchors({ only_text: only_text_Anchors });
     // window.meta2d.addPen(child_pen);
     console.log('here', pen);
-    window.meta2d.addPen(pen);
+    meta2d.addPen(pen);
     const text_width = 200;
     const text_height = 14;
-    window.meta2d.pushChildren(pen, 
+    meta2d.pushChildren(pen, 
       pen.anchors.map((anchor) => {
         return (
         {
@@ -69,31 +72,52 @@ const Meta2dContainer = () => {
     );
     console.log('here', pen);
     // window.meta2d.addPen(pen_text);
-    window.meta2d.inactive();
+    meta2d.inactive();
   }, []);
 
   var pens;
-  return (
-    // <div className='main' >
-    // <Content>
-    
-    <Content className={'main'}>
-      <div>
+
+  const item_navs = [
+    {
+      label: 
         <button onClick={() => meta2d.fitView()} >
           自适应界面
-        </button> <button onClick={() => meta2d.centerView()} >
+        </button> , 
+      key: '1',
+    },
+    {
+
+      label: 
+        <button onClick={() => meta2d.centerView()} >
           居中显示
-        </button> <button onClick={() => meta2d.toggleAnchorMode()} >
+        </button> ,
+      key: '2',
+    },
+    {
+
+      label: 
+        <button onClick={() => meta2d.toggleAnchorMode()} >
             添加锚点
-        </button> <button onClick={() => meta2d.downloadPng()} >
+        </button> ,
+      key: '3',
+    },
+    {
+
+      label: 
+        <button onClick={() => meta2d.downloadPng()} >
           生成 png 图像
-        </button> <button onClick={() => {
+        </button> ,
+      key: '4',
+    },
+    {
+      label: 
+        <button onClick={() => {
             console.log('child pen', child_pen);
-            pens = window.meta2d.mine();
+            pens = meta2d.mine();
             console.log('pens');
             console.log(pens);
             // draw_interface_text();
-            set_test_list((Object.entries(window.meta2d.mine())).map((pen) => {
+            set_test_list((Object.entries(meta2d.mine())).map((pen) => {
               console.log('pen');
               console.log(pen[1]);
               return (
@@ -115,9 +139,18 @@ const Meta2dContainer = () => {
           {/* {draw_interface_text()} */}
           {test_list}
           test
-        </button>
+        </button>,
+      key: '5',
+    },
+  ]
+  return (
+    // <div className='main' >
+    // <Content>
+    
+    <Content className={'main'}>
+    {/* <Content className={'main'}> */}
 
-      </div>
+      <Menu theme={'light'} mode="horizontal" defaultSelectedKeys={['主界面']} items={item_navs} selectable={false}/>
       {/* <div className="meta2d" id="meta2d"></div> */}
       <div id="meta2d11"></div>
       {/* <div></div> */}

@@ -18,6 +18,7 @@ const Home = () => {
   return (
     <>
       <My_Header />
+
       <Aside />
       <Meta2dContainer />
     </>

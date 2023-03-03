@@ -6,6 +6,7 @@ import React, { useCallback } from 'react';
 import { icons, interfaces } from '../utils/data';
 import { hardware_properties } from '../utils/data';
 import { component_properties } from '../utils/data';
+import {useState } from 'react';
 // use imgs
 // import logo from "../assets/images/hya.png"
 // <img src={logo} alt="" />
@@ -15,7 +16,6 @@ import { component_properties } from '../utils/data';
 // antd
 import { CaretRightOutlined } from '@ant-design/icons';
 import { Collapse, theme, Input } from 'antd';
-// import Sider from 'antd/es/layout/Sider';
 
 const { Panel } = Collapse;
 
@@ -46,8 +46,11 @@ const Right_aside = (props) => {
     alert(search_items);
   }
 
+  const [collapsed, setCollapsed] = useState(false);
   return (
-    <Sider  className="right_aside" >
+    // <Sider  className="right_aside">
+
+    <Sider className='right_aside' collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
     {/* <div className="right_aside" > */}
 
       <form onSubmit={handleSubmit}>
@@ -149,9 +152,9 @@ const Right_aside = (props) => {
 
 
 
-      <div className="link" >
+      {/* <div className="link" >
         <a href = "http://2ds.le5le.com/">帮助</a>
-      </div>
+      </div> */}
     </Sider> 
   );
 };

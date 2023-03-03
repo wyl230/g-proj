@@ -48,7 +48,7 @@ const Left_aside = (props) => {
   };
 
   return (
-    <Sider className="left_aside" >
+    <Sider className="left_aside">
     {/* <div className="left_aside" > */}
       <p>
         <Button 
@@ -157,9 +157,9 @@ const Left_aside = (props) => {
         </Panel>
       </Collapse>
 
-      <div className="link" >
+      {/* <div className="link" >
         <a href = "http://2ds.le5le.com/">一个链接</a>
-      </div>
+      </div> */}
     </Sider>   
 
   );

@@ -48,6 +48,7 @@ i.iconfont {
   /* height: 61px; */
   /* height: 80px; */
   border-bottom: 1px solid #ccc;
+  background-color:#fff;
 }
 
 .logo, .button-group {
@@ -167,7 +168,8 @@ i.iconfont {
 }
 .main {
   /* cursor: pointer; */
-  height: calc(100% - 61px);
+  height: calc(110% - 61px);
+  /* height: 200% */
   /* padding-left: 1px;
   margin-left: 10px; */
   /* padding-left: 101px; */
@@ -210,6 +212,15 @@ i.iconfont {
   content: "\e695";
 }
 
+.try_float {
+  background-color:#73787d;
+  padding-top: 7px;
+  padding-left: 35px;
+  margin-left: 77px;
+  padding-bottom: 7px;
+  /* float:left; */
+  /* font-size: 100px; */
+}
 .icon-pen:before {
   content: "\e6d6";
 }
