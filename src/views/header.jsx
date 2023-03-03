@@ -4,14 +4,13 @@
  */
 
 // add dropdown
-import { MenuProps } from 'antd';
+import { Divider, Menu, Switch, Breadcrumb, Layout, theme, } from 'antd';
 import { Button, Dropdown } from 'antd';
 import React, { useCallback, useEffect, useRef } from 'react';
 import { BrowserRouter, Routes, Route, Link, Outlet } from "react-router-dom";
-
-
-import { Layout, } from "antd";
-const { Header } = Layout;
+// import { MenuProps, MenuTheme } from 'antd/es/menu';
+import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
+const { Header, Content, Sider } = Layout;
 
 const My_Header = () => {
   const penBtn = useRef(null);
@@ -276,14 +275,79 @@ const My_Header = () => {
     },
   ];
 
+  const item_navs = [
+    {
+      label: '主界面', 
+      key: '主界面',
+    },
+    {
 
+      label: '产品展示界面',
+      key: '产品展示界面',
+    },
+    {
+      label: '功能',
+      key: 'SubMenu',
+      icon: <SettingOutlined />,
+      children: [
+        {
+          label: 'item1',
+          key: 'item1'
+        }, {
+          label: 'item2',
+          key: 'item2',
+        }, {
+          label: (
+        <p id="save" onClick = { onSave } >保存</p>
+          ),
+          key: 'item3',
+        }, {
+          label: (
+            <p id="help" onClick = { onHelp } >帮助</p>
+          ), key: '4'
+        }, {
+          label: (
+            <p id="test_interface" onClick = { onTest_interface } >接口测试</p>
+          ), key: '5'
+        }, {
+          label: (
+            <p id="test_send_json" onClick = { onTest_send_json } >发送连接关系对应的JSON</p>
+          ), key: '6'
+        }, {
+          label: (
+            <p id="test_interface" onClick = { onTest_interface } >生成IDL文件</p>
+          ), key: '7'
+        }, {
+          label: (
+            <p id="test_interface" onClick = { onTest_interface } >IDL2C</p>
+          ), key: '8'
+        }, {
+          label: (
+            <p id="test_interface" onClick = { onTest_interface } >to_FPGA</p>
+          ), key: '9'
+        }, {
+          label: (
+            <p id="3d_show" onClick = { on_3d_show } >产品展示界面</p>
+          ), key: '10'
+        }
+      ]
+    }
+  ]
+
+  // const [theme, setTheme] = useState<MenuTheme>('light');
+  // const changeTheme = (value) => {
+  //   setTheme(value ? 'dark' : 'light');
+  // };
 
   return (
-    <Header>
+    <Header className='header'>
     {/* <div className="header" > */}
       <div className="logo" >
-        <img src='/favicon.ico' alt="乐吾乐" />
+        <img src='/favicon.ico' alt="集成开发环境" />
       </div>
+      {/* <Switch onChange={changeTheme} /> Change Style */}
+      <Menu theme="light" mode="horizontal" defaultSelectedKeys={['主界面']} items={item_navs} />
+      {/* <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['主界面']} items={item_navs} /> */}
 
       <div className="button-group" >
         <Link to="/">
@@ -303,17 +367,6 @@ const My_Header = () => {
         </Link>
         <Outlet />
 
-
-    {/* <Dropdown menu={{ items }} placement="bottomLeft" arrow>
-      <Button>bottomLeft</Button>
-    </Dropdown>
-    <Dropdown menu={{ items }} placement="bottom" arrow>
-      <Button>文件操作</Button>
-    </Dropdown>
-    <Dropdown menu={{ items }} placement="bottomRight" arrow>
-      <Button>更多...(绘图相关)</Button>
-    </Dropdown> */}
-
     <Dropdown menu={{ items }} key='23' placement="bottomRight" arrow>
       <Button>更多...(绘图相关)</Button>
     </Dropdown>
@@ -321,17 +374,6 @@ const My_Header = () => {
     <Dropdown menu={{ items: file_op_items }} key='34' placement="bottomRight" >
       <Button>文件...</Button>
     </Dropdown>
-    {/* <Dropdown menu={{ items }} placement="topLeft" arrow>
-      <Button>topLeft</Button>
-    </Dropdown>
-    <Dropdown menu={{ items }} placement="top" arrow>
-      <Button>top</Button>
-    </Dropdown>
-    <Dropdown menu={{ items }} placement="topRight" arrow>
-      <Button>topRight</Button>
-    </Dropdown> */}
-
-
 
         <button className='button-3' id="save" onClick = { onSave } >保存</button>
         <button className='button-3' id="help" onClick = { onHelp } >帮助</button>

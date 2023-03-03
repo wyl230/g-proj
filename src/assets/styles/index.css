@@ -166,6 +166,7 @@ i.iconfont {
   user-select: none;
 }
 .main {
+  /* cursor: pointer; */
   height: calc(100% - 61px);
   /* padding-left: 101px; */
   /* padding-left: 201px; */
