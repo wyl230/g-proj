@@ -360,7 +360,7 @@ const My_Header = () => {
       {/* <Switch onChange={changeTheme} /> Change Style */}
 
       <div className="button-group" >
-        <Link to="/">
+        {/* <Link to="/">
           <button className='button-3'>
               Home
           </button>
@@ -375,7 +375,7 @@ const My_Header = () => {
             产品展示界面
           </button>
         </Link>
-        <Outlet />
+        <Outlet /> */}
 
     <Dropdown menu={{ items }} key='23' placement="bottomRight" arrow>
       <Button>更多...(绘图相关)</Button>
