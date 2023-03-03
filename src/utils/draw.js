@@ -12,6 +12,19 @@ export function my_compoent(pen, ctx) {
   if (path instanceof Path2D) return path;
 }
 
+export function only_text(pen, ctx) {
+
+}
+
+export function only_text_Anchors(pen) {
+
+  const anchors = [];
+
+  anchors.push({
+
+  });
+  pen.anchors = anchors;
+}
 // x轴为横轴
 export function my_compoent_Anchors(pen) {
   const anchors = [];
