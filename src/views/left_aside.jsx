@@ -9,6 +9,7 @@ import { hardwares } from '../utils/data';
 import logo from "../assets/images/hya.png"
 import { Button, Modal } from 'antd';
 import { Input } from 'antd';
+const { Search } = Input;
 import { Collapse } from 'antd';
 const { Panel } = Collapse;
 
@@ -41,6 +42,7 @@ const Left_aside = (props) => {
 
   const handleOk = () => {
     setIsModalOpen(false);
+    alert('功能待完善');
   };
 
   const handleCancel = () => {
@@ -65,12 +67,16 @@ const Left_aside = (props) => {
     fetch('http://162.105.85.214:8000/test_interface', requestOptions)
         .then(response => response.json())
         .then(data => {
-          console.log('get: ', data.data_mine);
+          // console.log('get: ', data.data_mine);
           const max = 10000;
           const min = 0;
           const icon = data.data_mine;
           icon.key = Math.floor(Math.random() * (max - min + 1)) + min;
-          console.log('icon', icon);
+          // icon.info = [
+          //   '型号 : kk',
+          //   '功耗 : 10w' 
+          // ]
+          // console.log('icon', icon);
           const newIcons = [...MyIcons, data.data_mine];
           setMyIcons(newIcons);
           console.log(MyIcons);
@@ -78,6 +84,7 @@ const Left_aside = (props) => {
     alert('已发送post请求');
   }
   
+  const onSearch = () => {};
   return (
     <Sider className="left_aside">
     {/* <div className="left_aside" > */}
@@ -86,7 +93,7 @@ const Left_aside = (props) => {
           // onClick={() => props.onClick('切换')}
           onClick={addIcon}
           // onFocus={() => props.onClick('focus')}
-          onMouseOver={() => props.onClick('mouse over')}
+          onMouseOver={() => props.onClick('添加')}
         >
           {props.value}
         </Button>
@@ -94,8 +101,9 @@ const Left_aside = (props) => {
       <form onSubmit={handleSubmit}>
         <div className='search-bar_right'>
           {/* <label htmlFor="text">搜索</label> */}
-          <Input id='search_items' placeholder="搜索组件..." />
-          <button type="submit" className='button-68' role='button'>search</button>
+          <Search placeholder="搜索组件..." onSearch={onSearch} enterButton />
+          {/* <Input id='search_items' placeholder="搜索组件..." />
+          <button type="submit" className='button-68' role='button'>search</button> */}
         </div>
       </form>
 
@@ -103,14 +111,28 @@ const Left_aside = (props) => {
         <Panel header="硬件模型库" key="1">
           <div className="grid-container">
             { MyIcons.map((icon) => {
-              const { key, title, data } = icon;
+              if(icon.info == null)
+                icon.info = [
+                  '名称：pim',
+                  '型号： ...',
+                  '创建时间： ...',
+                  '版本号： ...',
+                  '文档附件： ...',
+                  '功耗： ...',
+                  '硬件功能： ...',
+                  '硬件性能： ...',
+                  '操作环境： ...',
+                ];
+              const { key, title, data, info } = icon;
+              // console.log('title',title);
+              // console.log('info', info);
               return (
                 <div className='single_item' key = { key } 
                   draggable
                   onDragStart = { (e) => onDragStart(e, data) }
                   // onClick = {() => alert(`key: ${key} title: ${title} data: ${data}`)} // 测试用，点击组件名字即可
-                  onClick = {() => props.update_current_object(key, title, data)}
-                  onMouseOver = {() => props.update_current_object(key, title, data)}
+                  onClick = {() => props.update_current_object(key, title, data, info)}
+                  onMouseOver = {() => props.update_current_object(key, title, data, info)}
                 >
                   <i
                     draggable
@@ -141,23 +163,24 @@ const Left_aside = (props) => {
               新建模块
             </Button>
             <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-              <div>
-              <p>名称：</p>
-              <Input id='test' placeholder="搜索组件..." />
+              <div className='input-margin'>
+              <Input addonBefore="名称" id='test' placeholder="搜索组件..." />
               </div>
-              <p>型号:
-                <Input placeholder="..." />
-              </p>
-
-              <p>硬件功能：
-                <Input placeholder="..." />
-              </p>
-              <p>硬件性能:
-                <Input placeholder="..." />
-              </p>
-
+              <div className='input-margin'>
+              <Input addonBefore="型号" placeholder="..." />
+              </div>
+              <div className='input-margin'>
+              <Input addonBefore='硬件功能' placeholder="..." />
+              </div>
+              <div className='input-margin'>
+              <Input addonBefore='硬件性能' placeholder="..." />
+              </div>
+              <div className='input-margin'>
               <p>Some contents...</p>
+              </div>
+              <div className='input-margin'>
               <p>Some contents...</p>
+              </div>
             </Modal>
           </div>
         </Panel>

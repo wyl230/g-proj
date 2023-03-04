@@ -4,10 +4,10 @@
  */
 
 // add dropdown
-import {useState } from 'react';
+import React, { useState } from 'react';
 import { Divider, Menu, Switch, Breadcrumb, Layout, theme, } from 'antd';
 import { Button, Dropdown } from 'antd';
-import React, { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import { BrowserRouter, Routes, Route, Link, Outlet } from "react-router-dom";
 // import { MenuProps, MenuTheme } from 'antd';
 import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
@@ -291,13 +291,25 @@ const My_Header = () => {
 
   const item_navs = [
     {
-      label: '主界面', 
+      label: <Link to='/'>主界面</Link>,
       key: '主界面',
     },
     {
 
-      label: '产品展示界面',
+        label: <a href="http://162.105.85.214:3000" target="_blank">建模设计功能</a>,
+//       label: <Link to='/contact'
+// target="_blank" rel="noopener noreferrer"
+//       >建模设计功能</Link>,
+
+      key: '建模设计功能',
+    },
+    {
+
+      label: <Link to='/contact'>产品展示界面</Link>,
       key: '产品展示界面',
+      // onClick: () => {
+      //   alert(234);
+      // }
     },
     {
       label: '功能',
@@ -347,7 +359,10 @@ const My_Header = () => {
       ]
     }, {
       label: (
-        <Switch onChange={changeTheme} />
+        <Switch onChange={changeTheme} 
+       
+          onClick={() => setCount(Count + 1)}
+        />
       ), key: '11'
     }, {
       label: (
@@ -364,6 +379,12 @@ const My_Header = () => {
     }
   ]
 
+  const [Count, setCount] = useState(0);
+  useEffect(() => {
+    // document.title = `You clicked ${Count} times`;
+    console.log('run');
+    return () => console.log('exit');
+  });
 
   return (
     // <Header className='header'>
@@ -372,7 +393,7 @@ const My_Header = () => {
       <div className="logo" >
         <img src='/favicon.ico' alt="集成开发环境" />
       </div>
-      <Menu theme={theme} mode="horizontal" defaultSelectedKeys={['主界面']} items={item_navs} />
+      <Menu theme={theme} mode="horizontal" defaultSelectedKeys={['主界面']} items={item_navs}/>
       {/* <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['主界面']} items={item_navs} /> */}
 
       {/* <Switch onChange={changeTheme} /> Change Style */}

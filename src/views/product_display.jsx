@@ -2,9 +2,13 @@ import React from 'react';
 import Show_properties from './show_properties';
 import { BrowserRouter, Routes, Route, Link, Outlet } from "react-router-dom";
 
+import My_Header from './header';
+import Aside from './aside';
+import Meta2dContainer from './meta2d';
 const Product_display = () => (
     <>
-    <Link to="/">
+    <My_Header />
+    {/* <Link to="/">
         <button class-3>
             Home
         </button>
@@ -19,7 +23,8 @@ const Product_display = () => (
         产品展示界面
         </button>
     </Link>
-    <Outlet />
+    <Outlet /> */}
+
 
     <h1>
         产品展示界面
@@ -40,6 +45,9 @@ const Product_display = () => (
 
         <Show_properties />
     </div>
+
+      <Aside />
+      <Meta2dContainer />
     </>
 )
 

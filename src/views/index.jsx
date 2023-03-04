@@ -14,11 +14,12 @@ import { Layout, } from "antd";
 const { Header , Footer, Sider, Content } = Layout;
 
 
+let shouldHide = true;
+
 const Home = () => {
   return (
     <>
       <My_Header />
-
       <Aside />
       <Meta2dContainer />
     </>

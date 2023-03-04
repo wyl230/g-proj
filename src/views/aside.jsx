@@ -12,7 +12,7 @@ class Aside extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      current_property: 'test property',
+      current_property: '从服务器获取模型',
       current_object: 'undefined',
       current_object_properties: []
     };
@@ -28,10 +28,10 @@ class Aside extends React.Component {
     })
   }
 
-  update_current_object(key, title, data) {
+  update_current_object(key, title, data, info) {
     this.setState({
       current_object: key,
-      current_object_properties: [title]
+      current_object_properties: info // [title, info]
     })
   }
 
@@ -42,7 +42,7 @@ class Aside extends React.Component {
           value={this.state.current_property} 
           current_object={this.state.current_object} 
           onClick={(i) => this.handleClick(i)}
-          update_current_object = {(key,title,data) => this.update_current_object(key, title, data)}
+          update_current_object = {(key,title,data, info) => this.update_current_object(key, title, data, info)}
 
           // parentCallback={this.handleClick}
         />

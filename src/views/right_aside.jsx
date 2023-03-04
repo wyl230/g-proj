@@ -16,6 +16,7 @@ import {useState } from 'react';
 // antd
 import { CaretRightOutlined } from '@ant-design/icons';
 import { Collapse, theme, Input } from 'antd';
+const { Search } = Input;
 
 const { Panel } = Collapse;
 
@@ -46,6 +47,7 @@ const Right_aside = (props) => {
     alert(search_items);
   }
 
+  const onSearch = () => {};
   const [collapsed, setCollapsed] = useState(false);
   return (
     // <Sider  className="right_aside">
@@ -55,8 +57,10 @@ const Right_aside = (props) => {
 
       <form onSubmit={handleSubmit}>
         <div className='search-bar_right'>
-          <Input id='search_items' placeholder="搜索..." />
-          <button type="submit" className='button-68' role='button'>search</button>
+
+          <Search placeholder="搜索组件..." onSearch={onSearch} enterButton />
+          {/* <Input id='search_items' placeholder="搜索..." />
+          <button type="submit" className='button-68' role='button'>search</button> */}
 
         </div>
       </form>
@@ -79,10 +83,17 @@ const Right_aside = (props) => {
             {props.current_object_properties.map((item) => {
               return (
                 <>
-                  <p>名称： {item}</p>
+                  <p>{item}</p>
+                  <hr />
                 </>
               )
             })}
+              <Input
+                addonBefore="硬件功能"
+                id='1' placeholder="输入..." />
+              <Input 
+                addonBefore="硬件性能"
+                id='2' placeholder="输入..." />
           <hr />
 
           {

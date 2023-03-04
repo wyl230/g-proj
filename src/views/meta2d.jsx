@@ -43,8 +43,20 @@ const { Content } = Layout;
 const Meta2dContainer = () => {
   const [test_list, set_test_list] = useState('23')
   // const meta2d = new Meta2d('meta2d11');
+  const [first, set_first] = useState(true)
+  const [stay, setStay] = useState(false)
   useEffect(() => {
+    console.log('first:', first);
+    if(first == false) {
+      set_first(23153);
+      console.log(first, '???');
+      return () => set_first('qwer');
+    } else {
+      set_first(1234);
+      console.log(first, '??');
     const meta2d = new Meta2d('meta2d11');
+    console.log('use effect')
+    
     // window.meta2d = new Meta2d('meta2d11'); // 创建了一个id为此的<>
     meta2d.register({ my_compoent });
     meta2d.register({ only_text });
@@ -73,7 +85,14 @@ const Meta2dContainer = () => {
     console.log('here', pen);
     // window.meta2d.addPen(pen_text);
     meta2d.inactive();
-  }, []);
+
+    return () => {
+      console.log('un effect')
+      set_first(234)
+      ;}
+
+    }
+  }, [stay]);
 
   var pens;
 
@@ -153,7 +172,6 @@ const Meta2dContainer = () => {
       <Menu theme={'light'} mode="horizontal" defaultSelectedKeys={['主界面']} items={item_navs} selectable={false}/>
       {/* <div className="meta2d" id="meta2d"></div> */}
       <div id="meta2d11"></div>
-      {/* <div></div> */}
     </Content>
   );
 };

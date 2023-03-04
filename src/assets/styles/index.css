@@ -323,9 +323,17 @@ i.iconfont {
   /* text-align: center; */
 }
 
+.input-margin {
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
 .search-bar_right {
   font-size: 10px;
   text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
   /* width: 10px; */
 }
 
