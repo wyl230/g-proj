@@ -47,15 +47,46 @@ const Left_aside = (props) => {
     setIsModalOpen(false);
   };
 
+  const [MyIcons, setMyIcons] = useState(icons);
+  const addIcon = () => {
+    const data = window.meta2d.data();
+    console.log(data);
+    const json = JSON.stringify(data, undefined, 4);
+    console.log(json);
+
+    const requestOptions = {
+        method: 'POST',
+        headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+        },
+        body: json
+    };
+    fetch('http://162.105.85.214:8000/test_interface', requestOptions)
+        .then(response => response.json())
+        .then(data => {
+          console.log('get: ', data.data_mine);
+          const max = 10000;
+          const min = 0;
+          const icon = data.data_mine;
+          icon.key = Math.floor(Math.random() * (max - min + 1)) + min;
+          console.log('icon', icon);
+          const newIcons = [...MyIcons, data.data_mine];
+          setMyIcons(newIcons);
+          console.log(MyIcons);
+        });
+    alert('已发送post请求');
+  }
+  
   return (
     <Sider className="left_aside">
     {/* <div className="left_aside" > */}
       <p>
         <Button 
-          onClick={() => props.onClick('切换')}
-          onFocus={() => props.onClick('focus')}
+          // onClick={() => props.onClick('切换')}
+          onClick={addIcon}
+          // onFocus={() => props.onClick('focus')}
           onMouseOver={() => props.onClick('mouse over')}
-
         >
           {props.value}
         </Button>
@@ -71,7 +102,7 @@ const Left_aside = (props) => {
       <Collapse defaultActiveKey={['1']} onChange={onChange} className='collapse-mine'>
         <Panel header="硬件模型库" key="1">
           <div className="grid-container">
-            { icons.map((icon) => {
+            { MyIcons.map((icon) => {
               const { key, title, data } = icon;
               return (
                 <div className='single_item' key = { key } 

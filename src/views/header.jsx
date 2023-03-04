@@ -13,6 +13,9 @@ import { BrowserRouter, Routes, Route, Link, Outlet } from "react-router-dom";
 import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
 const { Header, Content, Sider } = Layout;
 
+import { icons } from '../utils/data';
+
+
 const My_Header = () => {
   const penBtn = useRef(null);
   const pencilBtn = useRef(null);
@@ -72,7 +75,12 @@ const My_Header = () => {
     };
     fetch('http://162.105.85.214:8000/test_interface', requestOptions)
         .then(response => response.json())
-        .then(data => this.setState({ postId: data.id }));
+        .then(data => {
+          console.log('get: ', data.data_mine);
+          icons.append(data.data_mine);
+          console.log(icons);
+        });
+        // .then(data => this.setState({ postId: data.id }));
 
   // curl -d '{"MyKey":"My Value"}' -H "Content-Type: application/json" http://127.0.0.1:8000/test_interface {"MyKey":"My Value"}
     // window.open('http://162.105.85.214:8000/test_interface');
