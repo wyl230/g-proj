@@ -110,11 +110,14 @@ const Left_aside = (props) => {
         </div>
       </form>
 
-      <Collapse defaultActiveKey={['1']} onChange={onChange} className='collapse-mine'>
+      <Collapse defaultActiveKey={['1']} onChange={onChange} className='collapse-mine'
+      mouseEnterDelay={0.01}
+      mouseLeaveDelay={0.01}
+      >
         <Panel header="硬件模型库" key="1">
           <Row align="center"
           justify={'space-evenly'}
-            gutter={[8, 8]}
+            gutter={[3, 8]}
           >
             { MyIcons.map((icon) => {
               if(icon.info == null)
@@ -186,117 +189,14 @@ const Left_aside = (props) => {
               );
             }) }
                 </Row>
-          <div className="grid-container">
-            { MyIcons.map((icon) => {
-              if(icon.info == null)
-                icon.info = [
-                  '名称：pim',
-                  '型号： ...',
-                  '创建时间： ...',
-                  '版本号： ...',
-                  '文档附件： ...',
-                  '功耗： ...',
-                  '硬件功能： ...',
-                  '硬件性能： ...',
-                  '操作环境： ...',
-                ];
-              const { key, title, data, info } = icon;
-              // console.log('title',title);
-              // console.log('info', info);
-              // const handleClick = () => {
-              //   setDrawerOpen(true);
-              // }
-              // const handle_drawer_onClose = () => {
-              //   setDrawerOpen(false);
-              // }
-              const [drawer_open, setDrawerOpen] = useState(false);
-              return (
-                // <div key = { key } 
-
-
-                <div className='single_item' key = { key } 
-                  draggable
-                  onDragStart = { (e) => onDragStart(e, data) }
-                  // onClick = {() => handleClick()}
-                  onMouseOver = {() => props.update_current_object(key, title, data, info)}
-                >
-                  {/* <i
-                    draggable
-                    className = { `grid-item item iconfont icon-${ key }` }
-                    title = { title }
-                    onDragStart = { (e) => onDragStart(e, data) }
-                  >{title}</i> */}
-
-                  <MyDrawer
-                    // title={title}
-                    draggable
-                    // className = { `grid-item item iconfont icon-${ key }` }
-                    // drawer_onClose = {() => handle_drawer_onClose()}
-                    // open={drawer_open}
-                    title = { title }
-                    onDragStart = { (e) => onDragStart(e, data) }
-                  >{title}
-                  </MyDrawer>
-                </div>
-              );
-            }) }
-
-            <div className="grid-item item3">CPU</div>  
-            <div className="grid-item item4">DSP</div>
-            <div className="grid-item item5">FPGA</div>
-            <div className="grid-item item5">微处理器</div>
-            {/* <div className="grid-item item">SOC</div>
-            <div className="grid-item item">主控模块</div>
-            <div className="grid-item item">交换模块</div>
-            <div className="grid-item item"> 信息处理模块 </div>
-            <div className="grid-item item">信号处理模块</div>
-            <div className="grid-item item">中频处理模块</div>
-            <div className="grid-item item">时钟频率模块</div> */}
-{/* 
-  <List
-    grid={{ gutter: 1, column: 2 }}
-    dataSource={MyIcons}
-    renderItem={
-        (icon) => {
-          if(icon.info == null)
-            icon.info = [
-              '名称：pim',
-              '型号： ...',
-              '创建时间： ...',
-              '版本号： ...',
-              '文档附件： ...',
-              '功耗： ...',
-              '硬件功能： ...',
-              '硬件性能： ...',
-              '操作环境： ...',
-            ];
-          const { key, title, data, info } = icon;
-          return (
-      <List.Item>
-              <Button
-              size={'small'}
-              // type={'text'}
-                wrap={true}
-                align="center"
-                draggable
-                title = { title }
-                onDragStart = { (e) => onDragStart(e, data) }
-              >
-               {title}
-              </Button>
-      </List.Item>
-          );
-        }}
-  /> */}
-
-
-          </div>
-          <div>
-            {/* <button type="submit" class='button-3 create' role='button'>新建模块</button> */}
+          <div className={'try_middle'}>
             
+            <Row>
+            <Col span={24} >
             <Button type="primary" onClick={showModal}>
               新建模块
             </Button>
+            </Col></Row>
             <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
               <div className='input-margin'>
               <Input addonBefore="名称" id='test' placeholder="搜索组件..." />

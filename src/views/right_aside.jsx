@@ -2,12 +2,16 @@
  * @Description:
  * 左侧区域，矩形、圆形...
  */
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { icons, interfaces } from '../utils/data';
 import { hardware_properties } from '../utils/data';
 import { component_properties } from '../utils/data';
+import { Button, Modal, Popover } from 'antd';
+import { Avatar, List, Skeleton } from 'antd';
 import {useState } from 'react';
 import { Col, Row } from 'antd';
+// import Animate from 'rc-animate';
+import QueueAnim from 'rc-queue-anim';
 
 // use imgs
 // import logo from "../assets/images/hya.png"
@@ -31,6 +35,19 @@ const { Sider} = Layout;
 
 const Right_aside = (props) => {
   // panel
+  const [back, setBack] = useState(true);
+  // useEffect(() => {
+  //   set
+  // }, [show]);
+  useEffect(() => {
+    setShow(false);
+    // setShow(true);
+    setTimeout(() => {
+      setShow(true);
+    }, 100)
+    
+  }, [props]);
+
   const { token } = theme.useToken();
 
   const panelStyle = {
@@ -51,21 +68,73 @@ const Right_aside = (props) => {
 
   const onSearch = () => {};
   const [collapsed, setCollapsed] = useState(false);
+
+
+  const [show, setShow] = useState(true);
+  const onClick = () => { setShow(!show); }
+  const item = [
+    {
+      name: '名称',
+      description: '描述...'
+    }
+  ];
   return (
 
     // <Sider  className="right_aside">
 
     <Sider theme={props.global_theme} className='right_aside' collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
+
+
+
+      <div className="queue-demo">
+          <Button type="primary" onClick={onClick}>Switch</Button>
+        <QueueAnim className="demo-content">
+          {show ? [
+            <div className="demo-thead" key="a">
+              {/* 234 */}
+            </div>,
+            <div className="demo-tbody" key="b">
+              {/* 2424 */}
+            </div>
+          ] : null}
+        </QueueAnim>
+      </div>
+
+
+        <QueueAnim className="demo-content">
+        {  show ? 
+        [<div key='23'>
+    <List
+      className="property-list"
+      // loading={initLoading}
+      itemLayout="horizontal"
+      // loadMore={loadMore}
+      // dataSource={list}
+      dataSource={item}
+      renderItem={(item) => (
+        <List.Item>
+          <Skeleton avatar title={false} loading={item.loading} active>
+            <List.Item.Meta
+              // avatar={<Avatar src={item.picture.large} />}
+              title={<a href="https://ant.design">{item.name}</a>}
+              description={item.description}
+            />
+            {/* <div>content</div> */}
+          </Skeleton>
+        </List.Item>
+      )}
+    /> 
+    </div>, 
+  ]
+     : null}
+</QueueAnim>
+
     {/* <div className="right_aside" > */}
 
 
       <form onSubmit={handleSubmit}>
         <div className='search-bar_right'>
-
           <Search placeholder="搜索组件..." onSearch={onSearch} enterButton />
-          {/* <Input id='search_items' placeholder="搜索..." />
-          <button type="submit" className='button-68' role='button'>search</button> */}
-
         </div>
       </form>
 
@@ -75,42 +144,48 @@ const Right_aside = (props) => {
         expandIcon={({ isActive }) => <CaretRightOutlined rotate={isActive ? 90 : 0} />}
         style={{ background: token.colorBgContainer }}
       >
-        <Panel header="硬件模型属性展示" key="1" style={panelStyle}>
-          <p>
-            测试属性: {props.value} 
-          </p>
-          <hr />
-          <p>
-            key: {props.current_object}
-          </p>
-          <hr />
-            {props.current_object_properties.map((item) => {
-              return (
-                <>
-                  <p>{item}</p>
-                  <hr />
-                </>
-              )
-            })}
-              <Input
-                addonBefore="硬件功能"
-                id='1' placeholder="输入..." />
-              <Input 
-                addonBefore="硬件性能"
-                id='2' placeholder="输入..." />
-          <hr />
 
-          {
-            hardware_properties.map((property) => {
+
+        <Panel header="硬件模型属性展示" key="1" style={panelStyle}>
+
+
+        <QueueAnim className="demo-content">
+          {show ? [
+          <p key='test'> 测试属性: {props.value} </p> , 
+          <hr />,
+          <p key='testob'> key: {props.current_object} </p>, 
+          <hr /> , 
+            
+              props.current_object_properties.map((item) => {
               return (
                 <>
-                  <p>{property}： ...</p> 
+                  <p key='234'>{item}</p>
                   <hr />
                 </>
               )
             })
-          }
-          <p>{text}</p >
+          ,
+          <Input
+            addonBefore="硬件功能"
+            id='1' placeholder="输入..." />,
+          <Input 
+            addonBefore="硬件性能"
+            id='2' placeholder="输入..." />,
+          <hr />,
+
+            hardware_properties.map((property) => {
+              return (
+                <>
+                  <p key={property}>{property}： ...</p> 
+                  <hr />
+                </>
+              )
+            })
+          ,
+          <p key='text'>{text}</p >
+         ] : null}
+        </QueueAnim>
+
         </Panel>
         <Panel header="组件模型属性展示" key="2" style={panelStyle}>
           {
@@ -130,42 +205,6 @@ const Right_aside = (props) => {
         </Panel>
       </Collapse>
 
-      {/* <div className='source-name'>
-        模型属性展示
-        <ul className='property'> 属性1：...  </ul>
-        <ul className='property'> 属性2：...  </ul>
-        <ul className='property'> 属性3：...  </ul>
-        <ul className='property'> 属性4：...  </ul>
-        <ul className='property'> 属性5：...  </ul>
-        <ul className='property'> 属性6：...  </ul>
-      </div>
-      <hr className="hr-twill-colorful"/>
-
-
-      <div className='source-name'>
-        模型属性展示2
-        <ul className='property'> 属性1：...  </ul>
-        <ul className='property'> 属性2：...  </ul>
-        <ul className='property'> 属性3：...  </ul>
-        <ul className='property'> 属性4：...  </ul>
-        <ul className='property'> 属性5：...  </ul>
-        <ul className='property'> 属性6：...  </ul>
-      </div>
-      <hr className="hr-twill-colorful"/>
-
-
-      <div className='source-name'>
-        模型属性展示3
-        <ul className='property'> 属性1：...  </ul>
-        <ul className='property'> 属性2：...  </ul>
-        <ul className='property'> 属性3：...  </ul>
-        <ul className='property'> 属性4：...  </ul>
-        <ul className='property'> 属性5：...  </ul>
-        <ul className='property'> 属性6：...  </ul>
-      </div>
-      <hr className="hr-twill-colorful"/>
- */}
-
 
       {/* <div className="link" >
         <a href = "http://2ds.le5le.com/">帮助</a>
@@ -175,5 +214,6 @@ const Right_aside = (props) => {
 };
 
 export default Right_aside;
+
 
 
