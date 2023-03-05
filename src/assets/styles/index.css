@@ -25,7 +25,10 @@ input[type=file]::-webkit-file-upload-button { /* chromes and blink button */
 
 .single_item {
   border: 5% solid;
-  border-radius: 5%;
+  border-radius: 10%;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  /* line-height: 140%; */
   text-align: center;
   cursor: pointer;
   /* position: inherit; */
@@ -33,7 +36,11 @@ input[type=file]::-webkit-file-upload-button { /* chromes and blink button */
   /* transform: translate(-50%, -50%); */
   /* margin-left: 1%; */
   /* margin: auto; */
-  background-color:rgba(39, 174, 96, .15);
+  color: azure;
+  background-color:rgba(46, 164, 79, 1);
+  /* background-color:rgba(22, 119, 225, 1); */
+  font-weight: bold;
+  /* background-color:rgba(39, 174, 96, .15); */
 }
 
 
