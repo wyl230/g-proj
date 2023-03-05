@@ -2,6 +2,7 @@
  * @Description: 
  */
 import React from 'react';
+import { useCallback, useState } from 'react';
 import Aside from './aside';
 import My_Header from './header';
 import Meta2dContainer from './meta2d';
@@ -17,11 +18,16 @@ const { Header , Footer, Sider, Content } = Layout;
 let shouldHide = true;
 
 const Home = () => {
+  const [theme, setTheme] = useState('dark');
   return (
     <>
-      <My_Header />
-      <Aside />
-      <Meta2dContainer />
+      <My_Header 
+        global_theme='dark'
+      />
+      <Aside 
+        global_theme='dark'
+      />
+      {/* <Meta2dContainer /> */}
     </>
   );
 };

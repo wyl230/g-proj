@@ -171,7 +171,9 @@ const Meta2dContainer = () => {
     // <Content>
     
     // <Content id='meta2d11'>
-    <Content >
+    <Content 
+      onMouseOver={() => setStay(true)}
+    >
     {/* <Content className={'main'}> */}
 
       <Menu theme={'light'} mode="horizontal" defaultSelectedKeys={['主界面']} items={item_navs} selectable={false}/>

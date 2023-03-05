@@ -30,8 +30,9 @@ input[type=file]::-webkit-file-upload-button { /* chromes and blink button */
   /* position: inherit; */
   /* position: absolute; */
   /* transform: translate(-50%, -50%); */
+  /* margin-left: 1%; */
   /* margin: auto; */
-  /* background-color:rgba(39, 174, 96, .15); */
+  background-color:rgba(39, 174, 96, .15);
 }
 
 

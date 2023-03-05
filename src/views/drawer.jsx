@@ -15,7 +15,7 @@ const MyDrawer = (props) => {
   return (
     <>
       {/* <Button type="primary" onClick={showDrawer}> */}
-      <p onClick={showDrawer}>
+      <p onClick={showDrawer} className={'single_item'}>
         {props.title}
       </p>
       {/* </Button> */}

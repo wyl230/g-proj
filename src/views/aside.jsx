@@ -39,6 +39,7 @@ class Aside extends React.Component {
     return (
         <Left_aside 
         // 等号前面是子组件的名称
+          global_theme='dark'
           value={this.state.current_property} 
           current_object={this.state.current_object} 
           onClick={(i) => this.handleClick(i)}

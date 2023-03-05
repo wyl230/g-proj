@@ -7,6 +7,8 @@ import { icons, interfaces } from '../utils/data';
 import { hardware_properties } from '../utils/data';
 import { component_properties } from '../utils/data';
 import {useState } from 'react';
+import { Col, Row } from 'antd';
+
 // use imgs
 // import logo from "../assets/images/hya.png"
 // <img src={logo} alt="" />
@@ -50,10 +52,12 @@ const Right_aside = (props) => {
   const onSearch = () => {};
   const [collapsed, setCollapsed] = useState(false);
   return (
+
     // <Sider  className="right_aside">
 
-    <Sider theme='light' className='right_aside' collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
+    <Sider theme={props.global_theme} className='right_aside' collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
     {/* <div className="right_aside" > */}
+
 
       <form onSubmit={handleSubmit}>
         <div className='search-bar_right'>
@@ -65,7 +69,7 @@ const Right_aside = (props) => {
         </div>
       </form>
 
-      <Collapse
+      <Collapse 
         bordered={false}
         defaultActiveKey={['1']}
         expandIcon={({ isActive }) => <CaretRightOutlined rotate={isActive ? 90 : 0} />}
@@ -171,3 +175,5 @@ const Right_aside = (props) => {
 };
 
 export default Right_aside;
+
+

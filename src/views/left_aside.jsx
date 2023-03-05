@@ -13,6 +13,7 @@ import MyDrawer from './drawer';
 const { Search } = Input;
 import { Collapse } from 'antd';
 const { Panel } = Collapse;
+import { Col, Row } from 'antd';
 
 const text = ` 待定 `;
 
@@ -87,7 +88,7 @@ const Left_aside = (props) => {
   
   const onSearch = () => {};
   return (
-    <Sider theme='light' className="left_aside">
+    <Sider theme={props.global_theme} className="left_aside">
     {/* <div className="left_aside" > */}
       <p>
         <Button 
@@ -110,6 +111,69 @@ const Left_aside = (props) => {
 
       <Collapse defaultActiveKey={['1']} onChange={onChange} className='collapse-mine'>
         <Panel header="硬件模型库" key="1">
+
+
+
+                <Row align="center"
+                justify={'space-evenly'}
+                  gutter={[3, 8]}
+                >
+                  <Col span={8}>col-6</Col>
+                  <Col span={8}>col-6</Col>
+                  <Col span={8}>col-6</Col>
+
+
+
+
+            { MyIcons.map((icon) => {
+              if(icon.info == null)
+                icon.info = [
+                  '名称：pim',
+                  '型号： ...',
+                  '创建时间： ...',
+                  '版本号： ...',
+                  '文档附件： ...',
+                  '功耗： ...',
+                  '硬件功能： ...',
+                  '硬件性能： ...',
+                  '操作环境： ...',
+                ];
+              const { key, title, data, info } = icon;
+              const [drawer_open, setDrawerOpen] = useState(false);
+              return (
+                  // <Col span={title.length * 3}  className='single_item'
+                  <Col span={
+                    () => {
+                      str = title;
+                      title.length * 3
+                      let strlength = 0;
+                        for (let i=0; i < str.length; ++i)
+                        {
+                          if (isChinese(str.charAt(i)) == true)
+                            strlength = strlength + 2; //中文计算为2个字符
+                          else
+                            strlength = strlength + 1;
+                        }
+                      console.log(strlength);
+                      return strlength ;
+                    }
+                  }  
+                    // className='single_item'
+                    key={key}
+                    draggable
+                    onDragStart = { (e) => onDragStart(e, data) }
+                    onMouseOver = {() => props.update_current_object(key, title, data, info)}
+                  >
+                  <MyDrawer
+                    draggable
+                    title = { title }
+                    onDragStart = { (e) => onDragStart(e, data) }
+                  >{title}
+                  </MyDrawer>
+                    </Col>
+              );
+            }) }
+                </Row>
           <div className="grid-container">
             { MyIcons.map((icon) => {
               if(icon.info == null)
@@ -138,6 +202,8 @@ const Left_aside = (props) => {
               const [drawer_open, setDrawerOpen] = useState(false);
               return (
                 // <div key = { key } 
+
+
                 <div className='single_item' key = { key } 
                   draggable
                   onDragStart = { (e) => onDragStart(e, data) }

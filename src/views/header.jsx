@@ -16,7 +16,7 @@ const { Header, Content, Sider } = Layout;
 import { icons } from '../utils/data';
 
 
-const My_Header = () => {
+const My_Header = (props) => {
   const penBtn = useRef(null);
   const pencilBtn = useRef(null);
   const magnifierBtn = useRef(null);
@@ -393,7 +393,8 @@ const My_Header = () => {
       <div className="logo" >
         <img src='/favicon.ico' alt="集成开发环境" />
       </div>
-      <Menu theme={theme} mode="horizontal" defaultSelectedKeys={['主界面']} items={item_navs}/>
+      {/* <Menu theme={theme} mode="horizontal" defaultSelectedKeys={['主界面']} items={item_navs}/> */}
+      <Menu theme={props.global_theme} mode="horizontal" defaultSelectedKeys={['主界面']} items={item_navs}/>
       {/* <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['主界面']} items={item_navs} /> */}
 
       {/* <Switch onChange={changeTheme} /> Change Style */}
