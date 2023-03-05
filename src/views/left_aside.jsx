@@ -5,10 +5,11 @@
 import React, { useCallback, useState } from 'react';
 import { icons } from '../utils/data';
 import { hardwares } from '../utils/data';
-
+import { Card, List } from 'antd';
 import logo from "../assets/images/hya.png"
 import { Button, Modal } from 'antd';
 import { Input } from 'antd';
+import MyDrawer from './drawer';
 const { Search } = Input;
 import { Collapse } from 'antd';
 const { Panel } = Collapse;
@@ -126,20 +127,31 @@ const Left_aside = (props) => {
               const { key, title, data, info } = icon;
               // console.log('title',title);
               // console.log('info', info);
+              const handleClick = () => {
+                // alert('11');
+              }
               return (
+                // <div key = { key } 
                 <div className='single_item' key = { key } 
                   draggable
                   onDragStart = { (e) => onDragStart(e, data) }
-                  // onClick = {() => alert(`key: ${key} title: ${title} data: ${data}`)} // 测试用，点击组件名字即可
-                  onClick = {() => props.update_current_object(key, title, data, info)}
+                  onClick = {() => handleClick()}
                   onMouseOver = {() => props.update_current_object(key, title, data, info)}
                 >
-                  <i
+                  {/* <i
                     draggable
                     className = { `grid-item item iconfont icon-${ key }` }
                     title = { title }
                     onDragStart = { (e) => onDragStart(e, data) }
-                  >{title}</i>
+                  >{title}</i> */}
+
+                  <MyDrawer
+                    // title={title}
+                    draggable
+                    // className = { `grid-item item iconfont icon-${ key }` }
+                    title = { title }
+                    onDragStart = { (e) => onDragStart(e, data) }
+                  >{title}</MyDrawer>
                 </div>
               );
             }) }
@@ -148,13 +160,51 @@ const Left_aside = (props) => {
             <div className="grid-item item4">DSP</div>
             <div className="grid-item item5">FPGA</div>
             <div className="grid-item item5">微处理器</div>
-            <div className="grid-item item">SOC</div>
+            {/* <div className="grid-item item">SOC</div>
             <div className="grid-item item">主控模块</div>
             <div className="grid-item item">交换模块</div>
             <div className="grid-item item"> 信息处理模块 </div>
             <div className="grid-item item">信号处理模块</div>
             <div className="grid-item item">中频处理模块</div>
-            <div className="grid-item item">时钟频率模块</div>
+            <div className="grid-item item">时钟频率模块</div> */}
+{/* 
+  <List
+    grid={{ gutter: 1, column: 2 }}
+    dataSource={MyIcons}
+    renderItem={
+        (icon) => {
+          if(icon.info == null)
+            icon.info = [
+              '名称：pim',
+              '型号： ...',
+              '创建时间： ...',
+              '版本号： ...',
+              '文档附件： ...',
+              '功耗： ...',
+              '硬件功能： ...',
+              '硬件性能： ...',
+              '操作环境： ...',
+            ];
+          const { key, title, data, info } = icon;
+          return (
+      <List.Item>
+              <Button
+              size={'small'}
+              // type={'text'}
+                wrap={true}
+                align="center"
+                draggable
+                title = { title }
+                onDragStart = { (e) => onDragStart(e, data) }
+              >
+               {title}
+              </Button>
+      </List.Item>
+          );
+        }}
+  /> */}
+
+
           </div>
           <div>
             {/* <button type="submit" class='button-3 create' role='button'>新建模块</button> */}

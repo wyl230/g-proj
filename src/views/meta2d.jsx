@@ -47,9 +47,8 @@ const Meta2dContainer = () => {
   const [stay, setStay] = useState(false)
   useEffect(() => {
     console.log('first:', first);
-    if(first == false) {
-      set_first(23153);
-      console.log(first, '???');
+    if(stay == false) {
+      console.log(first, 'dont gen meta2d now');
       return () => set_first('qwer');
     } else {
       set_first(1234);
@@ -160,12 +159,22 @@ const Meta2dContainer = () => {
           test
         </button>,
       key: '5',
-    },
+    }, {
+      label: 
+
+        <button onClick={() => 
+          setStay(true)
+        } >
+          gen meta2d
+        </button> ,
+      key: 'test'
+    }
   ]
   return (
     // <div className='main' >
     // <Content>
     
+    // <Content>
     <Content className={'main'}>
     {/* <Content className={'main'}> */}
 
