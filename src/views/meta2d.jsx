@@ -46,12 +46,10 @@ const Meta2dContainer = () => {
   const [first, set_first] = useState(true)
   const [stay, setStay] = useState(false)
   useEffect(() => {
-    console.log('first:', first);
     if(stay == false) {
       console.log(first, 'dont gen meta2d now');
       return () => set_first('qwer');
     } else {
-      set_first(1234);
       console.log(first, '??');
     const meta2d = new Meta2d('meta2d11');
     console.log('use effect')
@@ -86,10 +84,8 @@ const Meta2dContainer = () => {
     meta2d.inactive();
 
     return () => {
-      console.log('un effect')
-      set_first(234)
-      ;}
-
+      console.log('un effect') ;
+    }
     }
   }, [stay]);
 
@@ -174,8 +170,8 @@ const Meta2dContainer = () => {
     // <div className='main' >
     // <Content>
     
-    // <Content>
-    <Content className={'main'}>
+    // <Content id='meta2d11'>
+    <Content >
     {/* <Content className={'main'}> */}
 
       <Menu theme={'light'} mode="horizontal" defaultSelectedKeys={['主界面']} items={item_navs} selectable={false}/>

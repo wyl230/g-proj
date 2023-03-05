@@ -87,7 +87,7 @@ const Left_aside = (props) => {
   
   const onSearch = () => {};
   return (
-    <Sider className="left_aside">
+    <Sider theme='light' className="left_aside">
     {/* <div className="left_aside" > */}
       <p>
         <Button 
@@ -127,15 +127,21 @@ const Left_aside = (props) => {
               const { key, title, data, info } = icon;
               // console.log('title',title);
               // console.log('info', info);
-              const handleClick = () => {
-                // alert('11');
-              }
+              // const handleClick = () => {
+              //   setDrawerOpen(true);
+              // }
+              // const handle_drawer_onClose = () => {
+              //   console.log('2324');
+              //   setDrawerOpen(false);
+              //   alert(234);
+              // }
+              const [drawer_open, setDrawerOpen] = useState(false);
               return (
                 // <div key = { key } 
                 <div className='single_item' key = { key } 
                   draggable
                   onDragStart = { (e) => onDragStart(e, data) }
-                  onClick = {() => handleClick()}
+                  // onClick = {() => handleClick()}
                   onMouseOver = {() => props.update_current_object(key, title, data, info)}
                 >
                   {/* <i
@@ -149,9 +155,12 @@ const Left_aside = (props) => {
                     // title={title}
                     draggable
                     // className = { `grid-item item iconfont icon-${ key }` }
+                    // drawer_onClose = {() => handle_drawer_onClose()}
+                    // open={drawer_open}
                     title = { title }
                     onDragStart = { (e) => onDragStart(e, data) }
-                  >{title}</MyDrawer>
+                  >{title}
+                  </MyDrawer>
                 </div>
               );
             }) }

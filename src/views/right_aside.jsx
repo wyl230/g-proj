@@ -52,7 +52,7 @@ const Right_aside = (props) => {
   return (
     // <Sider  className="right_aside">
 
-    <Sider className='right_aside' collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
+    <Sider theme='light' className='right_aside' collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
     {/* <div className="right_aside" > */}
 
       <form onSubmit={handleSubmit}>
@@ -126,7 +126,7 @@ const Right_aside = (props) => {
         </Panel>
       </Collapse>
 
-      <div className='source-name'>
+      {/* <div className='source-name'>
         模型属性展示
         <ul className='property'> 属性1：...  </ul>
         <ul className='property'> 属性2：...  </ul>
@@ -160,7 +160,7 @@ const Right_aside = (props) => {
         <ul className='property'> 属性6：...  </ul>
       </div>
       <hr className="hr-twill-colorful"/>
-
+ */}
 
 
       {/* <div className="link" >

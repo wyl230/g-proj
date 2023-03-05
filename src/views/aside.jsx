@@ -64,11 +64,11 @@ class Aside extends React.Component {
   render() {
     return (
         <>
-        {/* <Layout> */}
+        <Layout>
         {this.render_left_aside(0)}
-        {/* <Meta2dContainer /> */}
+        <Meta2dContainer />
         {this.render_right_aside(0)}
-        {/* </Layout> */}
+        </Layout>
         </>
     )
   }
