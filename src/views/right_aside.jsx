@@ -42,10 +42,7 @@ const Right_aside = (props) => {
   useEffect(() => {
     setShow(false);
     // setShow(true);
-    setTimeout(() => {
-      setShow(true);
-    }, 100)
-    
+    setTimeout(() => { setShow(true); }, 100);
   }, [props]);
 
   const { token } = theme.useToken();
@@ -78,6 +75,16 @@ const Right_aside = (props) => {
       description: '描述...'
     }
   ];
+  console.log(234,
+                  props.current_object_properties.map((item) => {
+              return (
+                // <>
+                  <p key={item}>{item}</p>
+                  // <hr />
+                // </>
+              )
+            })
+  );
   return (
 
     // <Sider  className="right_aside">
@@ -149,7 +156,10 @@ const Right_aside = (props) => {
         <Panel header="硬件模型属性展示" key="1" style={panelStyle}>
 
 
-        <QueueAnim className="demo-content">
+        <QueueAnim 
+        duration={100} interval={10}
+        forcedReplay={true}
+        className="demo-content">
           {show ? [
           <p key='test'> 测试属性: {props.value} </p> , 
           <hr />,
@@ -158,10 +168,10 @@ const Right_aside = (props) => {
             
               props.current_object_properties.map((item) => {
               return (
-                <>
-                  <p key='234'>{item}</p>
+                <div key='whole'>
+                  <p key={item}>{item}</p>
                   <hr />
-                </>
+                </div>
               )
             })
           ,
