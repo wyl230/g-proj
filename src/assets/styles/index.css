@@ -24,7 +24,8 @@ input[type=file]::-webkit-file-upload-button { /* chromes and blink button */
 }
 
 .single_item {
-  border: 1px solid;
+  border: 5% solid;
+  border-radius: 5%;
   text-align: center;
   cursor: pointer;
   /* position: inherit; */

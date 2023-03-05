@@ -7,7 +7,7 @@ import { icons } from '../utils/data';
 import { hardwares } from '../utils/data';
 import { Card, List } from 'antd';
 import logo from "../assets/images/hya.png"
-import { Button, Modal } from 'antd';
+import { Button, Modal, Popover } from 'antd';
 import { Input } from 'antd';
 import MyDrawer from './drawer';
 const { Search } = Input;
@@ -88,6 +88,7 @@ const Left_aside = (props) => {
   
   const onSearch = () => {};
   return (
+    // <Sider theme='light' className="left_aside">
     <Sider theme={props.global_theme} className="left_aside">
     {/* <div className="left_aside" > */}
       <p>
@@ -111,20 +112,10 @@ const Left_aside = (props) => {
 
       <Collapse defaultActiveKey={['1']} onChange={onChange} className='collapse-mine'>
         <Panel header="硬件模型库" key="1">
-
-
-
-                <Row align="center"
-                justify={'space-evenly'}
-                  gutter={[3, 8]}
-                >
-                  <Col span={8}>col-6</Col>
-                  <Col span={8}>col-6</Col>
-                  <Col span={8}>col-6</Col>
-
-
-
-
+          <Row align="center"
+          justify={'space-evenly'}
+            gutter={[3, 8]}
+          >
             { MyIcons.map((icon) => {
               if(icon.info == null)
                 icon.info = [
@@ -140,9 +131,7 @@ const Left_aside = (props) => {
                 ];
               const { key, title, data, info } = icon;
               const [drawer_open, setDrawerOpen] = useState(false);
-              return (
-                  // <Col span={title.length * 3}  className='single_item'
-                  <Col span={
+              const strlengths = () => {
                     () => {
                       str = title;
                       title.length * 3
@@ -155,22 +144,45 @@ const Left_aside = (props) => {
                             strlength = strlength + 1;
                         }
                       console.log(strlength);
-                      return strlength ;
+                      return 6;
                     }
-                  }  
-                    // className='single_item'
-                    key={key}
-                    draggable
-                    onDragStart = { (e) => onDragStart(e, data) }
-                    onMouseOver = {() => props.update_current_object(key, title, data, info)}
+              }
+              return (
+                  // <Col span={title.length * 3}  className='single_item'
+                  <Popover content={title} title='名称' trigger='hover' arrow={false}
+                  mouseEnterDelay={0.01}
+                  mouseLeaveDelay={0.01}
                   >
-                  <MyDrawer
-                    draggable
-                    title = { title }
-                    onDragStart = { (e) => onDragStart(e, data) }
-                  >{title}
-                  </MyDrawer>
+                    <Col span={8}  
+                      // className='single_item'
+                      key={key}
+                      draggable
+                      onDragStart = { (e) => onDragStart(e, data) }
+                      onMouseOver = {() => props.update_current_object(key, title, data, info)}
+                    >
+                      {/* <Button>click</Button> */}
+                      <MyDrawer
+                        draggable
+                        title = { (
+                          // title[0]
+                          (title.length > 4) ? 
+                          <>
+                          {title[0] + title[1]}
+                          <br />   
+                          {title[2] + title[3]}
+                          </>
+                          :
+                          <>
+                          {title[0] + title[1]}
+                          <br />   
+                          {title.length == 3 ? title[2] : '..' + ''}
+                          </>
+                        ) }
+                        onDragStart = { (e) => onDragStart(e, data) }
+                      >{title}
+                      </MyDrawer>
                     </Col>
+                  </Popover>
               );
             }) }
                 </Row>
@@ -195,9 +207,7 @@ const Left_aside = (props) => {
               //   setDrawerOpen(true);
               // }
               // const handle_drawer_onClose = () => {
-              //   console.log('2324');
               //   setDrawerOpen(false);
-              //   alert(234);
               // }
               const [drawer_open, setDrawerOpen] = useState(false);
               return (

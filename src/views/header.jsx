@@ -388,7 +388,9 @@ const My_Header = (props) => {
 
   return (
     // <Header className='header'>
-    <Header className='header'>
+    <Header className='header'
+      // style={{'background-color': `rgb(0,21,41)`}}
+    >
     {/* <div className="header" > */}
       <div className="logo" >
         <img src='/favicon.ico' alt="集成开发环境" />

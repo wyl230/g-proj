@@ -18,14 +18,14 @@ const { Header , Footer, Sider, Content } = Layout;
 let shouldHide = true;
 
 const Home = () => {
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState('light');
   return (
     <>
       <My_Header 
-        global_theme='dark'
+        global_theme={theme}
       />
       <Aside 
-        global_theme='dark'
+        global_theme={theme}
       />
       {/* <Meta2dContainer /> */}
     </>
