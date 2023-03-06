@@ -68,7 +68,9 @@ class Aside extends React.Component {
         <>
         <Layout>
         {this.render_left_aside(0)}
-        <Meta2dContainer />
+        <Meta2dContainer 
+          global_theme={this.props.global_theme}
+        />
         {this.render_right_aside(0)}
         </Layout>
         </>

@@ -1,0 +1,32 @@
+./node_modules/@meta2d_latest/core/src/pen/render.js 224 export function drawImage(ctx, pen) {
+./node_modules/@meta2d_latest/core/src/pen/render.js 233     ctx.drawImage(img, x, y, width, height);
+./node_modules/@meta2d_latest/core/src/pen/render.js 719         drawImage(ctx, pen);
+./node_modules/@meta2d_latest/core/src/canvas/magnifierCanvas.js 71             ctx.drawImage(offscreen, pt.x - r, pt.y - r, _this.magnifierSize, _this.magnifierSize, 0, 0, _this.magnifierSize, _this.magnifierSize);
+./node_modules/@meta2d_latest/core/src/canvas/magnifierCanvas.js 85         offscreenCtx.drawImage(this.magnifierScreen, 0, 0, this.magnifierSize + 5, this.magnifierSize + 5, (pt.x - r - 2.5) / this.store.dpiRatio, (pt.y - r - 2.5) / this.store.dpiRatio, (this.magnifierSize + 5) / this.store.dpiRatio, (this.magnifierSize + 5) / this.store.dpiRatio);
+./node_modules/@meta2d_latest/core/src/canvas/magnifierCanvas.js 94         ctx.drawImage(this.offscreen, 0, 0, this.canvas.width, this.canvas.height);
+./node_modules/@meta2d_latest/core/src/canvas/canvas.js 1846             ctx.drawImage(_this.offscreen, 0, 0, _this.width, _this.height);
+./node_modules/@meta2d_latest/core/src/canvas/canvas.js 5855             ctx.drawImage(this.store.bkImg, x, y, this.canvasRect.width, this.canvasRect.height);
+./node_modules/@meta2d_latest/core/src/canvas/canvasImage.js 12 import { ctxFlip, ctxRotate, drawImage, setGlobalAlpha } from '../pen';
+./node_modules/@meta2d_latest/core/src/canvas/canvasImage.js 176
+./node_modules/@meta2d_latest/core/src/canvas/canvasImage.js 207
+./node_modules/@meta2d_latest/core/src/canvas/canvasImage.js 227
+./node_modules/@meta2d_latest/core/src/canvas/canvasImage.js 230
+./node_modules/@meta2d_latest/core/src/canvas/canvasImage.js 231
+./node_modules/@meta2d_latest/core/src/canvas/canvasImage.js 233
+./node_modules/@meta2d_latest/core/src/diagrams/gif.js 76     // meta2d canvas 绘制图片 drawImage 保持比例，是短边填充
+./node_modules/@meta2d/core/src/pen/render.js 224 export function drawImage(ctx, pen) {
+./node_modules/@meta2d/core/src/pen/render.js 233     ctx.drawImage(img, x, y, width, height);
+./node_modules/@meta2d/core/src/pen/render.js 719         drawImage(ctx, pen);
+./node_modules/@meta2d/core/src/canvas/magnifierCanvas.js 71             ctx.drawImage(offscreen, pt.x - r, pt.y - r, _this.magnifierSize, _this.magnifierSize, 0, 0, _this.magnifierSize, _this.magnifierSize);
+./node_modules/@meta2d/core/src/canvas/magnifierCanvas.js 85         offscreenCtx.drawImage(this.magnifierScreen, 0, 0, this.magnifierSize + 5, this.magnifierSize + 5, (pt.x - r - 2.5) / this.store.dpiRatio, (pt.y - r - 2.5) / this.store.dpiRatio, (this.magnifierSize + 5) / this.store.dpiRatio, (this.magnifierSize + 5) / this.store.dpiRatio);
+./node_modules/@meta2d/core/src/canvas/magnifierCanvas.js 94         ctx.drawImage(this.offscreen, 0, 0, this.canvas.width, this.canvas.height);
+./node_modules/@meta2d/core/src/canvas/canvas.js 1846             ctx.drawImage(_this.offscreen, 0, 0, _this.width, _this.height);
+./node_modules/@meta2d/core/src/canvas/canvas.js 5855             ctx.drawImage(this.store.bkImg, x, y, this.canvasRect.width, this.canvasRect.height);
+./node_modules/@meta2d/core/src/canvas/canvasImage.js 12 import { ctxFlip, ctxRotate, drawImage, setGlobalAlpha } from '../pen';
+./node_modules/@meta2d/core/src/canvas/canvasImage.js 180
+./node_modules/@meta2d/core/src/canvas/canvasImage.js 211
+./node_modules/@meta2d/core/src/canvas/canvasImage.js 231                 ctxCanvas.drawImage(this.otherOffsreen, 0, 0, this.canvas.width, this.canvas.height);
+./node_modules/@meta2d/core/src/canvas/canvasImage.js 234             ctxCanvas.drawImage(this.offscreen, 0, 0, this.canvas.width, this.canvas.height);
+./node_modules/@meta2d/core/src/canvas/canvasImage.js 235             ctxCanvas.drawImage(this.animateOffsScreen, 0, 0, this.canvas.width, this.canvas.height);
+./node_modules/@meta2d/core/src/canvas/canvasImage.js 237                 ctxCanvas.drawImage(this.otherOffsreen, 0, 0, this.canvas.width, this.canvas.height);
+./node_modules/@meta2d/core/src/diagrams/gif.js 76     // meta2d canvas 绘
