@@ -122,6 +122,9 @@ const Right_aside = (props) => {
           itemLayout="horizontal"
           // loadMore={loadMore}
           // dataSource={list}
+          style={{ 
+            'padding-left': '8%'
+          }}
           dataSource={item}
           renderItem={(item) => (
             <List.Item>
@@ -138,7 +141,23 @@ const Right_aside = (props) => {
     ])
   }
   return (
-    <Sider theme={props.global_theme} className='right_aside' collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
+    <Sider theme={props.global_theme} 
+      // style={{
+      //   height: '10%',
+      //   overflow: 'auto',
+      // }}
+      // width={200} 
+      style={{ 
+          overflow: 'auto',
+          height: '89.6vh',
+          // height: '100vh',
+          // position: 'fixed',
+          left: 0,
+      }}
+      className='right_aside' 
+      // collapsible 
+      // collapsed={collapsed} onCollapse={(value) => setCollapsed(value) }
+    >
 
     <Button type="primary" onClick={onClick}>Switch</Button>
 

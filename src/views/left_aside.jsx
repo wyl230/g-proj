@@ -145,7 +145,20 @@ const Left_aside = (props) => {
   };
 
   return (
-    <Sider theme={props.global_theme} className="left_aside">
+    <Sider theme={props.global_theme} 
+    className="left_aside"
+    // width={200} 
+    style={{ 
+        overflow: 'auto',
+          height: '89.6vh',
+        // position: 'fixed',
+        left: 0,
+    }}
+      // style={{
+      //   height: '100%',
+      //   overflow: 'auto',
+      // }}
+    >
       <p>
         <Button 
           // onClick={() => props.onClick('切换')}

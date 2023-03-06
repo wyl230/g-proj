@@ -21,6 +21,7 @@ const Home = () => {
   const [theme, setTheme] = useState('light');
   return (
     <>
+    <Layout>
       <My_Header 
         global_theme={theme}
       />
@@ -28,6 +29,7 @@ const Home = () => {
         global_theme={theme}
       />
       {/* <Meta2dContainer /> */}
+    </Layout>
     </>
   );
 };

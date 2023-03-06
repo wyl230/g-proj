@@ -168,16 +168,14 @@ const Meta2dContainer = () => {
   ]
   return (
     // <div className='main' >
-    // <Content>
-    
-    // <Content id='meta2d11'>
     <Content 
       onMouseOver={() => setStay(true)}
     >
-    {/* <Content className={'main'}> */}
-
-      <Menu theme={'light'} mode="horizontal" defaultSelectedKeys={['主界面']} items={item_navs} selectable={false}/>
       {/* <div className="meta2d" id="meta2d"></div> */}
+      <Menu theme={'light'} mode="horizontal" defaultSelectedKeys={['主界面']} items={item_navs} selectable={false}/>
+      {/* <Content id='meta2d11'>
+
+      </Content> */}
       <div id="meta2d11"></div>
     </Content>
   );

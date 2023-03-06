@@ -390,6 +390,12 @@ const My_Header = (props) => {
     // <Header className='header'>
     <Header className='header'
       // style={{'background-color': `rgb(0,21,41)`}}
+
+      style={{ 
+          // overflow: 'auto',
+          // height: '10.3vh',
+          // position: 'fixed',
+      }}
     >
     {/* <div className="header" > */}
       <div className="logo" >
