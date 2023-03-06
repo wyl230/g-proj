@@ -75,26 +75,49 @@ const Right_aside = (props) => {
       description: '描述...'
     }
   ];
-  console.log(234,
-                  props.current_object_properties.map((item) => {
-              return (
-                // <>
-                  <p key={item}>{item}</p>
-                  // <hr />
-                // </>
-              )
-            })
-  );
+
+  console.lo
+  const show_properties = () => {
+  console.log(props.current_object_properties, '1850');
+    return ([
+    <p key='test'> 测试属性: {props.value} </p> , 
+    <hr key='1hr'/>,
+    <p key='testob'> key: {props.current_object} </p>, 
+    <hr key='2hr'/> , 
+      props.current_object_properties.map((item) => {
+        return (
+          <div key={item}>
+            <p key={item}>{item}</p>
+            <hr />
+          </div>
+        )
+      })// multy???
+    ,
+    <Input
+      addonBefore="硬件功能"
+      id='1' placeholder="输入..." />,
+    <Input 
+      addonBefore="硬件性能"
+      id='2' placeholder="输入..." />,
+    <hr />,
+
+    hardware_properties.map((property) => {
+      return (
+        <>
+          <p key={property}>{property}： ...</p> 
+          <hr />
+        </>
+      )
+    }) 
+    ,
+    <p key='text'>{text + 'what???'}</p > // only show once
+  ])};
+
   return (
-
-    // <Sider  className="right_aside">
-
     <Sider theme={props.global_theme} className='right_aside' collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
 
-
-
       <div className="queue-demo">
-          <Button type="primary" onClick={onClick}>Switch</Button>
+        <Button type="primary" onClick={onClick}>Switch</Button>
         <QueueAnim className="demo-content">
           {show ? [
             <div className="demo-thead" key="a">
@@ -108,36 +131,31 @@ const Right_aside = (props) => {
       </div>
 
 
-        <QueueAnim className="demo-content">
-        {  show ? 
-        [<div key='23'>
-    <List
-      className="property-list"
-      // loading={initLoading}
-      itemLayout="horizontal"
-      // loadMore={loadMore}
-      // dataSource={list}
-      dataSource={item}
-      renderItem={(item) => (
-        <List.Item>
-          <Skeleton avatar title={false} loading={item.loading} active>
-            <List.Item.Meta
-              // avatar={<Avatar src={item.picture.large} />}
-              title={<a href="https://ant.design">{item.name}</a>}
-              description={item.description}
-            />
-            {/* <div>content</div> */}
-          </Skeleton>
-        </List.Item>
-      )}
-    /> 
-    </div>, 
-  ]
-     : null}
-</QueueAnim>
-
-    {/* <div className="right_aside" > */}
-
+      <QueueAnim className="demo-content">
+      {  show ? 
+        [
+          <div key='23'>
+            <List
+              className="property-list"
+              // loading={initLoading}
+              itemLayout="horizontal"
+              // loadMore={loadMore}
+              // dataSource={list}
+              dataSource={item}
+              renderItem={(item) => (
+                <List.Item>
+                  <Skeleton avatar title={false} loading={item.loading} active>
+                    <List.Item.Meta
+                      title={<a href="https://ant.design">{item.name}</a>}
+                      description={item.description}
+                    />
+                  </Skeleton>
+                </List.Item>
+              )}
+              /> 
+          </div>, 
+        ] : null}
+      </QueueAnim>
 
       <form onSubmit={handleSubmit}>
         <div className='search-bar_right'>
@@ -151,51 +169,14 @@ const Right_aside = (props) => {
         expandIcon={({ isActive }) => <CaretRightOutlined rotate={isActive ? 90 : 0} />}
         style={{ background: token.colorBgContainer }}
       >
-
-
         <Panel header="硬件模型属性展示" key="1" style={panelStyle}>
-
-
-        <QueueAnim 
-        duration={100} interval={10}
-        forcedReplay={true}
-        className="demo-content">
-          {show ? [
-          <p key='test'> 测试属性: {props.value} </p> , 
-          <hr />,
-          <p key='testob'> key: {props.current_object} </p>, 
-          <hr /> , 
-            
-              props.current_object_properties.map((item) => {
-              return (
-                <div key='whole'>
-                  <p key={item}>{item}</p>
-                  <hr />
-                </div>
-              )
-            })
-          ,
-          <Input
-            addonBefore="硬件功能"
-            id='1' placeholder="输入..." />,
-          <Input 
-            addonBefore="硬件性能"
-            id='2' placeholder="输入..." />,
-          <hr />,
-
-            hardware_properties.map((property) => {
-              return (
-                <>
-                  <p key={property}>{property}： ...</p> 
-                  <hr />
-                </>
-              )
-            })
-          ,
-          <p key='text'>{text}</p >
-         ] : null}
-        </QueueAnim>
-
+          <QueueAnim 
+            duration={100} interval={10}
+            forcedReplay={true}
+            className="demo-content"
+          >
+            {show ? show_properties() : null}
+          </QueueAnim>
         </Panel>
         <Panel header="组件模型属性展示" key="2" style={panelStyle}>
           {
@@ -214,11 +195,6 @@ const Right_aside = (props) => {
           <p>{text}</p>
         </Panel>
       </Collapse>
-
-
-      {/* <div className="link" >
-        <a href = "http://2ds.le5le.com/">帮助</a>
-      </div> */}
     </Sider> 
   );
 };
