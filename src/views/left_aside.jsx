@@ -117,7 +117,7 @@ const Left_aside = (props) => {
         <Panel header="硬件模型库" key="1">
           <Row align="center"
           justify={'space-evenly'}
-            gutter={[3, 8]}
+            gutter={[3, 3]}
           >
             { MyIcons.map((icon) => {
               if(icon.info == null)
@@ -188,7 +188,7 @@ const Left_aside = (props) => {
                   </Popover>
               );
             }) }
-                </Row>
+          </Row>
           <div className={'try_middle'}>
             
             <Row>
