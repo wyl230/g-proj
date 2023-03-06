@@ -147,10 +147,10 @@ const Left_aside = (props) => {
   return (
     <Sider theme={props.global_theme} 
     className="left_aside"
-    // width={200} 
     style={{ 
         overflow: 'auto',
-          height: '89.6vh',
+          // height: '89.6vh',
+          height: 'calc(100vh - 64px)',
         // position: 'fixed',
         left: 0,
     }}

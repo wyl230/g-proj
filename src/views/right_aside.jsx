@@ -149,14 +149,21 @@ const Right_aside = (props) => {
       // width={200} 
       style={{ 
           overflow: 'auto',
-          height: '89.6vh',
-          // height: '100vh',
+          // height: '89.6vh',
+          // height: '89.6vh',
+          height: 'calc(100vh - 64px)',
           // position: 'fixed',
           left: 0,
       }}
       className='right_aside' 
-      // collapsible 
-      collapsed={collapsed} onCollapse={(value) => setCollapsed(value) }
+      collapsible 
+      collapsed={collapsed} onCollapse={
+        (value) => {
+          setCollapsed(value);
+          setShow(!value);
+        }
+      }
+      
     >
 
     <div className='try_middle'>

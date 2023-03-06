@@ -46,7 +46,7 @@ const Meta2dContainer = (props) => {
   const [test_info, setTest_info] = useState('23')
   // const meta2d = new Meta2d('meta2d11');
   const [first, set_first] = useState(true)
-  const [stay, setStay] = useState(false)
+  const [stay, setStay] = useState(true)
   // const [meta2d, SetMeta2d] = useState(null);
   useEffect(() => {
     if(stay == false) {
@@ -56,7 +56,7 @@ const Meta2dContainer = (props) => {
       console.log(first, '??');
     const meta2d = new Meta2d('meta2d11');
     console.log('use effect')
-    
+    meta2d.resize();
     // window.meta2d = new Meta2d('meta2d11'); // 创建了一个id为此的<>
     meta2d.register({ my_compoent });
     meta2d.register({ only_text });
@@ -97,9 +97,8 @@ const Meta2dContainer = (props) => {
     {
       label:
       '工具栏',
-      key: 'title'
-    },
-    {
+      key: 'title',
+    }, {
       label: 
         <p onClick={() => meta2d.fitView()} 
          className={'vertical-text'}
@@ -110,32 +109,25 @@ const Meta2dContainer = (props) => {
         //   自适应界面
         // </button> , 
       key: '1',
-    },
-    {
-
+    }, {
       label: 
         <p onClick={() => meta2d.centerView()} >
           居中显示
         </p> ,
       key: '2',
-    },
-    {
-
+    }, {
       label: 
         <p onClick={() => meta2d.toggleAnchorMode()} >
             添加锚点
         </p> ,
       key: '3',
-    },
-    {
-
+    }, {
       label: 
         <p onClick={() => meta2d.downloadPng()} >
           生成 png 图像
         </p> ,
       key: '4',
-    },
-    {
+    }, {
       label: 
         <p onClick={() => {
             console.log('child pen', child_pen);
@@ -171,9 +163,13 @@ const Meta2dContainer = (props) => {
       label: 
 
         <p onClick={() => 
-          setStay(true)
+          {
+            meta2d.resize();
+          // setStay(true)
+          }
         } >
-          gen Meta2d
+          {/* gen Meta2d */}
+          resize
         </p> ,
       key: 'test'
     }, {
@@ -197,7 +193,6 @@ const Meta2dContainer = (props) => {
     <>
     <Sider width={150} 
       theme={props.global_theme}
-
       collapsible 
       collapsed={collapsed} 
       onCollapse={(value) => setCollapsed(value) }
@@ -212,7 +207,6 @@ const Meta2dContainer = (props) => {
       }}
     >
     <Menu theme={'light'} 
-    // mode="" 
     // mode="inline" 
     // mode="horizontal" 
     defaultSelectedKeys={['主界面']} items={item_navs} selectable={false}
@@ -220,14 +214,21 @@ const Meta2dContainer = (props) => {
     />
   </Sider>
     <Content 
-      onLoad={() => setStay(true)}
       onMouseOver={() => setStay(true)}
     >
       {/* <div className="meta2d" id="meta2d"></div> */}
       {/* <Content id='meta2d11'>
 
       </Content> */}
-      <div id="meta2d11">
+      <div id="meta2d11"
+        style={{
+          // 'width': '920px',
+          'height': 'calc(100vh - 64px)',
+          // 'height': '89.6vh',
+          'width': `${window.innerWidth}px`,
+          // 'height': `${window.innerHeight - 300}px`,
+        }}
+      >
       </div>
     </Content>
 </>
