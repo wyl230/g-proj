@@ -76,22 +76,22 @@ const Right_aside = (props) => {
     }
   ];
 
-  console.lo
   const show_properties = () => {
-  console.log(props.current_object_properties, '1850');
     return ([
     <p key='test'> 测试属性: {props.value} </p> , 
     <hr key='1hr'/>,
     <p key='testob'> key: {props.current_object} </p>, 
     <hr key='2hr'/> , 
-      props.current_object_properties.map((item) => {
+    <div key='whole'>
+      {props.current_object_properties.map((item) => {
         return (
           <div key={item}>
             <p key={item}>{item}</p>
             <hr />
           </div>
         )
-      })// multy???
+      })}
+    </div>
     ,
     <Input
       addonBefore="硬件功能"
@@ -110,51 +110,40 @@ const Right_aside = (props) => {
       )
     }) 
     ,
-    <p key='text'>{text + 'what???'}</p > // only show once
+    <p key='text'>{text}</p > // only show once
   ])};
 
+  const show_list = () => { 
+    return ([
+      <div key='23'>
+        <List
+          className="property-list"
+          // loading={initLoading}
+          itemLayout="horizontal"
+          // loadMore={loadMore}
+          // dataSource={list}
+          dataSource={item}
+          renderItem={(item) => (
+            <List.Item>
+              <Skeleton avatar title={false} loading={item.loading} active>
+                <List.Item.Meta
+                  title={<a href="https://ant.design">{item.name}</a>}
+                  description={item.description}
+                />
+              </Skeleton>
+            </List.Item>
+          )}
+          /> 
+      </div>, 
+    ])
+  }
   return (
     <Sider theme={props.global_theme} className='right_aside' collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
 
-      <div className="queue-demo">
-        <Button type="primary" onClick={onClick}>Switch</Button>
-        <QueueAnim className="demo-content">
-          {show ? [
-            <div className="demo-thead" key="a">
-              {/* 234 */}
-            </div>,
-            <div className="demo-tbody" key="b">
-              {/* 2424 */}
-            </div>
-          ] : null}
-        </QueueAnim>
-      </div>
-
+    <Button type="primary" onClick={onClick}>Switch</Button>
 
       <QueueAnim className="demo-content">
-      {  show ? 
-        [
-          <div key='23'>
-            <List
-              className="property-list"
-              // loading={initLoading}
-              itemLayout="horizontal"
-              // loadMore={loadMore}
-              // dataSource={list}
-              dataSource={item}
-              renderItem={(item) => (
-                <List.Item>
-                  <Skeleton avatar title={false} loading={item.loading} active>
-                    <List.Item.Meta
-                      title={<a href="https://ant.design">{item.name}</a>}
-                      description={item.description}
-                    />
-                  </Skeleton>
-                </List.Item>
-              )}
-              /> 
-          </div>, 
-        ] : null}
+        { show ?  show_list() : null }
       </QueueAnim>
 
       <form onSubmit={handleSubmit}>
