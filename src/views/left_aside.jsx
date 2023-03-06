@@ -159,12 +159,17 @@ const Left_aside = (props) => {
       //   overflow: 'auto',
       // }}
     >
-      <p>
+      <p 
+       style={ {
+        'padding-left': '20px',
+        'padding-top': '5px'
+      }}
+      >
         <Button 
           // onClick={() => props.onClick('切换')}
           onClick={addIcon}
           // onFocus={() => props.onClick('focus')}
-          onMouseOver={() => props.onClick('添加')}
+          // onMouseOver={() => props.onClick('添加')}
         >
           {props.value}
         </Button>

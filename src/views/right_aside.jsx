@@ -156,10 +156,13 @@ const Right_aside = (props) => {
       }}
       className='right_aside' 
       // collapsible 
-      // collapsed={collapsed} onCollapse={(value) => setCollapsed(value) }
+      collapsed={collapsed} onCollapse={(value) => setCollapsed(value) }
     >
 
-    <Button type="primary" onClick={onClick}>Switch</Button>
+    <div className='try_middle'>
+      <Button type="primary" onClick={onClick}
+      >Switch</Button>
+    </div>
 
       <QueueAnim className="demo-content">
         { show ?  show_list() : null }

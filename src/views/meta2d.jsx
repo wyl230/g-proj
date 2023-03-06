@@ -95,6 +95,11 @@ const Meta2dContainer = (props) => {
 
   const item_navs = [
     {
+      label:
+      '工具栏',
+      key: 'title'
+    },
+    {
       label: 
         <p onClick={() => meta2d.fitView()} 
          className={'vertical-text'}
@@ -186,7 +191,7 @@ const Meta2dContainer = (props) => {
     }
   ]
 
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
   return (
     // <div className='main' >
     <>
@@ -194,7 +199,11 @@ const Meta2dContainer = (props) => {
       theme={props.global_theme}
 
       collapsible 
-      collapsed={collapsed} onCollapse={(value) => setCollapsed(value) }
+      collapsed={collapsed} 
+      onCollapse={(value) => setCollapsed(value) }
+      onMouseEnter={() => setCollapsed(false)}
+      onMouseLeave={() => setCollapsed(true)}
+      // onMouseOut=
       style={{ 
           // overflow: 'auto',
           height: '89.6vh',
@@ -211,13 +220,15 @@ const Meta2dContainer = (props) => {
     />
   </Sider>
     <Content 
+      onLoad={() => setStay(true)}
       onMouseOver={() => setStay(true)}
     >
       {/* <div className="meta2d" id="meta2d"></div> */}
       {/* <Content id='meta2d11'>
 
       </Content> */}
-      <div id="meta2d11"></div>
+      <div id="meta2d11">
+      </div>
     </Content>
 </>
   );
