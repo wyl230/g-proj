@@ -87,10 +87,65 @@ const Left_aside = (props) => {
   }
   
   const onSearch = () => {};
+  const icon_rols = () => {
+    return (
+      MyIcons.map((icon) => {
+      if(icon.info == null)
+        icon.info = [
+          '名称：pim',
+          '型号： ...',
+          '创建时间： ...',
+          '版本号： ...',
+          '文档附件： ...',
+          '功耗： ...',
+          '硬件功能： ...',
+          '硬件性能： ...',
+          '操作环境： ...',
+        ];
+      const { key, title, data, info } = icon;
+      const [drawer_open, setDrawerOpen] = useState(false);
+      return (
+          // <Col span={title.length * 3}  className='single_item'
+          <Popover content={title} title='名称' trigger='hover' arrow={false}
+          mouseEnterDelay={0.01}
+          mouseLeaveDelay={0.01}
+          >
+            <Col span={8}  
+              // className='single_item'
+              key={key}
+              draggable
+              onDragStart = { (e) => onDragStart(e, data) }
+              onMouseOver = {() => props.update_current_object(key, title, data, info)}
+            >
+              {/* <Button>click</Button> */}
+              <MyDrawer
+                draggable
+                title = { (
+                  (title.length > 4) ? 
+                  <>
+                  {title[0] + title[1]}
+                  <br />   
+                  {title[2] + title[3]}
+                  </>
+                  :
+                  <>
+                  {title[0] + title[1]}
+                  <br />   
+                  {title.length == 3 ? title[2] : '..' + ''}
+                  </>
+                ) }
+                onDragStart = { (e) => onDragStart(e, data) }
+              >{title}
+              </MyDrawer>
+            </Col>
+          </Popover>
+      );
+    }) 
+    )
+  };
+
   return (
-    // <Sider theme='light' className="left_aside">
     <Sider theme={props.global_theme} className="left_aside">
-    {/* <div className="left_aside" > */}
       <p>
         <Button 
           // onClick={() => props.onClick('切换')}
@@ -119,75 +174,7 @@ const Left_aside = (props) => {
           justify={'space-evenly'}
             gutter={[3, 3]}
           >
-            { MyIcons.map((icon) => {
-              if(icon.info == null)
-                icon.info = [
-                  '名称：pim',
-                  '型号： ...',
-                  '创建时间： ...',
-                  '版本号： ...',
-                  '文档附件： ...',
-                  '功耗： ...',
-                  '硬件功能： ...',
-                  '硬件性能： ...',
-                  '操作环境： ...',
-                ];
-              const { key, title, data, info } = icon;
-              const [drawer_open, setDrawerOpen] = useState(false);
-              const strlengths = () => {
-                    () => {
-                      str = title;
-                      title.length * 3
-                      let strlength = 0;
-                        for (let i=0; i < str.length; ++i)
-                        {
-                          if (isChinese(str.charAt(i)) == true)
-                            strlength = strlength + 2; //中文计算为2个字符
-                          else
-                            strlength = strlength + 1;
-                        }
-                      console.log(strlength);
-                      return 6;
-                    }
-              }
-              return (
-                  // <Col span={title.length * 3}  className='single_item'
-                  <Popover content={title} title='名称' trigger='hover' arrow={false}
-                  mouseEnterDelay={0.01}
-                  mouseLeaveDelay={0.01}
-                  >
-                    <Col span={8}  
-                      // className='single_item'
-                      key={key}
-                      draggable
-                      onDragStart = { (e) => onDragStart(e, data) }
-                      onMouseOver = {() => props.update_current_object(key, title, data, info)}
-                    >
-                      {/* <Button>click</Button> */}
-                      <MyDrawer
-                        draggable
-                        title = { (
-                          // title[0]
-                          (title.length > 4) ? 
-                          <>
-                          {title[0] + title[1]}
-                          <br />   
-                          {title[2] + title[3]}
-                          </>
-                          :
-                          <>
-                          {title[0] + title[1]}
-                          <br />   
-                          {title.length == 3 ? title[2] : '..' + ''}
-                          </>
-                        ) }
-                        onDragStart = { (e) => onDragStart(e, data) }
-                      >{title}
-                      </MyDrawer>
-                    </Col>
-                  </Popover>
-              );
-            }) }
+            {icon_rols()}
           </Row>
           <div className={'try_middle'}>
             

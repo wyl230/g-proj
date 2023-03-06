@@ -407,11 +407,6 @@ const My_Header = (props) => {
               Home
           </button>
         </Link>
-        <Link to="/about">
-          <button className='button-3'>
-              about
-          </button>
-        </Link>
         <Link to="/contact">
           <button className='button-3'>
             产品展示界面
