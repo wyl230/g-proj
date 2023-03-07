@@ -2,13 +2,12 @@
  * @Description: 
  */
 
-import { Divider, Menu, Switch, Breadcrumb,  theme, } from 'antd';
+import { Divider, Menu, Switch, Breadcrumb,  theme, Layout, Slider, } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { Meta2d } from '@meta2d/core';
 import { my_compoent, my_compoent_Anchors } from '../utils/draw';
 import { only_text, only_text_Anchors } from '../utils/draw';
 
-import { Layout, } from "antd";
 import Sider from 'antd/es/layout/Sider';
 const { Content } = Layout;
 
@@ -43,7 +42,7 @@ const { Content } = Layout;
 // const Meta2dContainer = (props) => {
 const Meta2dContainer = (props) => {
   const [test_list, set_test_list] = useState('23')
-  const [test_info, setTest_info] = useState('23')
+  const [test_info, setTest_info] = useState('设置')
   // const meta2d = new Meta2d('meta2d11');
   const [first, set_first] = useState(true)
   const [stay, setStay] = useState(true)
@@ -123,7 +122,7 @@ const Meta2dContainer = (props) => {
       key: '3',
     }, {
       label: 
-        <p onClick={() => meta2d.downloadPng()} >
+        <p onClick={() => meta2d.downloadPng('test.png')} >
           生成 png 图像
         </p> ,
       key: '4',
@@ -171,19 +170,113 @@ const Meta2dContainer = (props) => {
           {/* gen Meta2d */}
           resize
         </p> ,
-      key: 'test'
+      key: 'resize'
     }, {
       label: 
 
         <p onClick={() => 
           {
-            meta2d.fitView();
-            setTest_info('234')
+            // meta2d.fitView();
+            setTest_info('ok')
+            console.log(meta2d.getOptions());
+            const my_options = {
+                "fontFamily": "\"Hiragino Sans GB\", \"Microsoft YaHei\", \"Helvetica Neue\", Helvetica, Arial",
+                "fontSize": 12,
+                "lineHeight": 1.5,
+                "textAlign": "center",
+                "textBaseline": "middle",
+                "color": "#222222",
+                "activeColor": "#278df8",
+                "hoverColor": "rgba(39,141,248,0.5)",
+                "anchorColor": "#278DF8",
+                "hoverAnchorColor": "#FF4101",
+                "anchorRadius": 5,
+                "anchorBackground": "#fff",
+                "dockColor": "rgba(39,141,248,1)",
+                "dockPenColor": "#1890FF",
+                "dragColor": "#1890ff",
+                "rotateCursor": "rotate.cur",
+                "hoverCursor": "pointer",
+                "minScale": 0.2,
+                "maxScale": 5,
+                "keydown": 0,
+                'grid': false,
+                'gridSize': 20,
+                "gridColor": "#e2e2e2",
+                "ruleColor": "#888888",
+                "drawingLineName": "polyline",
+                "interval": 30,
+                "animateInterval": 30,
+                "autoPolyline": true,
+                "autoAnchor": true,
+                "animateColor": "#ff4d4f",
+                "ruleLineColor": "#FF4101",
+                "defaultAnchors": [
+                    {
+                        "x": 0.5,
+                        "y": 0
+                    },
+                    {
+                        "x": 1,
+                        "y": 0.5
+                    },
+                    {
+                        "x": 0.5,
+                        "y": 1
+                    },
+                    {
+                        "x": 0,
+                        "y": 0.5
+                    }
+                ],
+                "measureTextWidth": true,
+                "mouseRightActive": true,
+                "disableClipboard": false,
+                "disableRotate": true,
+                "moveConnectedLine": false,
+                "drawingLineLength": 0
+            };
+            // grid gridsize, can't set
+            // 
+            // my_options.gridSize = 40;
+            // my_options.grid = false;
+            my_options.anchorRadius = 50;
+            // meta2d.setOptions(my_options);
+            let my_option = meta2d.getOptions();
+            // my_option.anchorRadius = 100;
+            my_option.gridSize = 100;
+            my_option.gridColor = '#ffffff';
+            meta2d.setOptions(my_option);
+            meta2d.resize();
           }
         } >
           {test_info}
         </p> ,
-      key: 'test'
+      key: 'test_options'
+    }, {
+      label: <p onClick={ () => {
+          let my_option = meta2d.getOptions();
+          // my_option.gridSize = 100;
+          // my_option.gridColor = '#ffffff';
+          my_option.grid = !my_option.grid;
+          meta2d.setOptions(my_option);
+          meta2d.resize();
+      }}> 网格开关</p>,
+      key: 'grid-set',
+    }, 
+    {
+      label: <Slider defaultValue={30} 
+        onChange={(value) => {
+          // console.log(value);
+          let my_option = meta2d.getOptions();
+          // my_option.gridSize = 100;
+          // my_option.gridColor = '#ffffff';
+          my_option.gridSize = value;
+          meta2d.setOptions(my_option);
+          meta2d.resize();
+        }}
+      />,
+      key: 'gridSize'
     }
   ]
 
@@ -201,7 +294,8 @@ const Meta2dContainer = (props) => {
       // onMouseOut=
       style={{ 
           // overflow: 'auto',
-          height: '89.6vh',
+          // height: '89.6vh',
+          'height': 'calc(100vh - 64px)',
           // position: 'fixed',
           left: 0,
       }}
@@ -225,7 +319,7 @@ const Meta2dContainer = (props) => {
           // 'width': '920px',
           'height': 'calc(100vh - 64px)',
           // 'height': '89.6vh',
-          'width': `${window.innerWidth}px`,
+          'width': `${window.innerWidth - 240 - 64}px`,
           // 'height': `${window.innerHeight - 300}px`,
         }}
       >

@@ -103,7 +103,6 @@ const Left_aside = (props) => {
           '操作环境： ...',
         ];
       const { key, title, data, info } = icon;
-      const [drawer_open, setDrawerOpen] = useState(false);
       return (
           // <Col span={title.length * 3}  className='single_item'
           <Popover content={title} title='名称' trigger='hover' arrow={false}
