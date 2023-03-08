@@ -1,84 +1,167 @@
+    Meta2d.prototype.setOptions = function (opts) {
+      ok
+    Meta2d.prototype.getOptions = function () {
+      ok
+    Meta2d.prototype.setDatabyOptions = function (options) {
+    Meta2d.prototype.init = function (parent) {
+    Meta2d.prototype.initEventFns = function () {
+    Meta2d.prototype.doSendDataEvent = function (value) {
+    Meta2d.prototype.resize = function (width, height) {
+    Meta2d.prototype.addPen = function (pen, history, emit) {
+    Meta2d.prototype.addPens = function (pens, history) {
+    Meta2d.prototype.render = function (patchFlags) {
+    Meta2d.prototype.setBackgroundImage = function (url) {
+    Meta2d.prototype.setBackgroundColor = function (color) {
+    Meta2d.prototype.setGrid = function (_a) {
+    Meta2d.prototype.setRule = function (_a) {
+    Meta2d.prototype.open = function (data) {
+    Meta2d.prototype.initBindDatas = function () {
+    Meta2d.prototype.connectSocket = function () {
+    Meta2d.prototype.doInitJS = function () {
+    Meta2d.prototype.drawLine = function (lineName) {
+    Meta2d.prototype.drawingPencil = function () {
+    Meta2d.prototype.stopPencil = function () {
+    Meta2d.prototype.lock = function (lock) {
+    Meta2d.prototype.finishDrawLine = function (end) {
+    Meta2d.prototype.finishPencil = function () {
+    Meta2d.prototype.updateLineType = function (pen, lineName) {
+    Meta2d.prototype.addDrawLineFn = function (fnName, fn) {
+    Meta2d.prototype.removeDrawLineFn = function (fnName) {
+    Meta2d.prototype.showMagnifier = function () {
+    Meta2d.prototype.hideMagnifier = function () {
+    Meta2d.prototype.toggleMagnifier = function () {
+    Meta2d.prototype.clear = function (render) {
+    Meta2d.prototype.emit = function (eventType, data) {
+    Meta2d.prototype.on = function (eventType, handler) {
+    Meta2d.prototype.off = function (eventType, handler) {
+    Meta2d.prototype.registerMoveDock = function (dock) {
+    Meta2d.prototype.registerResizeDock = function (dock) {
+    Meta2d.prototype.find = function (idOrTag) {
+    Meta2d.prototype.findOne = function (idOrTag) {
+    Meta2d.prototype.getPenRect = function (pen) {
+    Meta2d.prototype.setPenRect = function (pen, rect, render) {
+    Meta2d.prototype.startAnimate = function (idOrTagOrPens) {
+    Meta2d.prototype.pauseAnimate = function (idOrTagOrPens) {
+    Meta2d.prototype.stopAnimate = function (idOrTagOrPens) {
+    Meta2d.prototype.startVideo = function (idOrTagOrPens) {
+    Meta2d.prototype.pauseVideo = function (idOrTagOrPens) {
+    Meta2d.prototype.stopVideo = function (idOrTagOrPens) {
+    Meta2d.prototype.calcAnimateDuration = function (pen) {
+    Meta2d.prototype.combine = function (pens, showChild) {
+    Meta2d.prototype.uncombine = function (pen) {
+    Meta2d.prototype.isCombine = function (pen) {
+    Meta2d.prototype.active = function (pens, emit) {
+    Meta2d.prototype.inactive = function () {
+    Meta2d.prototype.delete = function (pens, canDelLocked, history) {
+    Meta2d.prototype.scale = function (scale, center) {
+    Meta2d.prototype.translate = function (x, y) {
+    Meta2d.prototype.translatePens = function (pens, x, y) {
+    Meta2d.prototype.getParent = function (pen, root) {
+    Meta2d.prototype.data = function () {
+    Meta2d.prototype.copy = function (pens) {
+    Meta2d.prototype.cut = function (pens) {
+    Meta2d.prototype.paste = function () {
+    Meta2d.prototype.undo = function () {
+    Meta2d.prototype.redo = function () {
+    Meta2d.prototype.listenSocket = function () {
+    Meta2d.prototype.connectWebsocket = function (websocket) {
+    Meta2d.prototype.closeWebsocket = function () {
+    Meta2d.prototype.connectMqtt = function (params) {
+    Meta2d.prototype.closeMqtt = function () {
+    Meta2d.prototype.connectHttp = function () {
+    Meta2d.prototype.sendDatabyHttp = function (data) {
+    Meta2d.prototype.closeHttp = function () {
+    Meta2d.prototype.socketCallback = function (message, topic) {
+    Meta2d.prototype.setDatas = function (datas, _a) {
+    Meta2d.prototype.setValue = function (data, _a) {
+    Meta2d.prototype._setValue = function (data, history) {
+    Meta2d.prototype.pushHistory = function (action) {
+    Meta2d.prototype.showInput = function (pen, rect) {
+    Meta2d.prototype.hideInput = function () {
+    Meta2d.prototype.clearDropdownList = function () {
+    Meta2d.prototype.pushChildren = function (parent, children) {
+    Meta2d.prototype.toPng = function (padding, callback, containBkImg) {
+    Meta2d.prototype.downloadPng = function (name, padding) {
+    Meta2d.prototype.getRect = function (pens) {
+    Meta2d.prototype.fitView = function (fit, viewPadding) {
+    Meta2d.prototype.centerView = function () {
+    Meta2d.prototype.hasView = function () {
+    Meta2d.prototype.getViewCenter = function () {
+    Meta2d.prototype.beSameByFirst = function (pens, attribute) {
+    Meta2d.prototype.formatPainterByFirst = function (pens) {
+    Meta2d.prototype.alignNodes = function (align, pens, rect) {
+    Meta2d.prototype.alignNodesByFirst = function (align, pens) {
+    Meta2d.prototype.alignPen = function (align, pen, rect) {
+    Meta2d.prototype.spaceBetweenByDirection = function (direction, pens, distance) {
+    Meta2d.prototype.spaceBetween = function (pens, width) {
+    Meta2d.prototype.spaceBetweenColumn = function (pens, height) {
+    Meta2d.prototype.layout = function (pens, width, space) {
+    Meta2d.prototype.gotoView = function (pen) {
+    Meta2d.prototype.showMap = function () {
+    Meta2d.prototype.hideMap = function () {
+    Meta2d.prototype.onSizeUpdate = function () {
+    Meta2d.prototype.toggleAnchorMode = function () {
+    Meta2d.prototype.addAnchorHand = function () {
+    Meta2d.prototype.removeAnchorHand = function () {
+    Meta2d.prototype.toggleAnchorHand = function () {
+    Meta2d.prototype.top = function (pen, pens) {
+      置顶画笔
+    Meta2d.prototype.initImageCanvas = function (pens) {
+    Meta2d.prototype.bottom = function (pen, pens) {
+    Meta2d.prototype.up = function (pen, pens) {
+    Meta2d.prototype.down = function (pen, pens) {
+    Meta2d.prototype.setLayer = function (pen, toIndex, pens) {
+    Meta2d.prototype.changePenId = function (oldId, newId) {
+    Meta2d.prototype.getLines = function (node, type) {
+    Meta2d.prototype.nextNode = function (pen) {
+    Meta2d.prototype.previousNode = function (pen) {
+    Meta2d.prototype.getNext = function (pen) {
+    Meta2d.prototype.addAnchor = function (pen, anchor, index) {
+    Meta2d.prototype.connectLine = function (from, to, fromAnchor, toAnchor, render) {
+    Meta2d.prototype.toComponent = function (pens, showChild, anchor) {
+    Meta2d.prototype.setVisible = function (pen, visible, render) {
+    Meta2d.prototype.clearHover = function () {
+    Meta2d.prototype.closeSocket = function () {
+    Meta2d.prototype.destroy = function (onlyData) {
+    Meta2d.prototype.mine = function () {
 
-      <div>
-        <button onClick={() => meta2d.fitView()} >
-          自适应界面
-        </button> <button onClick={() => meta2d.centerView()} >
-          居中显示
-        </button> <button onClick={() => meta2d.toggleAnchorMode()} >
-            添加锚点
-        </button> <button onClick={() => meta2d.downloadPng()} >
-          生成 png 图像
-        </button> <button onClick={() => {
-            console.log('child pen', child_pen);
-            pens = window.meta2d.mine();
-            console.log('pens');
-            console.log(pens);
-            // draw_interface_text();
-            set_test_list((Object.entries(window.meta2d.mine())).map((pen) => {
-              console.log('pen');
-              console.log(pen[1]);
-              return (
-                <>
-                {pen[1].name}
-                {pen[1].anchors[0].x}
-                {pen[1].anchors[1].x}
-                {pen[1].anchors[2].x}
-                </>
-              )
-            }));
-          }
-          } >
-            {
-              // list.map(l => <p>234</p>)
-              // meta2d.mine().map(l => <p>23</p>)
-            }
-          {/* onClick={() => console.log(Meta2d)} > */}
-          {/* {draw_interface_text()} */}
-          {test_list}
-          test
-        </button>
+import React from 'react';
+import { Button, Checkbox, Form, Input } from 'antd';
 
-      </div>
+const onFinish = (values: any) => {
+  console.log('Success:', values);
+};
+
+const onFinishFailed = (errorInfo: any) => {
+  console.log('Failed:', errorInfo);
+};
+
+const App: React.FC = () => (
+  <Form
+    name="basic"
+    labelCol={{ span: 8 }}
+    wrapperCol={{ span: 16 }}
+    style={{ maxWidth: 600 }}
+    initialValues={{ remember: true }}
+    onFinish={onFinish}
+    onFinishFailed={onFinishFailed}
+    autoComplete="off"
+  >
+    <Form.Item
+      label="Username"
+      name="username"
+      rules={[{ required: true, message: 'Please input your username!' }]}
+    >
+      <Input />
+    </Form.Item>
 
 
+    <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+      <Button type="primary" htmlType="submit">
+        Submit
+      </Button>
+    </Form.Item>
+  </Form>
+);
 
-
-
-
-
-
-
-
-  const [test_list, set_test_list] = useState('23')
-  useEffect(() => {
-    window.meta2d = new Meta2d('meta2d11'); // 创建了一个id为此的<>
-    window.meta2d.register({ my_compoent });
-    window.meta2d.register({ only_text });
-    window.meta2d.registerAnchors({ my_compoent: my_compoent_Anchors });
-    window.meta2d.registerAnchors({ only_text: only_text_Anchors });
-    // window.meta2d.addPen(child_pen);
-    console.log('here', pen);
-    window.meta2d.addPen(pen);
-    const text_width = 200;
-    const text_height = 14;
-    window.meta2d.pushChildren(pen, 
-      pen.anchors.map((anchor) => {
-        return (
-        {
-          name: 'only_text',
-          text: `interface`,
-          // x: 100 + pen.width * pen.anchors[0].x - text_width/2,
-          x: 100 + pen.width * anchor.x - text_width/2,
-          // y: 100 + pen.height * pen.anchors[0].y - text_height,
-          y: 100 + pen.height * anchor.y - text_height * (anchor.x === 0.5 ? 1 : 0),
-          width: text_width,
-          height: 0,
-        })
-      }) // pens.children
-    );
-    console.log('here', pen);
-    // window.meta2d.addPen(pen_text);
-    window.meta2d.inactive();
-  }, []);
-
-  var pens;
+export default App;

@@ -57,7 +57,8 @@ const Meta2dContainer = (props) => {
     console.log('use effect')
     meta2d.resize();
     // window.meta2d = new Meta2d('meta2d11'); // 创建了一个id为此的<>
-    meta2d.register({ my_compoent });
+    // meta2d.register({ my_compoent }); // use path2d
+    meta2d.registerCanvasDraw({ my_compoent }); // use canvas draw
     meta2d.register({ only_text });
     meta2d.registerAnchors({ my_compoent: my_compoent_Anchors });
     meta2d.registerAnchors({ only_text: only_text_Anchors });
@@ -168,7 +169,7 @@ const Meta2dContainer = (props) => {
           }
         } >
           {/* gen Meta2d */}
-          resize
+          调整画布
         </p> ,
       key: 'resize'
     }, {
@@ -273,7 +274,9 @@ const Meta2dContainer = (props) => {
           // my_option.gridColor = '#ffffff';
           my_option.gridSize = value;
           meta2d.setOptions(my_option);
-          meta2d.resize();
+          // meta2d.resize();
+          meta2d.canvas.resize();
+          // meta2d.render();
         }}
       />,
       key: 'gridSize'

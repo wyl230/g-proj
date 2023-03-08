@@ -8,9 +8,9 @@ import { hardwares } from '../utils/data';
 import { Card, List } from 'antd';
 import logo from "../assets/images/hya.png"
 import { Button, Modal, Popover } from 'antd';
-import { Input } from 'antd';
 import MyDrawer from './drawer';
 const { Search } = Input;
+import { Checkbox, Form, Input } from 'antd';
 import { Collapse } from 'antd';
 const { Panel } = Collapse;
 import { Col, Row } from 'antd';
@@ -23,28 +23,48 @@ const { Sider} = Layout;
 const Left_aside = (props) => {
   const onChange = (key) => { console.log(key); };
   const onDragStart = useCallback((e, data) => {
-    e.dataTransfer.setData('Meta2d', JSON.stringify(data));
+    console.log(e); // this
+    console.log(meta2d.store.data.pens);
+    e.dataTransfer.setData('Meta2d', JSON.stringify(data)); // first argument is the class type of data
+    console.log(meta2d.store.data.pens);
+    // meta2d.store
   }, []);
+
+  const onDragEnd = useCallback((e, data) => {
+    console.log(e); // 这个时候的值才开始被放置图的处理
+    // meta2d.store.data.pens[0].x = 200;
+    console.log(meta2d.store.data.pens);
+    
+  });
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
     const search_items = event.target.elements.search_items.value;
-
     alert(search_items);
   }
 
 
   // modal
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isAddressInputModalOpen, setIsAddressInputModalOpen] = useState(false);
+  const [address, setAddress] = useState('http://162.105.85.214:8000/test_interface');
 
   const showModal = () => {
+    // console.log(meta2d.store.data.pens);
     setIsModalOpen(true);
   };
+
+  const show_address_input_modal = () => {
+    setIsAddressInputModalOpen(true);
+  }
 
   const handleOk = () => {
     setIsModalOpen(false);
     alert('功能待完善');
+  };
+
+  const handle_input_adderss_Ok = () => {
+    setIsAddressInputModalOpen(false);
   };
 
   const handleCancel = () => {
@@ -66,7 +86,8 @@ const Left_aside = (props) => {
         },
         body: json
     };
-    fetch('http://162.105.85.214:8000/test_interface', requestOptions)
+    fetch(address.ip_address, requestOptions)
+    // fetch('http://162.105.85.214:8000/test_interface', requestOptions)
         .then(response => response.json())
         .then(data => {
           // console.log('get: ', data.data_mine);
@@ -115,10 +136,12 @@ const Left_aside = (props) => {
               draggable
               onDragStart = { (e) => onDragStart(e, data) }
               onMouseOver = {() => props.update_current_object(key, title, data, info)}
+              // onDragOver = {(e) => onDragOver(e, data)}
+              onDragEnd = {(e) => onDragEnd(e, data)}
             >
               {/* <Button>click</Button> */}
               <MyDrawer
-                draggable
+                // draggable
                 title = { (
                   (title.length > 4) ? 
                   <>
@@ -133,7 +156,7 @@ const Left_aside = (props) => {
                   {title.length == 3 ? title[2] : '..' + ''}
                   </>
                 ) }
-                onDragStart = { (e) => onDragStart(e, data) }
+                // onDragStart = { (e) => onDragStart(e, data) }
               >{title}
               </MyDrawer>
             </Col>
@@ -141,8 +164,17 @@ const Left_aside = (props) => {
       );
     }) 
     )
+  };    
+
+  const onFinish = (v) => {
+    console.log(v);
+    setAddress(v);
+    handle_input_adderss_Ok();
   };
 
+  const onFinishFailed = (errorInfo) => {
+    console.log('Failed:', errorInfo);
+  };
   return (
     <Sider theme={props.global_theme} 
     className="left_aside"
@@ -195,12 +227,50 @@ const Left_aside = (props) => {
           </Row>
           <div className={'try_middle'}>
             
-            <Row>
+            <Row
+              gutter={[30, 30]}
+              justify="center" align="middle"
+            >
             <Col span={24} >
             <Button type="primary" onClick={showModal}>
               新建模块
             </Button>
+          {/* </div>
+          <div className={'try_middle'}> */}
+            <Button type="primary" onClick={show_address_input_modal}>
+              输入服务器IP地址
+            </Button>
             </Col></Row>
+
+            <Modal title="输入地址" open={isAddressInputModalOpen} onOk={handle_input_adderss_Ok} onCancel={handleCancel}
+            footer={[
+                    <Button form="myForm" key="submit" htmlType="submit">
+                        Submit
+                    </Button>
+                    ]}
+            >
+              <div className='input-margin'>
+
+            <Form id='myForm'
+              name="basic"
+              labelCol={{ span: 8 }}
+              wrapperCol={{ span: 16 }}
+              style={{ maxWidth: 600 }}
+              initialValues={{ remember: true }}
+              onFinish={onFinish}
+              onFinishFailed={onFinishFailed}
+              autoComplete="off"
+            >
+              <Form.Item
+                label="ip_address"
+                name="ip_address"
+                rules={[{ required: true, message: 'Please input your ip address!' }]}
+              >
+                <Input id='test' placeholder="示例:http://162.105.85.214:8000/test_interface" />
+              </Form.Item>
+          </Form>
+              </div>
+            </Modal>
             <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
               <div className='input-margin'>
               <Input addonBefore="名称" id='test' placeholder="搜索组件..." />
