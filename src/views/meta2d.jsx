@@ -9,6 +9,7 @@ import { my_compoent, my_compoent_Anchors } from '../utils/draw';
 import { only_text, only_text_Anchors } from '../utils/draw';
 
 import Sider from 'antd/es/layout/Sider';
+import {my_options} from './my_options';
 const { Content } = Layout;
 
   // 4. 开始使用
@@ -53,61 +54,80 @@ const Meta2dContainer = (props) => {
       return () => set_first('qwer');
     } else {
       console.log(first, '??');
-    const meta2d = new Meta2d('meta2d11');
-    console.log('use effect')
-    meta2d.resize();
-    // window.meta2d = new Meta2d('meta2d11'); // 创建了一个id为此的<>
-    // meta2d.register({ my_compoent }); // use path2d
-    meta2d.registerCanvasDraw({ my_compoent }); // use canvas draw
-    meta2d.register({ only_text });
-    meta2d.registerAnchors({ my_compoent: my_compoent_Anchors });
-    meta2d.registerAnchors({ only_text: only_text_Anchors });
-    // window.meta2d.addPen(child_pen);
-    console.log('here', pen);
-    meta2d.addPen(pen);
-    const text_width = 200;
-    const text_height = 14;
-    meta2d.pushChildren(pen, 
-      pen.anchors.map((anchor) => {
-        return (
-        {
-          name: 'only_text',
-          text: `interface`,
-          // x: 100 + pen.width * pen.anchors[0].x - text_width/2,
-          x: 100 + pen.width * anchor.x - text_width/2,
-          y: 100 + pen.height * anchor.y - text_height * (anchor.x === 0.5 ? 1 : 0),
-          width: text_width,
-          height: 0,
-        })
-      }) // pens.children
-    );
-    console.log('here', pen);
-    // window.meta2d.addPen(pen_text);
-    meta2d.inactive();
+      const meta2d = new Meta2d('meta2d11');
+      console.log('use effect')
+      meta2d.resize();
+      // window.meta2d = new Meta2d('meta2d11'); // 创建了一个id为此的<>
+      // meta2d.register({ my_compoent }); // use path2d
+      meta2d.registerCanvasDraw({ my_compoent }); // use canvas draw
+      meta2d.register({ only_text });
+      meta2d.registerAnchors({ my_compoent: my_compoent_Anchors });
+      meta2d.registerAnchors({ only_text: only_text_Anchors });
+      // window.meta2d.addPen(child_pen);
+      console.log('here', pen);
+      meta2d.addPen(pen);
+      // deep clone
+      const pen_test = {
+        name: 'my_compoent',
+        text: 'PIM',
+        x: 100,
+        y: 100,
+        width: 140,
+        height: 110,
+        fromArrow: "triangleSolid",
+      };
+      const str = JSON.stringify(pen_test);
+      console.log('pen3', str);
+      const pen2 = JSON.parse(JSON.stringify(pen_test));
+      pen2.y = 200;
+      meta2d.addPen(pen2);
+      meta2d.setLayer(pen2, 10);
+      console.log('pen', pen);
+      console.log('pen2', pen2);
+      console.log(meta2d.store.pens);
+      
+      // deep clone end
+      const text_width = 200;
+      const text_height = 14;
+      meta2d.pushChildren(pen, 
+        pen.anchors.map((anchor) => {
+          return (
+          {
+            name: 'only_text',
+            text: `interface`,
+            // x: 100 + pen.width * pen.anchors[0].x - text_width/2,
+            x: 100 + pen.width * anchor.x - text_width/2,
+            y: 100 + pen.height * anchor.y - text_height * (anchor.x === 0.5 ? 1 : 0),
+            width: text_width,
+            height: 0,
+          })
+        }) // pens.children
+      );
+      console.log('here', pen);
+      // window.meta2d.addPen(pen_text);
+      meta2d.inactive();
 
-    return () => {
-      console.log('un effect') ;
-    }
+      return () => {
+        console.log('un effect') ;
+      }
     }
   }, [stay]);
 
   var pens;
 
   const item_navs = [
+    // {
+    //   label:
+    //   '工具栏',
+    //   key: 'title',
+    // }, 
     {
-      label:
-      '工具栏',
-      key: 'title',
-    }, {
       label: 
         <p onClick={() => meta2d.fitView()} 
          className={'vertical-text'}
         >
           自适应界面
         </p> , 
-        // <button onClick={() => meta2d.fitView()} >
-        //   自适应界面
-        // </button> , 
       key: '1',
     }, {
       label: 
@@ -180,63 +200,6 @@ const Meta2dContainer = (props) => {
             // meta2d.fitView();
             setTest_info('ok')
             console.log(meta2d.getOptions());
-            const my_options = {
-                "fontFamily": "\"Hiragino Sans GB\", \"Microsoft YaHei\", \"Helvetica Neue\", Helvetica, Arial",
-                "fontSize": 12,
-                "lineHeight": 1.5,
-                "textAlign": "center",
-                "textBaseline": "middle",
-                "color": "#222222",
-                "activeColor": "#278df8",
-                "hoverColor": "rgba(39,141,248,0.5)",
-                "anchorColor": "#278DF8",
-                "hoverAnchorColor": "#FF4101",
-                "anchorRadius": 5,
-                "anchorBackground": "#fff",
-                "dockColor": "rgba(39,141,248,1)",
-                "dockPenColor": "#1890FF",
-                "dragColor": "#1890ff",
-                "rotateCursor": "rotate.cur",
-                "hoverCursor": "pointer",
-                "minScale": 0.2,
-                "maxScale": 5,
-                "keydown": 0,
-                'grid': false,
-                'gridSize': 20,
-                "gridColor": "#e2e2e2",
-                "ruleColor": "#888888",
-                "drawingLineName": "polyline",
-                "interval": 30,
-                "animateInterval": 30,
-                "autoPolyline": true,
-                "autoAnchor": true,
-                "animateColor": "#ff4d4f",
-                "ruleLineColor": "#FF4101",
-                "defaultAnchors": [
-                    {
-                        "x": 0.5,
-                        "y": 0
-                    },
-                    {
-                        "x": 1,
-                        "y": 0.5
-                    },
-                    {
-                        "x": 0.5,
-                        "y": 1
-                    },
-                    {
-                        "x": 0,
-                        "y": 0.5
-                    }
-                ],
-                "measureTextWidth": true,
-                "mouseRightActive": true,
-                "disableClipboard": false,
-                "disableRotate": true,
-                "moveConnectedLine": false,
-                "drawingLineLength": 0
-            };
             // grid gridsize, can't set
             // 
             // my_options.gridSize = 40;
@@ -280,7 +243,19 @@ const Meta2dContainer = (props) => {
         }}
       />,
       key: 'gridSize'
-    }
+    }, 
+    {
+      label: <>
+        拓扑层级
+        </>,
+      key: 'topo'
+    }, 
+    {
+      label: <>
+        待定
+        </>,
+      key: 'remain'
+    }, 
   ]
 
   const [collapsed, setCollapsed] = useState(true);

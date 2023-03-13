@@ -166,10 +166,10 @@ const Right_aside = (props) => {
       
     >
 
-    <div className='try_middle'>
+    {/* <div className='try_middle'>
       <Button type="primary" onClick={onClick}
       >Switch</Button>
-    </div>
+    </div> */}
 
       <QueueAnim className="demo-content">
         { show ?  show_list() : null }

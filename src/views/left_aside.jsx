@@ -91,16 +91,19 @@ const Left_aside = (props) => {
         .then(response => response.json())
         .then(data => {
           // console.log('get: ', data.data_mine);
+          console.log('get', data);
           const max = 10000;
           const min = 0;
-          const icon = data.data_mine;
+          const icon = data;
+          // const icon = data.data_mine;
           icon.key = Math.floor(Math.random() * (max - min + 1)) + min;
           // icon.info = [
           //   '型号 : kk',
           //   '功耗 : 10w' 
           // ]
           // console.log('icon', icon);
-          const newIcons = [...MyIcons, data.data_mine];
+          const newIcons = [...MyIcons, data];
+          // const newIcons = [...MyIcons, data.data_mine];
           setMyIcons(newIcons);
           console.log(MyIcons);
         });
