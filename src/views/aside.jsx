@@ -14,7 +14,8 @@ class Aside extends React.Component {
     this.state = {
       current_property: '从服务器获取模型',
       current_object: 'undefined',
-      current_object_properties: []
+      current_object_properties: [],
+      edit_info: 'edit_info'
     };
 
     // handleClick = (child_data) => {
@@ -32,6 +33,13 @@ class Aside extends React.Component {
     this.setState({
       current_object: key,
       current_object_properties: info // [title, info]
+    })
+  }
+
+  set_edit_info(v) {
+    console.log('meta2d.store.active', meta2d.store.active)
+    this.setState({
+      edit_info: v
     })
   }
 
@@ -58,6 +66,7 @@ class Aside extends React.Component {
           value={this.state.current_property} 
           current_object={this.state.current_object} 
           current_object_properties={this.state.current_object_properties}
+          info={this.state.edit_info}
         />
     )
     // <Square value={i}/>;
@@ -71,6 +80,8 @@ class Aside extends React.Component {
         <Meta2dContainer 
           global_theme={this.props.global_theme}
           stay={true}
+          info={this.state.edit_info}
+          set_info={(v) => this.set_edit_info(v)}
         />
         {this.render_right_aside(0)}
         </Layout>

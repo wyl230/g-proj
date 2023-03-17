@@ -3,11 +3,13 @@
  */
 
 import { Divider, Menu, Switch, Breadcrumb,  theme, Layout, Slider, } from 'antd';
+import { Button, Dropdown , Form, Input} from 'antd';
 import React, { useEffect, useState } from 'react';
 import { Meta2d } from '@meta2d/core';
 import { my_compoent, my_compoent_Anchors } from '../utils/draw';
 import { only_text, only_text_Anchors } from '../utils/draw';
 
+import MyDrawer from './drawer';
 import Sider from 'antd/es/layout/Sider';
 import {my_options} from './my_options';
 const { Content } = Layout;
@@ -41,13 +43,103 @@ const { Content } = Layout;
     height: 0,
   }
 // const Meta2dContainer = (props) => {
+
+
+
 const Meta2dContainer = (props) => {
   const [test_list, set_test_list] = useState('23')
   const [test_info, setTest_info] = useState('设置')
   // const meta2d = new Meta2d('meta2d11');
   const [first, set_first] = useState(true)
   const [stay, setStay] = useState(true)
-  // const [meta2d, SetMeta2d] = useState(null);
+  const items_navs = [
+    {
+      key:'1',
+      label: 'test'
+    }
+  ];
+
+
+  // 右键菜单
+  const showContextMenu = (e, client_rect) => { 
+    console.log('ok', e, client_rect);
+
+    const onFinish = () => {}
+    const onFinishFailed = () => {}
+    const lists = (
+      <>
+        {
+          meta2d.store.active.map(
+            (component) => (
+              <p key={component.id}>
+                {component.name}
+              </p>
+            )
+          )
+        }
+        <p> 接口：</p> <hr />
+        {
+          meta2d.store.active.map(
+            (component) => (
+
+              component.children.map(
+                child => {
+                  console.log('child', child)
+                  const text = meta2d.find(child)[0].text
+                  return (
+                    <p key={child}>
+                      {text}
+                    </p>
+                  )
+                }
+              )
+            )
+          )
+        }
+
+        <Form id='myForm'
+          name="basic"
+          labelCol={{ span: 8 }}
+          wrapperCol={{ span: 16 }}
+          style={{ maxWidth: 600 }}
+          initialValues={{ remember: true }}
+          onFinish={onFinish}
+          onFinishFailed={onFinishFailed}
+          autoComplete="off"
+        >
+          <Form.Item
+            label="接口"
+            name="ip_address"
+            rules={[{ required: true, message: '请输入完整' }]}
+          >
+            <Input id='test' placeholder="please" />
+          </Form.Item>
+        </Form>
+
+        <Button form="myForm" key="submit" htmlType="submit">
+            Submit
+        </Button>
+      </>
+    )
+    console.log('lists', lists)
+    props.set_info(meta2d.store.active == 0 ? '请右键选中要查看的模块' : lists);
+    // return (
+      //     <MyDrawer
+      //       // draggable
+      //       title = { (
+      //         'asdf'
+      //       ) }
+      //       // onDragStart = { (e) => onDragStart(e, data) }
+      //     >{234}
+      //     </MyDrawer>
+      // <Dropdown menu={{items: items_navs}} key='234'>
+      //   <div>{234}</div>
+      // </Dropdown>
+    // );
+  };
+
+
+
   useEffect(() => {
     if(stay == false) {
       console.log(first, 'dont gen meta2d now');
@@ -55,6 +147,13 @@ const Meta2dContainer = (props) => {
     } else {
       console.log(first, '??');
       const meta2d = new Meta2d('meta2d11');
+
+      const hideContextMenu = () => {};
+
+      meta2d.on('contextmenu', showContextMenu);
+      // 点击画布
+      meta2d.on('click', hideContextMenu);
+
       console.log('use effect')
       meta2d.resize();
       // window.meta2d = new Meta2d('meta2d11'); // 创建了一个id为此的<>
@@ -79,7 +178,8 @@ const Meta2dContainer = (props) => {
       const str = JSON.stringify(pen_test);
       console.log('pen3', str);
       const pen2 = JSON.parse(JSON.stringify(pen_test));
-      pen2.y = 200;
+      pen2.x = 300;
+      pen2.y = 300;
       meta2d.addPen(pen2);
       meta2d.setLayer(pen2, 10);
       console.log('pen', pen);
@@ -297,7 +397,8 @@ const Meta2dContainer = (props) => {
           // 'width': '920px',
           'height': 'calc(100vh - 64px)',
           // 'height': '89.6vh',
-          'width': `${window.innerWidth - 240 - 64}px`,
+          'width': '72vw'
+          // 'width': `${window.innerWidth - 240 - 64}px`,
           // 'height': `${window.innerHeight - 300}px`,
         }}
       >

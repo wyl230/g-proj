@@ -6,7 +6,7 @@ import React, { useCallback, useEffect } from 'react';
 import { icons, interfaces } from '../utils/data';
 import { hardware_properties } from '../utils/data';
 import { component_properties } from '../utils/data';
-import { Button, Modal, Popover } from 'antd';
+import { Button, Modal, Popover, Tabs } from 'antd';
 import { Avatar, List, Skeleton } from 'antd';
 import {useState } from 'react';
 import { Col, Row } from 'antd';
@@ -29,7 +29,7 @@ const { Panel } = Collapse;
 const text = `待定 `;
 
 import { Layout, } from "antd";
-const { Sider} = Layout;
+const { Sider } = Layout;
 
 
 
@@ -140,6 +140,75 @@ const Right_aside = (props) => {
       </div>, 
     ])
   }
+
+  const tab_items = [
+    {
+      key: 'prop',
+      label: <> 属性 </>,
+      children: 
+      <>
+        <QueueAnim className="demo-content">
+          { show ?  show_list() : null }
+        </QueueAnim>
+
+        <form onSubmit={handleSubmit}>
+          <div className='search-bar_right'>
+            <Search placeholder="搜索组件..." onSearch={onSearch} enterButton />
+          </div>
+        </form>
+
+        <Collapse 
+          bordered={false}
+          defaultActiveKey={['1']}
+          expandIcon={({ isActive }) => <CaretRightOutlined rotate={isActive ? 90 : 0} />}
+          style={{ background: token.colorBgContainer }}
+        >
+          <Panel header="硬件模型属性展示" key="1" style={panelStyle}>
+            <QueueAnim 
+              duration={100} interval={10}
+              forcedReplay={true}
+              className="demo-content"
+            >
+              {show ? show_properties() : null}
+            </QueueAnim>
+          </Panel>
+          <Panel header="组件模型属性展示" key="2" style={panelStyle}>
+            {
+              component_properties.map((property) => {
+                return (
+                  <>
+                    <p>{property}： ...</p> 
+                    <hr />
+                  </>
+                )
+              })
+            }
+            <p>{text}</p >
+          </Panel>
+          <Panel header="模型属性展示 3" key="3" style={panelStyle}>
+            <p>{text}</p>
+          </Panel>
+        </Collapse>
+      </>
+    }, 
+    {
+      key: 'edit',
+      label: <> 修改属性 </>,
+      children:
+        <>
+          <div
+            style={{
+              'text-align': 'center'
+            }}
+          >
+            <Button type="primary" onClick={onClick}
+            >待定</Button>
+            <p>{props.info}</p>
+          </div>
+        </>
+    }, 
+  ]
+
   return (
     <Sider theme={props.global_theme} 
       // style={{
@@ -165,54 +234,11 @@ const Right_aside = (props) => {
       }
       
     >
-
-    {/* <div className='try_middle'>
-      <Button type="primary" onClick={onClick}
-      >Switch</Button>
-    </div> */}
-
-      <QueueAnim className="demo-content">
-        { show ?  show_list() : null }
-      </QueueAnim>
-
-      <form onSubmit={handleSubmit}>
-        <div className='search-bar_right'>
-          <Search placeholder="搜索组件..." onSearch={onSearch} enterButton />
-        </div>
-      </form>
-
-      <Collapse 
-        bordered={false}
-        defaultActiveKey={['1']}
-        expandIcon={({ isActive }) => <CaretRightOutlined rotate={isActive ? 90 : 0} />}
-        style={{ background: token.colorBgContainer }}
-      >
-        <Panel header="硬件模型属性展示" key="1" style={panelStyle}>
-          <QueueAnim 
-            duration={100} interval={10}
-            forcedReplay={true}
-            className="demo-content"
-          >
-            {show ? show_properties() : null}
-          </QueueAnim>
-        </Panel>
-        <Panel header="组件模型属性展示" key="2" style={panelStyle}>
-          {
-            component_properties.map((property) => {
-              return (
-                <>
-                  <p>{property}： ...</p> 
-                  <hr />
-                </>
-              )
-            })
-          }
-          <p>{text}</p >
-        </Panel>
-        <Panel header="模型属性展示 3" key="3" style={panelStyle}>
-          <p>{text}</p>
-        </Panel>
-      </Collapse>
+      <Tabs 
+        defaultActiveKey="1"
+        centered
+        items={tab_items}
+      />
     </Sider> 
   );
 };

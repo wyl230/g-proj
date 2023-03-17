@@ -235,14 +235,28 @@ const Left_aside = (props) => {
               justify="center" align="middle"
             >
             <Col span={24} >
-            <Button type="primary" onClick={showModal}>
-              新建模块
-            </Button>
-          {/* </div>
-          <div className={'try_middle'}> */}
-            <Button type="primary" onClick={show_address_input_modal}>
-              输入服务器IP地址
-            </Button>
+              
+              <div
+                style={{
+                  'text-align': 'center',
+                }}
+              >
+                <Button type="primary" onClick={showModal}
+                  style={{
+                    'margin': '1px 10px'
+                  }}
+                >
+                  新建模块
+                </Button>
+
+                <Button type="primary" onClick={show_address_input_modal}
+                  style={{
+                    'margin': '4px 10px'
+                  }}
+                >
+                  输入服务器IP地址
+                </Button>
+              </div>
             </Col></Row>
 
             <Modal title="输入地址" open={isAddressInputModalOpen} onOk={handle_input_adderss_Ok} onCancel={handleCancel}
