@@ -8,6 +8,7 @@ import React, { useEffect, useState } from 'react';
 import { Meta2d } from '@meta2d/core';
 import { my_compoent, my_compoent_Anchors } from '../utils/draw';
 import { only_text, only_text_Anchors } from '../utils/draw';
+import { interface_part, interface_part_Anchors } from '../utils/draw';
 
 import MyDrawer from './drawer';
 import Sider from 'antd/es/layout/Sider';
@@ -19,7 +20,7 @@ const { Content } = Layout;
     name: 'my_compoent',
     text: 'PIM',
     x: 100,
-    y: 100,
+    y: 150,
     width: 140,
     height: 110,
     fromArrow: "triangleSolid",
@@ -41,6 +42,15 @@ const { Content } = Layout;
     y: 100,
     width: 100,
     height: 0,
+  }
+
+  const interface_part_eg = {
+    name: 'interface_part',
+    text: 'interface test',
+    x: 100,
+    y: 100,
+    width: 10,
+    height: 10,
   }
 // const Meta2dContainer = (props) => {
 
@@ -148,6 +158,11 @@ const Meta2dContainer = (props) => {
       console.log(first, '??');
       const meta2d = new Meta2d('meta2d11');
 
+      let my_option = meta2d.getOptions();
+      my_option.anchorRadius = 10;
+      meta2d.setOptions(my_option);
+      meta2d.canvas.resize();
+
       const hideContextMenu = () => {};
 
       meta2d.on('contextmenu', showContextMenu);
@@ -160,6 +175,8 @@ const Meta2dContainer = (props) => {
       // meta2d.register({ my_compoent }); // use path2d
       meta2d.registerCanvasDraw({ my_compoent }); // use canvas draw
       meta2d.register({ only_text });
+      meta2d.register({ interface_part });
+      meta2d.registerAnchors({ interface_part: interface_part_Anchors });
       meta2d.registerAnchors({ my_compoent: my_compoent_Anchors });
       meta2d.registerAnchors({ only_text: only_text_Anchors });
       // window.meta2d.addPen(child_pen);
@@ -196,13 +213,18 @@ const Meta2dContainer = (props) => {
             name: 'only_text',
             text: `interface`,
             // x: 100 + pen.width * pen.anchors[0].x - text_width/2,
-            x: 100 + pen.width * anchor.x - text_width/2,
-            y: 100 + pen.height * anchor.y - text_height * (anchor.x === 0.5 ? 1 : 0),
+            x: pen.x + pen.width * anchor.x - text_width/2,
+            y: pen.y + pen.height * anchor.y - text_height * (anchor.x === 0.5 ? 1 : 0),
             width: text_width,
             height: 0,
           })
         }) // pens.children
       );
+
+      
+      interface_part_eg.x = pen.x + pen.width * 0.3;
+      interface_part_eg.y = pen.y + pen.height * 0.5;
+      meta2d.pushChildren(pen, [interface_part_eg]);
       console.log('here', pen);
       // window.meta2d.addPen(pen_text);
       meta2d.inactive();
@@ -304,7 +326,7 @@ const Meta2dContainer = (props) => {
             // 
             // my_options.gridSize = 40;
             // my_options.grid = false;
-            my_options.anchorRadius = 50;
+            my_options.anchorRadius = 10;
             // meta2d.setOptions(my_options);
             let my_option = meta2d.getOptions();
             // my_option.anchorRadius = 100;

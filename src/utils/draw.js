@@ -90,3 +90,32 @@ export function my_compoent_Anchors(pen) {
   });
   pen.anchors = anchors;
 }
+
+
+export function interface_part(pen, ctx) {
+  const path = !ctx ? new Path2D() : ctx;
+  const { x, y, width, height } = pen.calculative.worldRect;
+  ctx = meta2d.canvas.canvas.getContext('2d');
+
+
+  console.log('path', path, ctx);
+  path.moveTo(x, y);
+  path.lineTo(x+width, y);
+  path.lineTo(x + width, y + height);
+  path.lineTo(x, y+height);
+
+  path.closePath();
+  if (path instanceof Path2D) return path;
+
+}
+// x轴为横轴
+export function interface_part_Anchors(pen) {
+  const anchors = [];
+  anchors.push({
+    id: '0',
+    penId: pen.id,
+    x: 0.5,
+    y: 0.5,
+  });
+  pen.anchors = anchors;
+}
