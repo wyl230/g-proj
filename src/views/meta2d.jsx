@@ -92,9 +92,10 @@ const Meta2dContainer = (props) => {
         name: 'interface_part',
         text: 'interface test',
         width: 10,
-        height: 10,
+        height: 15,
       }
-      // new_interface.name = res.name;
+      new_interface.text = res.name;
+      new_interface.width = res.name.length * 9;
       new_interface.x = pen.x + pen.width * pos_x_Ref.current;
       new_interface.y = pen.y + pen.height * pos_y_Ref.current;
       console.log('here1', new_interface,pen);

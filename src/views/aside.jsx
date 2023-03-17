@@ -15,7 +15,7 @@ class Aside extends React.Component {
       current_property: '从服务器获取模型',
       current_object: 'undefined',
       current_object_properties: [],
-      edit_info: 'edit_info'
+      edit_info: '右键点击要修改的模块'
     };
 
     // handleClick = (child_data) => {
