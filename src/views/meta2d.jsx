@@ -4,8 +4,8 @@
 
 import { Divider, Menu, Switch, Breadcrumb,  theme, Layout, Slider, } from 'antd';
 import { Button, Dropdown , Form, Input} from 'antd';
-import React, { useEffect, useState } from 'react';
-import { Meta2d } from '@meta2d/core';
+import React, { useEffect, useState, useRef } from 'react';
+import { Meta2d, randomId } from '@meta2d/core';
 import { my_compoent, my_compoent_Anchors } from '../utils/draw';
 import { only_text, only_text_Anchors } from '../utils/draw';
 import { interface_part, interface_part_Anchors } from '../utils/draw';
@@ -62,6 +62,9 @@ const Meta2dContainer = (props) => {
   // const meta2d = new Meta2d('meta2d11');
   const [first, set_first] = useState(true)
   const [stay, setStay] = useState(true)
+  const [pos_x, setPosX] = useState(0.1)
+  const [test, setTest] = useState(0.1)
+  const [pos_y, setPosY] = useState(0.1)
   const items_navs = [
     {
       key:'1',
@@ -69,12 +72,38 @@ const Meta2dContainer = (props) => {
     }
   ];
 
+  const pos_x_Ref = useRef(0); // 设置初值
+  pos_x_Ref.current = pos_x;
+  const pos_y_Ref = useRef(0); // 设置初值
+  pos_y_Ref.current = pos_y;
 
   // 右键菜单
+
+
   const showContextMenu = (e, client_rect) => { 
     console.log('ok', e, client_rect);
 
-    const onFinish = () => {}
+    const onFinish = (res) => {
+      setPosX(res.pos_x);
+      setPosY(res.pos_y);
+      console.log('res',res, pos_x_Ref.current, pos_y_Ref.current );
+
+      const new_interface = {
+        name: 'interface_part',
+        text: 'interface test',
+        width: 10,
+        height: 10,
+      }
+      // new_interface.name = res.name;
+      new_interface.x = pen.x + pen.width * pos_x_Ref.current;
+      new_interface.y = pen.y + pen.height * pos_y_Ref.current;
+      console.log('here1', new_interface,pen);
+      meta2d.pushChildren(pen, [new_interface]);
+      console.log('here2', new_interface,pen);
+      // window.meta2d.addPen(pen_text);
+      meta2d.render();
+      meta2d.inactive();
+    }
     const onFinishFailed = () => {}
     const lists = (
       <>
@@ -119,10 +148,24 @@ const Meta2dContainer = (props) => {
         >
           <Form.Item
             label="接口"
-            name="ip_address"
+            name="name"
             rules={[{ required: true, message: '请输入完整' }]}
           >
-            <Input id='test' placeholder="please" />
+            <Input id='test' placeholder="输入接口名字" />
+          </Form.Item>
+          <Form.Item
+            label="x坐标"
+            name="pos_x"
+            rules={[{ required: true, message: '请输入完整' }]}
+          >
+            <Input id='x' placeholder="please" />
+          </Form.Item>
+          <Form.Item
+            label="y坐标"
+            name="pos_y"
+            rules={[{ required: true, message: '请输入完整' }]}
+          >
+            <Input id='y' placeholder="please" />
           </Form.Item>
         </Form>
 
@@ -221,11 +264,15 @@ const Meta2dContainer = (props) => {
         }) // pens.children
       );
 
-      
-      interface_part_eg.x = pen.x + pen.width * 0.3;
+
+      console.log('here wh', interface_part_eg,pen);
+      interface_part_eg.x = pen.x + pen.width * 0.7;
+      console.log('here wh', interface_part_eg,pen);
       interface_part_eg.y = pen.y + pen.height * 0.5;
+      console.log('here wh', interface_part_eg,pen);
       meta2d.pushChildren(pen, [interface_part_eg]);
-      console.log('here', pen);
+      // console.log('here', pen);
+      console.log('here wh', interface_part_eg,pen);
       // window.meta2d.addPen(pen_text);
       meta2d.inactive();
 
@@ -236,6 +283,27 @@ const Meta2dContainer = (props) => {
   }, [stay]);
 
   var pens;
+  // useEffect(() => {
+  //   const new_interface = {
+  //     name: 'interface_part',
+  //     text: 'interface test',
+  //     width: 10,
+  //     height: 10,
+  //   }
+  //     new_interface.x = pen.x + pen.width * pos_x_Ref.current;
+  //     new_interface.y = pen.y + pen.height * pos_y_Ref.current;
+  //     const max=11110;
+  //     const min=0;
+  //     new_interface.id = Math.floor(Math.random() * (max - min + 1)) + min;
+
+  //     console.log('here1', new_interface,pen);
+  //     meta2d.pushChildren(pen, [new_interface]);
+  //     console.log('here2', new_interface,pen);
+  //     // window.meta2d.addPen(pen_text);
+  //     meta2d.render();
+  //     meta2d.inactive();
+
+  // }, [pos_x, pos_y]);
 
   const item_navs = [
     // {
