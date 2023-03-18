@@ -57,7 +57,7 @@ const { Content } = Layout;
 
 
 const Meta2dContainer = (props) => {
-  const [test_list, set_test_list] = useState('23')
+  const [test_list, set_test_list] = useState('')
   const [test_info, setTest_info] = useState('设置')
   // const meta2d = new Meta2d('meta2d11');
   const [first, set_first] = useState(true)
@@ -87,11 +87,11 @@ const Meta2dContainer = (props) => {
 
     props.set_cur_right_side_tab('edit');
     const onFinish = (res) => {
-    // todo 添加接口时，对不同的模块做出区分
       setPosX(res.pos_x);
       setPosY(res.pos_y);
       console.log('res',res, pos_x_Ref.current, pos_y_Ref.current );
 
+      // todo 接口中文名字的长度以及高度问题，高度不够，长度需要*2
       const new_interface = {
         name: 'interface_part',
         text: 'interface test',
@@ -99,10 +99,12 @@ const Meta2dContainer = (props) => {
         height: 15,
       }
 
+      const w = res.name.length * 9;
+      const h = 15;
       new_interface.text = res.name;
-      new_interface.width = res.name.length * 9;
-      new_interface.x = pen.x + pen.width * pos_x_Ref.current;
-      new_interface.y = pen.y + pen.height * pos_y_Ref.current;
+      new_interface.width = w;
+      new_interface.x = pen.x + pen.width * pos_x_Ref.current - w/2;
+      new_interface.y = pen.y + pen.height * pos_y_Ref.current - h/2;
       console.log('here1', new_interface,pen);
       meta2d.pushChildren(pen, [new_interface]);
       console.log('here2', new_interface,pen);
@@ -169,19 +171,19 @@ const Meta2dContainer = (props) => {
             name="pos_x"
             rules={[{ required: true, message: '请输入完整' }]}
           >
-            <Input id='x' placeholder="please" />
+            <Input id='x' placeholder="相对坐标please" />
           </Form.Item>
           <Form.Item
             label="y坐标"
             name="pos_y"
             rules={[{ required: true, message: '请输入完整' }]}
           >
-            <Input id='y' placeholder="please" />
+            <Input id='y' placeholder="相对坐标please" />
           </Form.Item>
         </Form>
 
         <Button form="myForm" key="submit" htmlType="submit">
-            Submit
+          添加接口
         </Button>
       </>
     )
@@ -264,14 +266,14 @@ const Meta2dContainer = (props) => {
       // );
 
 
-      console.log('here wh', interface_part_eg,pen);
-      interface_part_eg.x = pen.x + pen.width * 0.7;
-      console.log('here wh', interface_part_eg,pen);
-      interface_part_eg.y = pen.y + pen.height * 0.5;
-      console.log('here wh', interface_part_eg,pen);
-      meta2d.pushChildren(pen, [interface_part_eg]);
-      console.log('here', pen);
-      console.log('here wh', interface_part_eg,pen);
+      // console.log('here wh', interface_part_eg,pen);
+      // interface_part_eg.x = pen.x + pen.width * 0.7;
+      // console.log('here wh', interface_part_eg,pen);
+      // interface_part_eg.y = pen.y + pen.height * 0.5;
+      // console.log('here wh', interface_part_eg,pen);
+      // meta2d.pushChildren(pen, [interface_part_eg]);
+      // console.log('here', pen);
+      // console.log('here wh', interface_part_eg,pen);
       // window.meta2d.addPen(pen_text);
       meta2d.inactive();
 
@@ -358,10 +360,6 @@ const Meta2dContainer = (props) => {
             }));
           }
           } >
-            {
-              // list.map(l => <p>234</p>)
-              // meta2d.mine().map(l => <p>23</p>)
-            }
           {/* onClick={() => console.log(Meta2d)} > */}
           {/* {draw_interface_text()} */}
           {test_list}
