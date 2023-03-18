@@ -202,13 +202,17 @@ const Right_aside = (props) => {
             }}
           >
             <Button type="primary" onClick={onClick}
-            >待定</Button>
+            >保存模型及接口</Button>
+            {
+              // todo 这里要提交json给后端
+            }
             <p>{props.info}</p>
           </div>
         </>
     }, 
   ]
 
+  const [cur_tab, setCur_tab] = useState('prop');
   return (
     <Sider theme={props.global_theme} 
       // style={{
@@ -234,10 +238,16 @@ const Right_aside = (props) => {
       }
       
     >
-      <Tabs 
+      <Tabs id='tabs'
         defaultActiveKey="1"
         centered
         items={tab_items}
+        onChange={(key) => {
+          console.log(key);
+          // setCur_tab(key);
+          props.set_cur_right_side_tab(key);
+        }}
+        activeKey={props.cur_right_side_tab}
       />
     </Sider> 
   );

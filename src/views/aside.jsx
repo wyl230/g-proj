@@ -1,4 +1,4 @@
-
+// 除Header以外的所有部分
 import React, { useCallback, useState } from 'react';
 
 import { Layout, } from "antd";
@@ -15,7 +15,8 @@ class Aside extends React.Component {
       current_property: '从服务器获取模型',
       current_object: 'undefined',
       current_object_properties: [],
-      edit_info: '右键点击要修改的模块'
+      edit_info: '右键点击要修改的模块',
+      cur_right_side_tab: 'prop'
     };
 
     // handleClick = (child_data) => {
@@ -43,6 +44,12 @@ class Aside extends React.Component {
     })
   }
 
+  set_cur_right_side_tab(key) {
+    this.setState({
+      cur_right_side_tab: key
+    })
+  }
+
   render_left_aside(i) {
     return (
         <Left_aside 
@@ -67,6 +74,8 @@ class Aside extends React.Component {
           current_object={this.state.current_object} 
           current_object_properties={this.state.current_object_properties}
           info={this.state.edit_info}
+          cur_right_side_tab={this.state.cur_right_side_tab}
+          set_cur_right_side_tab={(key) => this.set_cur_right_side_tab(key)}
         />
     )
     // <Square value={i}/>;
@@ -82,6 +91,8 @@ class Aside extends React.Component {
           stay={true}
           info={this.state.edit_info}
           set_info={(v) => this.set_edit_info(v)}
+          cur_right_side_tab={this.state.cur_right_side_tab}
+          set_cur_right_side_tab={(key) => this.set_cur_right_side_tab(key)}
         />
         {this.render_right_aside(0)}
         </Layout>

@@ -83,6 +83,7 @@ const Meta2dContainer = (props) => {
   const showContextMenu = (e, client_rect) => { 
     console.log('ok', e, client_rect);
 
+    props.set_cur_right_side_tab('edit');
     const onFinish = (res) => {
       setPosX(res.pos_x);
       setPosY(res.pos_y);
