@@ -81,8 +81,8 @@ const Meta2dContainer = (props) => {
 
 
   const showContextMenu = (e, client_rect) => { 
+    // 右键模型之后，显示接口，并提供添加接口的功能
     const pen = meta2d.store.active[0];
-    // todo 显示接口时，从children里面显示
     console.log('ok', e, client_rect);
 
     props.set_cur_right_side_tab('edit');
@@ -111,6 +111,8 @@ const Meta2dContainer = (props) => {
       // window.meta2d.addPen(pen_text);
       meta2d.render();
       meta2d.inactive();
+      meta2d.store.active[0] = pen;
+      showContextMenu(e, client_rect);
     }
     const onFinishFailed = () => {}
     const lists = (
@@ -126,27 +128,17 @@ const Meta2dContainer = (props) => {
         }
         <div> 接口：</div> <hr />
         {
-          meta2d.store.active.map(
-            (component) => {
-              if(component.children != null) {
-                return (
-                  component.children.map(
-                    child => {
-                      console.log('child', child)
-                      const text = meta2d.find(child)[0].text
-                      return (
-                        <div key={child}>
-                          {text}
-                        </div>
-                      )
-                    }
-                  )
-                )
-              } else {
-                return 'remain..'
-              }
-            }
-          )
+          meta2d.store.active[0].children == null ?
+            '没有任何接口' :
+            meta2d.store.active[0].children.map(
+              (pen_id) => (
+                <p>
+                {meta2d.find(pen_id)[0].name}
+                : 
+                {meta2d.find(pen_id)[0].text}
+                </p>
+              )
+            )
         }
 
         <Form id='myForm'
