@@ -81,10 +81,13 @@ const Meta2dContainer = (props) => {
 
 
   const showContextMenu = (e, client_rect) => { 
+    const pen = meta2d.store.active[0];
+    // todo 显示接口时，从children里面显示
     console.log('ok', e, client_rect);
 
     props.set_cur_right_side_tab('edit');
     const onFinish = (res) => {
+    // todo 添加接口时，对不同的模块做出区分
       setPosX(res.pos_x);
       setPosY(res.pos_y);
       console.log('res',res, pos_x_Ref.current, pos_y_Ref.current );
@@ -95,6 +98,7 @@ const Meta2dContainer = (props) => {
         width: 10,
         height: 15,
       }
+
       new_interface.text = res.name;
       new_interface.width = res.name.length * 9;
       new_interface.x = pen.x + pen.width * pos_x_Ref.current;
@@ -112,29 +116,34 @@ const Meta2dContainer = (props) => {
         {
           meta2d.store.active.map(
             (component) => (
-              <p key={component.id}>
+              <div key={component.id}>
                 {component.name}
-              </p>
+              </div>
             )
           )
         }
-        <p> 接口：</p> <hr />
+        <div> 接口：</div> <hr />
         {
           meta2d.store.active.map(
-            (component) => (
-
-              component.children.map(
-                child => {
-                  console.log('child', child)
-                  const text = meta2d.find(child)[0].text
-                  return (
-                    <p key={child}>
-                      {text}
-                    </p>
+            (component) => {
+              if(component.children != null) {
+                return (
+                  component.children.map(
+                    child => {
+                      console.log('child', child)
+                      const text = meta2d.find(child)[0].text
+                      return (
+                        <div key={child}>
+                          {text}
+                        </div>
+                      )
+                    }
                   )
-                }
-              )
-            )
+                )
+              } else {
+                return 'remain..'
+              }
+            }
           )
         }
 
@@ -178,19 +187,6 @@ const Meta2dContainer = (props) => {
     )
     console.log('lists', lists)
     props.set_info(meta2d.store.active == 0 ? '请右键选中要查看的模块' : lists);
-    // return (
-      //     <MyDrawer
-      //       // draggable
-      //       title = { (
-      //         'asdf'
-      //       ) }
-      //       // onDragStart = { (e) => onDragStart(e, data) }
-      //     >{234}
-      //     </MyDrawer>
-      // <Dropdown menu={{items: items_navs}} key='234'>
-      //   <div>{234}</div>
-      // </Dropdown>
-    // );
   };
 
 
@@ -251,20 +247,21 @@ const Meta2dContainer = (props) => {
       // deep clone end
       const text_width = 200;
       const text_height = 14;
-      meta2d.pushChildren(pen, 
-        pen.anchors.map((anchor) => {
-          return (
-          {
-            name: 'only_text',
-            text: `interface`,
-            // x: 100 + pen.width * pen.anchors[0].x - text_width/2,
-            x: pen.x + pen.width * anchor.x - text_width/2,
-            y: pen.y + pen.height * anchor.y - text_height * (anchor.x === 0.5 ? 1 : 0),
-            width: text_width,
-            height: 0,
-          })
-        }) // pens.children
-      );
+      // @deprecated
+      // meta2d.pushChildren(pen, 
+      //   pen.anchors.map((anchor) => {
+      //     return (
+      //     {
+      //       name: 'only_text',
+      //       text: `interface`,
+      //       // x: 100 + pen.width * pen.anchors[0].x - text_width/2,
+      //       x: pen.x + pen.width * anchor.x - text_width/2,
+      //       y: pen.y + pen.height * anchor.y - text_height * (anchor.x === 0.5 ? 1 : 0),
+      //       width: text_width,
+      //       height: 0,
+      //     })
+      //   }) // pens.children
+      // );
 
 
       console.log('here wh', interface_part_eg,pen);
@@ -273,7 +270,7 @@ const Meta2dContainer = (props) => {
       interface_part_eg.y = pen.y + pen.height * 0.5;
       console.log('here wh', interface_part_eg,pen);
       meta2d.pushChildren(pen, [interface_part_eg]);
-      // console.log('here', pen);
+      console.log('here', pen);
       console.log('here wh', interface_part_eg,pen);
       // window.meta2d.addPen(pen_text);
       meta2d.inactive();
@@ -299,7 +296,7 @@ const Meta2dContainer = (props) => {
   //     new_interface.id = Math.floor(Math.random() * (max - min + 1)) + min;
 
   //     console.log('here1', new_interface,pen);
-  //     meta2d.pushChildren(pen, [new_interface]);
+      // meta2d.pushChildren(pen, [new_interface]);
   //     console.log('here2', new_interface,pen);
   //     // window.meta2d.addPen(pen_text);
   //     meta2d.render();

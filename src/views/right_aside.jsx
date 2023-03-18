@@ -193,7 +193,7 @@ const Right_aside = (props) => {
     }, 
     {
       key: 'edit',
-      label: <> 修改属性 </>,
+      label: <> 修改模型 </>,
       children:
         <>
           <div
@@ -212,7 +212,6 @@ const Right_aside = (props) => {
     }, 
   ]
 
-  const [cur_tab, setCur_tab] = useState('prop');
   return (
     <Sider theme={props.global_theme} 
       // style={{
