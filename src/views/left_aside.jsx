@@ -15,6 +15,8 @@ import { Collapse } from 'antd';
 const { Panel } = Collapse;
 import { Col, Row } from 'antd';
 
+import { ConfigProvider } from 'antd';
+import { theme } from 'antd';
 const text = ` 待定 `;
 
 import { Layout, } from "antd";
@@ -179,6 +181,15 @@ const Left_aside = (props) => {
     console.log('Failed:', errorInfo);
   };
   return (
+    <ConfigProvider
+      theme={{
+        // algorithm: theme.darkAlgorithm,
+        token: {
+          // colorPrimary: '#00b96b', // green
+          // colorPrimary: '#1890ff', // blue
+        },
+      }}
+    >
     <Sider theme={props.global_theme} 
     className="left_aside"
     style={{ 
@@ -193,6 +204,15 @@ const Left_aside = (props) => {
       //   overflow: 'auto',
       // }}
     >
+      <ConfigProvider
+        theme={{
+          algorithm: props.global_theme == 'light' ? theme.defaultAlgorithm : theme.darkAlgorithm,
+          token: {
+            // colorPrimary: '#00b96b', // green
+            // colorPrimary: '#1890ff', // blue
+          },
+        }}
+      >
       <p 
        style={ {
         'padding-left': '20px',
@@ -337,12 +357,14 @@ const Left_aside = (props) => {
         </Panel>
       </Collapse>
 
+      </ConfigProvider>
       {/* <div className="link" >
         <a href = "http://2ds.le5le.com/">一个链接</a>
       </div> */}
     </Sider>   
-
+    </ConfigProvider>
   );
 };
 
 export default Left_aside;
+

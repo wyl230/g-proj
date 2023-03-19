@@ -13,7 +13,9 @@ import { interface_part, interface_part_Anchors } from '../utils/draw';
 import MyDrawer from './drawer';
 import Sider from 'antd/es/layout/Sider';
 import {my_options} from './my_options';
+import { ConfigProvider } from 'antd';
 const { Content } = Layout;
+
 
   // 4. 开始使用
   const pen = {
@@ -457,12 +459,21 @@ const Meta2dContainer = (props) => {
           left: 0,
       }}
     >
+    <ConfigProvider
+        theme={{
+          algorithm: props.global_theme == 'light' ? theme.defaultAlgorithm : theme.darkAlgorithm,
+          token: {
+            // colorPrimary: '#00b96b', // green
+            // colorPrimary: '#1890ff', // blue
+          },
+        }}
+      >
     <Menu theme={'light'} 
     // mode="inline" 
     // mode="horizontal" 
     defaultSelectedKeys={['主界面']} items={item_navs} selectable={false}
-    
     />
+    </ConfigProvider>
   </Sider>
     <Content 
       onMouseOver={() => setStay(true)}

@@ -13,6 +13,7 @@ import { BrowserRouter, Routes, Route, Link, Outlet } from "react-router-dom";
 import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
 const { Header, Content, Sider } = Layout;
 
+import { ConfigProvider } from 'antd';
 import { icons } from '../utils/data';
 
 
@@ -232,22 +233,6 @@ const My_Header = (props) => {
       </a>
       ),
     },
-  {
-    key: '6',
-    label: (
-      <a target="_blank" rel="noopener noreferrer" href="https://www.luohanacademy.com">
-        放上需要的链接
-      </a>
-      ),
-    },
-  {
-    key: '7',
-    label: (
-      <a target="_blank" rel="noopener noreferrer" href="https://www.luohanacademy.com">
-        放上需要的链接
-      </a>
-      ),
-    },
   ];
 
   const file_op_items = [
@@ -284,9 +269,8 @@ const My_Header = (props) => {
     },
   ];
 
-  const [theme, setTheme] = useState('light');
   const changeTheme = (value) => {
-    setTheme(value ? 'dark' : 'light');
+    props.setTheme(value ? 'dark' : 'light');
   };
 
   const item_navs = [
@@ -353,14 +337,8 @@ const My_Header = (props) => {
           ), key: '9'
         },       
       ]
-    }, {
-      label: (
-        <Switch onChange={changeTheme} 
-       
-          onClick={() => setCount(Count + 1)}
-        />
-      ), key: '11'
-    }, {
+    }, 
+    {
       label: (
         <Dropdown menu={{ items: file_op_items }} key='34' placement="bottomRight" >
           <Button>文件...</Button>
@@ -375,7 +353,32 @@ const My_Header = (props) => {
     }, {
         label: <a href="/usage.html" target="_blank">使用说明</a>,
         key: 'usage'
-    }
+    }, 
+
+    {
+      label: (
+        <>
+        主题切换
+        </>
+      ), key: 'textchange',
+      children: [{
+        label: (
+          <>
+          <Switch onChange={changeTheme} 
+            onClick={() => setCount(Count + 1)}
+          />
+          </>
+        ), key: '11'
+      }]
+    }, {
+      label: (
+        <>
+        <Switch onChange={changeTheme} 
+          onClick={() => setCount(Count + 1)}
+        />
+        </>
+      ), key: '11'
+    }, 
   ]
 
   const [Count, setCount] = useState(0);
@@ -396,19 +399,35 @@ const My_Header = (props) => {
           // height: '64px',
           // position: 'fixed',
           'border-bottom': '1px solid #ccc',
-          'background-color' :'#fff'
+          'background-color': `${props.global_theme == 'light' ? '#fff' : 'rgba(0,21, 41)'}`
       }}
     >
     {/* <div className="header" > */}
-      <div className="logo" >
+      <div className="logo" 
+        style={{
+          'background-color': `${props.global_theme == 'light' ? '#fff' : 'rgba(0,21, 41)'}`
+        }}
+      >
         <img src='/favicon.ico' alt="集成开发环境" />
       </div>
       {/* <Menu theme={theme} mode="horizontal" defaultSelectedKeys={['主界面']} items={item_navs}/> */}
+
+            <ConfigProvider
+        theme={{
+          algorithm: props.global_theme == 'light' ? theme.defaultAlgorithm : theme.darkAlgorithm,
+          token: {
+            // colorPrimary: '#00b96b', // green
+            // colorPrimary: '#1890ff', // blue
+          },
+        }}
+      >
+
       <Menu theme={props.global_theme} mode="horizontal" defaultSelectedKeys={['主界面']} items={item_navs}/>
       {/* <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['主界面']} items={item_navs} /> */}
 
       {/* <Switch onChange={changeTheme} /> Change Style */}
 
+      </ConfigProvider>
       <div className="button-group" >
         {/* <Link to="/">
           <button className='button-3'>

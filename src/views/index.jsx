@@ -19,15 +19,17 @@ const { Header , Footer, Sider, Content } = Layout;
 let shouldHide = true;
 
 const Home = () => {
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState('light');
 
   const [address, setAddress] = useState({ ip_address: 'http://162.105.85.214:8000/test_interface'});
   return (
     <>
     <ConfigProvider
       theme={{
+        // algorithm: theme.darkAlgorithm,
         token: {
-          colorPrimary: '#00b96b', // green
+          // colorPrimary: '#00b96b', // green
+          // colorPrimary: '#1890ff', // blue
         },
       }}
     >
@@ -36,6 +38,7 @@ const Home = () => {
           global_theme={theme}
           address={address}
           setAddress={setAddress}
+          setTheme={setTheme}
         />
         <Aside 
           global_theme={theme}

@@ -13,6 +13,7 @@ import {useState } from 'react';
 import { Col, Row } from 'antd';
 // import Animate from 'rc-animate';
 import QueueAnim from 'rc-queue-anim';
+import { ConfigProvider } from 'antd';
 
 // use imgs
 // import logo from "../assets/images/hya.png"
@@ -158,6 +159,15 @@ const Right_aside = (props) => {
           </div>
         </form>
 
+      <ConfigProvider
+        theme={{
+          algorithm: props.global_theme == 'light' ? theme.defaultAlgorithm : theme.darkAlgorithm,
+          token: {
+            // colorPrimary: '#00b96b', // green
+            // colorPrimary: '#1890ff', // blue
+          },
+        }}
+      >
         <Collapse 
           bordered={false}
           defaultActiveKey={['1']}
@@ -190,6 +200,7 @@ const Right_aside = (props) => {
             <p>{text}</p>
           </Panel>
         </Collapse>
+      </ConfigProvider>
       </>
     }, 
     {
@@ -239,6 +250,15 @@ const Right_aside = (props) => {
   ]
 
   return (
+    <ConfigProvider
+      theme={{
+        // algorithm: theme.darkAlgorithm,
+        token: {
+          // colorPrimary: '#00b96b', // green
+          // colorPrimary: '#1890ff', // blue
+        },
+      }}
+    >
     <Sider theme={props.global_theme} 
       // style={{
       //   height: '10%',
@@ -263,6 +283,16 @@ const Right_aside = (props) => {
       }
       
     >
+
+      <ConfigProvider
+        theme={{
+          algorithm: props.global_theme == 'light' ? theme.defaultAlgorithm : theme.darkAlgorithm,
+          token: {
+            // colorPrimary: '#00b96b', // green
+            // colorPrimary: '#1890ff', // blue
+          },
+        }}
+      >
       <Tabs id='tabs'
         defaultActiveKey="1"
         centered
@@ -274,7 +304,9 @@ const Right_aside = (props) => {
         }}
         activeKey={props.cur_right_side_tab}
       />
+    </ConfigProvider>
     </Sider> 
+    </ConfigProvider>
   );
 };
 
