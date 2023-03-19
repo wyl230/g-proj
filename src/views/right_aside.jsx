@@ -172,9 +172,10 @@ const Right_aside = (props) => {
           bordered={false}
           defaultActiveKey={['1']}
           expandIcon={({ isActive }) => <CaretRightOutlined rotate={isActive ? 90 : 0} />}
-          style={{ background: token.colorBgContainer }}
+          // style={{ background: token.colorBgContainer }}
         >
-          <Panel header="硬件模型属性展示" key="1" style={panelStyle}>
+          <Panel header="硬件模型属性展示" key="1" style={panelStyle}
+          >
             <QueueAnim 
               duration={100} interval={10}
               forcedReplay={true}
