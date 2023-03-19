@@ -50,6 +50,12 @@ input[type=file]::-webkit-file-upload-button { /* chromes and blink button */
   /* background-color:rgba(39, 174, 96, .15); */
 }
 
+.for_pad_margin {
+  margin-left: 3%;
+  margin-right: 3%;
+  margin-top: 3%;
+  /* background:rgb(159, 34, 34); */
+}
 
 .create {
   display: flex;

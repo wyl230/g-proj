@@ -148,7 +148,7 @@ const My_Header = (props) => {
 
   const onHelp = useCallback(() => {
     // window.open('https://www.yuque.com/alsmile/topology/cucep0');
-    window.open('./help.html');
+    window.open('/usage.html');
   }, []);
 
   const onKeyDown = useCallback((e) => {
@@ -351,11 +351,7 @@ const My_Header = (props) => {
           label: (
             <p id="test_interface" onClick = { onTest_interface } >to_FPGA</p>
           ), key: '9'
-        }, {
-          label: (
-            <p id="3d_show" onClick = { on_3d_show } >产品展示界面</p>
-          ), key: '10'
-        }
+        },       
       ]
     }, {
       label: (
@@ -376,6 +372,9 @@ const My_Header = (props) => {
           <Button>更多...(绘图相关)</Button>
         </Dropdown>
       ), key: '13'
+    }, {
+        label: <a href="/usage.html" target="_blank">使用说明</a>,
+        key: 'usage'
     }
   ]
 
@@ -388,13 +387,16 @@ const My_Header = (props) => {
 
   return (
     // <Header className='header'>
-    <Header className='header'
+    <Header 
+    // className='header'
       // style={{'background-color': `rgb(0,21,41)`}}
 
       style={{ 
           // overflow: 'auto',
           // height: '64px',
           // position: 'fixed',
+          'border-bottom': '1px solid #ccc',
+          'background-color' :'#fff'
       }}
     >
     {/* <div className="header" > */}

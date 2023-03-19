@@ -47,7 +47,7 @@ const Left_aside = (props) => {
   // modal
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isAddressInputModalOpen, setIsAddressInputModalOpen] = useState(false);
-  const [address, setAddress] = useState('http://162.105.85.214:8000/test_interface');
+  // const [address, setAddress] = useState('http://162.105.85.214:8000/test_interface');
 
   const showModal = () => {
     // console.log(meta2d.store.data.pens);
@@ -86,7 +86,7 @@ const Left_aside = (props) => {
         },
         body: json
     };
-    fetch(address.ip_address, requestOptions)
+    fetch(props.address.ip_address, requestOptions)
     // fetch('http://162.105.85.214:8000/test_interface', requestOptions)
         .then(response => response.json())
         .then(data => {
@@ -171,7 +171,7 @@ const Left_aside = (props) => {
 
   const onFinish = (v) => {
     console.log(v);
-    setAddress(v);
+    props.setAddress(v);
     handle_input_adderss_Ok();
   };
 

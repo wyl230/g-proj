@@ -8,6 +8,7 @@ import { hardware_properties } from '../utils/data';
 import { component_properties } from '../utils/data';
 import { Button, Modal, Popover, Tabs } from 'antd';
 import { Avatar, List, Skeleton } from 'antd';
+import { Card } from 'antd';
 import {useState } from 'react';
 import { Col, Row } from 'antd';
 // import Animate from 'rc-animate';
@@ -201,12 +202,37 @@ const Right_aside = (props) => {
               'text-align': 'center'
             }}
           >
-            <Button type="primary" onClick={onClick}
+            <Button type="primary" onClick={() => {
+              const data = meta2d.store.active[0]
+              const json = JSON.stringify(data, undefined, 4);
+
+              const requestOptions = {
+                  method: 'POST',
+                  headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                  },
+                  body: json
+              };
+              fetch(props.address.ip_address, requestOptions)
+              // fetch('http://162.105.85.214:8000/test_interface', requestOptions)
+                  .then(response => response.json())
+                  .then(data => {
+                    console.log('get', data);
+                  });
+            }}
             >保存模型及接口</Button>
             {
               // todo 这里要提交json给后端
             }
             <p>{props.info}</p>
+            {/* <div className='for_pad_margin' */}
+            {/* > */}
+              <Card className='for_pad_margin'
+                title={'提示'}
+              > 请确保此时画布中只有一个模块</Card>
+            {/* </div> */}
+            {/* <p> 请确保此时画布中只有一个模块</p> */}
           </div>
         </>
     }, 

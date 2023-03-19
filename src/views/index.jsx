@@ -12,24 +12,40 @@ import ReactDOM from 'react-dom';
 // import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { BrowserRouter, Routes, Route, Link, Outlet} from "react-router-dom";
 import { Layout, } from "antd";
+import { Button, ConfigProvider } from 'antd';
 const { Header , Footer, Sider, Content } = Layout;
 
 
 let shouldHide = true;
 
 const Home = () => {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('dark');
+
+  const [address, setAddress] = useState({ ip_address: 'http://162.105.85.214:8000/test_interface'});
   return (
     <>
-    <Layout>
-      <My_Header 
-        global_theme={theme}
-      />
-      <Aside 
-        global_theme={theme}
-      />
-      {/* <Meta2dContainer /> */}
-    </Layout>
+    <ConfigProvider
+      theme={{
+        token: {
+          colorPrimary: '#00b96b', // green
+        },
+      }}
+    >
+      <Layout>
+        <My_Header 
+          global_theme={theme}
+          address={address}
+          setAddress={setAddress}
+        />
+        <Aside 
+          global_theme={theme}
+          address={address}
+          setAddress={setAddress}
+        />
+        {/* <Meta2dContainer /> */}
+
+      </Layout>
+    </ConfigProvider>
     </>
   );
 };

@@ -59,7 +59,8 @@ class Aside extends React.Component {
           current_object={this.state.current_object} 
           onClick={(i) => this.handleClick(i)}
           update_current_object = {(key,title,data, info) => this.update_current_object(key, title, data, info)}
-
+          address={this.props.address}
+          setAddress={this.props.setAddress}
           // parentCallback={this.handleClick}
         />
     )
@@ -76,6 +77,8 @@ class Aside extends React.Component {
           info={this.state.edit_info}
           cur_right_side_tab={this.state.cur_right_side_tab}
           set_cur_right_side_tab={(key) => this.set_cur_right_side_tab(key)}
+          address={this.props.address}
+          setAddress={this.props.setAddress}
         />
     )
     // <Square value={i}/>;
