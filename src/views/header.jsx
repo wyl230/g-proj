@@ -269,15 +269,17 @@ const My_Header = (props) => {
     },
   ];
 
-  const changeTheme = (value) => {
-    props.setTheme(value ? 'dark' : 'light');
+  const changeTheme = (dark) => {
+    props.setTheme(dark ? 'dark' : 'light');
       let my_option = meta2d.getOptions();
-      // my_option.color = value == 'light' ? '#222299' : '#888888'
+      my_option.color = dark ? '#fff' : '#000'
+      my_option.hoverColor = dark ? 'rgb(255,122,122)' : 'rgba(39,141,248,0.7)'
+      // my_option.hoverColor = dark ? '#fff' : '#000'
       // my_option.fontSize = 1000;
-      my_option.gridColor = value ? '#2e2e2e' : '#e2e2e2';
+      my_option.gridColor = dark ? '#2e2e2e' : '#e2e2e2';
       meta2d.setOptions(my_option);
       meta2d.resize();
-      console.log(value, meta2d.getOptions().gridColor)
+      console.log(dark, meta2d.getOptions().gridColor)
   };
 
   const item_navs = [
