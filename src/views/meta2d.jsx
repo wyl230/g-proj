@@ -13,7 +13,7 @@ import { interface_part, interface_part_Anchors } from '../utils/draw';
 import MyDrawer from './drawer';
 import Sider from 'antd/es/layout/Sider';
 import {my_options} from './my_options';
-import { ConfigProvider } from 'antd';
+import { ConfigProvider } from 'antd';  
 const { Content } = Layout;
 
 
@@ -487,9 +487,10 @@ const Meta2dContainer = (props) => {
           // 'width': '920px',
           'height': 'calc(100vh - 64px)',
           // 'height': '89.6vh',
-          'width': '72vw'
+          'width': '72vw',
           // 'width': `${window.innerWidth - 240 - 64}px`,
           // 'height': `${window.innerHeight - 300}px`,
+          'background-color': `${props.global_theme == 'light' ? 'rgb(244,244,244)' : 'rgb(11,11,11)'}`
         }}
       >
       </div>

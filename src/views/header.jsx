@@ -271,6 +271,13 @@ const My_Header = (props) => {
 
   const changeTheme = (value) => {
     props.setTheme(value ? 'dark' : 'light');
+      let my_option = meta2d.getOptions();
+      // my_option.color = value == 'light' ? '#222299' : '#888888'
+      // my_option.fontSize = 1000;
+      my_option.gridColor = value ? '#2e2e2e' : '#e2e2e2';
+      meta2d.setOptions(my_option);
+      meta2d.resize();
+      console.log(value, meta2d.getOptions().gridColor)
   };
 
   const item_navs = [

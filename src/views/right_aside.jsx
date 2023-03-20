@@ -211,7 +211,8 @@ const Right_aside = (props) => {
         <>
           <div
             style={{
-              'text-align': 'center'
+              'text-align': 'center',
+              overflow: 'auto',
             }}
           >
             <Button type="primary" onClick={() => {
@@ -238,13 +239,12 @@ const Right_aside = (props) => {
               // todo 这里要提交json给后端
             }
             <p>{props.info}</p>
-            {/* <div className='for_pad_margin' */}
-            {/* > */}
-              <Card className='for_pad_margin'
-                title={'提示'}
-              > 如果要保存模型，最好确保此时画布中只有一个模块</Card>
-            {/* </div> */}
-            {/* <p> 请确保此时画布中只有一个模块</p> */}
+            <Card className='for_pad_margin'
+              title={'提示'}
+            > 如果要保存模型，最好确保此时画布中只有一个模块
+            </Card>
+            <br /> <br /> <br /> <br /> <br /> 
+            {/* todo 这里因为插入了props.info，导致滚动不能滚动到底，所以加了几个break */}
           </div>
         </>
     }, 

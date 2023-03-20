@@ -207,8 +207,7 @@ i.iconfont {
   /* margin-left: 200px; */
   /* margin-right: 200px; */
   /* margin-right: var(--right-side-length); */
-  
-  background-color: rgb(244, 244, 244);
+  /* color: #e2e2e2   */
 }
 
 
@@ -635,7 +634,9 @@ button {
 
 div:hover {
   /* color: rgba(0, 0, 0, 0.9); */
-  color: rgb(0, 133, 35);
+  /* color: rgb(0, 133, 35); */
+  /* color: rgb(0, 111, 131); */
+  color: rgb(22, 104, 220);
 }
 
 /* div {
