@@ -242,7 +242,7 @@ const Right_aside = (props) => {
             {/* > */}
               <Card className='for_pad_margin'
                 title={'提示'}
-              > 请确保此时画布中只有一个模块</Card>
+              > 如果要保存模型，最好确保此时画布中只有一个模块</Card>
             {/* </div> */}
             {/* <p> 请确保此时画布中只有一个模块</p> */}
           </div>

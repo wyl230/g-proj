@@ -170,7 +170,7 @@ i.iconfont {
   height: calc(100% - 61px);
   float: right;
   border-right: 1px solid #ccc;
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
 }
 
 .right_aside .icon-list {
@@ -634,7 +634,8 @@ button {
 }
 
 div:hover {
-  color: rgba(0, 0, 0, 0.9);
+  /* color: rgba(0, 0, 0, 0.9); */
+  color: rgb(0, 133, 35);
 }
 
 /* div {
