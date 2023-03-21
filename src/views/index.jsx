@@ -21,7 +21,8 @@ let shouldHide = true;
 const Home = () => {
   const [theme, setTheme] = useState('light');
 
-  const [address, setAddress] = useState({ ip_address: 'http://162.105.85.214:8000/test_interface'});
+  const [address, setAddress] = useState({ ip_address: 'http://10.129.194.177:5000'});
+  // const [address, setAddress] = useState({ ip_address: 'http://162.105.85.214:8000/test_interface'});
   return (
     <>
     <ConfigProvider

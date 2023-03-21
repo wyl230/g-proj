@@ -71,6 +71,7 @@ const Left_aside = (props) => {
 
   const handleCancel = () => {
     setIsModalOpen(false);
+    setIsAddressInputModalOpen(false);
   };
 
   const [MyIcons, setMyIcons] = useState(icons);

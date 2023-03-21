@@ -118,6 +118,7 @@ const Meta2dContainer = (props) => {
     }
     const onFinishFailed = () => {}
     const lists = (
+      (meta2d.store.active == 0) ? '请右键点击组件' :
       <>
         {
           meta2d.store.active.map(
@@ -314,6 +315,7 @@ const Meta2dContainer = (props) => {
           自适应界面
         </p> , 
       key: '1',
+      // title: <p> 自</p>
     }, {
       label: 
         <p onClick={() => meta2d.centerView()} >

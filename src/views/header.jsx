@@ -74,7 +74,8 @@ const My_Header = (props) => {
         // headers: { 'Content-Type': 'application/json' },
         body: json
     };
-    fetch('http://162.105.85.214:8000/test_interface', requestOptions)
+    fetch('http://10.129.194.177:5000/graphs', requestOptions)
+    // fetch('http://162.105.85.214:8000/test_interface', requestOptions)
         .then(response => response.json())
         .then(data => {
           console.log('get: ', data.data_mine);
@@ -138,6 +139,24 @@ const My_Header = (props) => {
     fetch('http://162.105.85.214:8000/test_interface', requestOptions)
         .then(response => response.json())
         .then(data => this.setState({ postId: data.id }));
+
+    // window.open('http://162.105.85.214:8000/test_interface');
+    alert('已发送post请求');
+  }, []);
+
+  const onSave_to_server = useCallback(() => {
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ title: 'React POST Request Example' })
+    };
+    fetch(`${props.address.ip_address}/graphs`, requestOptions)
+        .then(response => response.json())
+        .then(data => {
+          console.log(data);
+        })
+
+          // this.setState({ postId: data.id }));
 
     // window.open('http://162.105.85.214:8000/test_interface');
     alert('已发送post请求');
@@ -338,13 +357,17 @@ const My_Header = (props) => {
           ), key: '7'
         }, {
           label: (
-            <p id="test_interface" onClick = { onTest_interface } >IDL2C</p>
+            <p id="test_interface" onClick = { onTest_interface } >IDL to 框架代码</p>
           ), key: '8'
         }, {
           label: (
             <p id="test_interface" onClick = { onTest_interface } >to_FPGA</p>
           ), key: '9'
-        },       
+        }, {
+          label: (
+            <p id="save_to_server" onClick = { onSave_to_server } >保存到服务器</p>
+          ), key: 'save_to_server'
+        }
       ]
     }, 
     {
@@ -371,22 +394,30 @@ const My_Header = (props) => {
         </>
       ), key: 'textchange',
       children: [{
-        label: (
-          <>
-          <Switch onChange={changeTheme} 
-            onClick={() => setCount(Count + 1)}
-          />
-          </>
-        ), key: '11'
-      }]
+          label: (
+            <>
+            <p onClick={changeTheme} > dark </p>
+            </>
+          ), key: 'dark'
+        }, {
+          label: (
+            <>
+            <p onClick={() => changeTheme(false)} > light </p>
+            </>
+          ), key: 'light'
+
+        }
+      ]
     }, {
       label: (
         <>
+        {/* <p >theme</p> */}
         <Switch onChange={changeTheme} 
           onClick={() => setCount(Count + 1)}
         />
         </>
-      ), key: '11'
+      ), key: '11',
+      // disabled: true
     }, 
   ]
 
