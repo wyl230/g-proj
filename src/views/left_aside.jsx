@@ -17,6 +17,10 @@ import { Col, Row } from 'antd';
 
 import { ConfigProvider } from 'antd';
 import { theme } from 'antd';
+
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+
+
 const text = ` 待定 `;
 
 import { Layout, } from "antd";
@@ -145,7 +149,6 @@ const Left_aside = (props) => {
               // onDragOver = {(e) => onDragOver(e, data)}
               onDragEnd = {(e) => onDragEnd(e, data)}
             >
-              {/* <Button>click</Button> */}
               <MyDrawer
                 // draggable
                 title = { (
@@ -229,6 +232,18 @@ const Left_aside = (props) => {
           {props.value}
         </Button>
       </p>
+
+      <p 
+       style={ {
+        'padding-left': '20px',
+        'padding-top': '5px'
+      }}
+      >
+        <Button onClick={() => { alert('remain'); }} >
+          {'模块组件一览'}
+        </Button>
+      </p>
+
       <form onSubmit={handleSubmit}>
         <div className='search-bar_right'>
           {/* <label htmlFor="text">搜索</label> */}
