@@ -1,18 +1,14 @@
-/*
- * @Description: 
- * @Author: 高浩然
- * @Date: 2021-10-11 15:02:25
- * @LastEditTime: 2021-10-13 14:53:13
- */
 const path = require('path');
 const common = require('./webpack.common');
 const { merge } = require('webpack-merge');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = merge(common, {
   mode: 'development',
   devServer: {
     open: true,
     port: 8888,
-    compress: true
+    compress: true,
+    historyApiFallback: true,
   }
 });

@@ -239,8 +239,11 @@ const Left_aside = (props) => {
         'padding-top': '5px'
       }}
       >
-        <Button onClick={() => { alert('remain'); }} >
-          {'模块组件一览'}
+        <Button onClick={() => { 
+
+         }} >
+          <a href={`/models_table`} target="_blank" >模块组件一览</a>
+          {/* {'模块组件一览'} */}
         </Button>
       </p>
 

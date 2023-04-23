@@ -1,9 +1,3 @@
-/*
- * @Description:
- * @Author: 高浩然
- * @Date: 2021-10-11 15:02:14
- * @LastEditTime: 2021-10-13 14:59:48
- */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -14,7 +8,8 @@ module.exports = {
     // 输出文件的路径
     path: path.resolve(__dirname, 'dist'),
     // 输出后的文件名称
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: '/'
   },
   module: {
     rules: [

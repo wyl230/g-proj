@@ -54,9 +54,6 @@ const Home = () => {
   );
 };
 
-
-
-
 // const Home = () => <h1>Home</h1>;
 const About = () => (
   <>
@@ -65,37 +62,8 @@ const About = () => (
 )
 const Contact = () => <h1>Contact</h1>;
 
-// const Layout = () => (
-//   <>
-//     <nav>
-//       <ul>
-//         <li>
-//           <Link to="/">Home</Link>
-//         </li>
-//         <li>
-//           <Link to="/about">about</Link>
-//         </li>
-//         <li>
-//           <Link to="/contact">Contact</Link>
-//         </li>
-//       </ul>
-//     </nav>
-//     <Outlet />
-//   </>
-// )
 const App = () => (
-  <BrowserRouter>
-    <Routes>
-        <Route path="/" element={<Home />} />
-        {/* <Route path="contact" element={<Contact />} /> */}
-        <Route path="contact" element={<Product_display />} />
-        <Route path="about" element={<About />} />
-      {/* <Route path="/" element={<Home />}>
-        <Route path="contact" element={<Contact />} />
-        <Route path="about" element={<About />} /> */}
-      {/* </Route> */}
-    </Routes>
-  </BrowserRouter>
+  <Home />
 );
 
 export default App;
