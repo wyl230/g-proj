@@ -11,7 +11,7 @@ import {
 import Root from './routes/root.jsx';
 import ErrorPage from "./error-page";
 import Contact from "./routes/contact";
-import ModelTable  from './views/model_table';
+import ModelTable  from './views/overview/model_table';
 
 
 const router = createBrowserRouter([
